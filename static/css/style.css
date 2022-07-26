@@ -1,0 +1,139 @@
+    /*font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Bellefair', serif;*/
+
+:root {
+    --back: hsl(230, 35%, 7%);
+    --head: hsl(231, 77%, 90%);
+    --content: hsl(0, 0%, 100%);
+
+    --desktop-w: 1440px;
+    --desktop-h: 900px;
+}
+
+body {
+    position: relative;
+    width: var(--desktop-w);
+    height: var(--desktop-h);
+    background-image: url('/assets/home/background-home-desktop.jpg'); /* Needs absolute path */
+}
+main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+main * {
+    position: absolute;
+}
+
+
+h1, h2, h3, h4, .subhead1 { font-family: 'Bellefair', serif; }
+h5, .subhead2, .navtext, .bodytext { font-family: 'Barlow Condensed', sans-serif; }
+
+h1 { font-size: 150px; }
+h2 { font-size: 100px; }
+h3 { font-size: 56px; }
+h4 { font-size: 32px; }
+h5 { font-size: 28px; letter-spacing: 4.75px;}
+.subhead1 { font-size: 28px; }
+.subhead2 { font-size: 14px; letter-spacing: 2.35px; }
+.navtext { font-size: 16px; letter-spacing: 2.7px; }
+
+
+/* Design Home Page FIGMA DIRECTIVES*/
+.navbar {
+    width: 1385px;
+    height: 96px;
+    top: 40px;
+    left: 55px;
+}
+.navbar-shared-logo {
+    width: 48px;
+    height: 48px;
+    left: 55px;
+    top: 64px;
+}
+.navbar-line {
+    width: 473px;
+    height: 1px;
+    left: 167px;
+    top: 88px;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+    z-index: 1;
+}
+.navbar-content {
+    width: 830px;
+    height: 96px;
+    left: 610px;
+    top: 40px;
+
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+}
+.navbar-content-ul {
+    width: 542px;
+    height: 19px;
+    left: 733px;
+    top: 79px;
+}
+.navbar-content-element {
+    width: 70px;
+    height: 19px;
+    left: 733px;
+    top: 79px;
+}
+.navbar-content-element span {
+    height: 19px;
+    top: calc(50% - 19px/2);
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+    color: #FFFFFF;
+
+}
+.navbar-content-element-number {
+    left: 0%;
+    right: 74.29%;
+    font-weight: 700;
+}
+.navbar-content-element-link {
+    left: 41.43%;
+    right: 2.86%;
+    
+    font-weight: 400;
+}
+
+.descriptor {
+    width: 450px;
+    height: 382px;
+    left: 165px;
+    top: 387px;
+}
+.descriptor-h5 {
+    height: 34px;
+    left: 0.11%;
+    right: 15.67%;
+    top: calc(50% - 34px/2 - 174px);
+    
+    color: #D0D6F9;    
+}
+.descriptor-h1 {
+    height: 172px;
+    left: 0%;
+    right: 1.11%;
+    top: calc(50% - 172px/2 - 47px); 
+    
+    color: #FFFFFF;    
+}
+.descriptor-body {
+    height: 128px;
+    left: 0.11%;
+    right: 1.22%;
+    top: calc(50% - 128px/2 + 127px);
+    
+    color: #D0D6F9;    
+}

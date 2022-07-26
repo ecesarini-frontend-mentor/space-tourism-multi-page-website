@@ -1,0 +1,48 @@
+    /*font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Bellefair', serif;*/
+
+:root {
+    --back: hsl(230, 35%, 7%);
+    --head: hsl(231, 77%, 90%);
+    --content: hsl(0, 0%, 100%);
+
+    --desktop-w: 1440px;
+    --desktop-h: 900px;
+}
+
+body {
+    max-width: var(--desktop-w);
+    max-height: var(--desktop-h);
+}
+main {
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/home/background-home-desktop.jpg');
+}
+
+
+h1, h2, h3, h4, .subhead1 { font-family: 'Bellefair', serif; }
+h5, .subhead2, .navtext, .bodytext { font-family: 'Barlow Condensed', sans-serif; }
+
+h1 { font-size: 150px; }
+h2 { font-size: 100px; }
+h3 { font-size: 56px; }
+h4 { font-size: 32px; }
+h5 { font-size: 28px; letter-spacing: 4.75px;}
+.subhead1 { font-size: 28px; }
+.subhead2 { font-size: 14px; letter-spacing: 2.35px; }
+.navtext { font-size: 16px; letter-spacing: 2.7px; }
+
+
+/* Design Home Page RESPONSIVE APPROACH */
+.navbar {
+    width: 100%;
+    height: 10.7%;
+    margin: 4.4% 0 0 3.8%;
+}
+.navbar .shared-logo {
+    width: 48px;
+    height: 48px;
+    
+}
+
