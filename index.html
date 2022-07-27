@@ -11,45 +11,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/style.css">
+  <!--<link rel="stylesheet" href="./static/css/index.css">-->
   
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 <body>
-  <main>
-    <nav class="navbar navbar-home">
-      <img class="navbar-shared-logo" alt="logo" src="./assets/shared/logo.svg">
-      <hr class="navbar-line">
-      <ul class="navbar-content navtext">
+  <header>
+    <a href="./index.html">
+      <img alt="Logo. Back home." src="./assets/shared/logo.svg">
+    </a>
+    <hr>
+    <nav class="nav-index">
+      <ul>
         <li class="navbar-content-element">
-          <span class="navbar-content-element-number">00</span> 
-          <span class="navbar-content-element-link">Home</span>           
+          <span>00</span> 
+          <span>Home</span>           
         </li>
         <li class="navbar-content-element">
-          <span class="navbar-content-element-number">01</span> 
-          <span class="navbar-content-element-link">Destination</span>           
+          <span>01</span> 
+          <span>Destination</span>           
         </li>
         <li class="navbar-content-element">
-          <span class="navbar-content-element-number">02</span> 
-          <span class="navbar-content-element-link">Crew</span>           
+          <span>02</span> 
+          <span>Crew</span>           
         </li>
         <li class="navbar-content-element">
-          <span class="navbar-content-element-number">03</span> 
-          <span class="navbar-content-element-link">Technology</span>           
+          <span>03</span> 
+          <span>Technology</span>           
         </li>
       </ul>
     </nav>
+  </header>
   
-    <section class="descriptor">
-      <h5 class="descriptor-h5">So, you want to travel to</h5>
-      <h1 class="descriptor-h1">Space</h1>
-      <p class="descriptor-body">Let’s face it; if you want to go to space, you might as well genuinely go to 
-      outer space and not hover kind of on the edge of it. Well sit back, and relax 
-      because we’ll give you a truly out of this world experience!
-      </p>
-    </section>
-
-  Explore
+  <main>
+    <div class="grid-content">
+      <section class="descriptor">
+        <h5 class="descriptor-h5">So, you want to travel to</h5>
+        <h1 class="descriptor-h1">Space</h1>
+        <p class="descriptor-body">Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
+      </section>
+      <section class="explorer">
+        <button class="btn-explore" type="button">
+          <span>
+            Explore
+          </span>
+        </button>
+      </section>
+    </div>
   </main>
-
 </body>
 </html>
