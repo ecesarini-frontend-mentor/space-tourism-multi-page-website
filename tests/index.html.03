@@ -21,7 +21,7 @@
       <img alt="Logo. Back home." src="./assets/shared/logo.svg">
     </a>
     <hr>
-    <nav class="nav-index navtext">
+    <nav class="nav-index">
       <ul>
         <li class="navbar-content-element">
           <span>00</span> 
