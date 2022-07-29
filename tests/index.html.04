@@ -8,9 +8,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet">  
-  <link rel="stylesheet" href="./static/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="./static/css/style.css">
   <!--<link rel="stylesheet" href="./static/css/index.css">-->
   
   <title>Frontend Mentor | Space tourism website</title>
@@ -47,8 +47,8 @@
     <div class="grid-content">
       <section class="descriptor">
         <h5 class="descriptor-h5">So, you want to travel to</h5>
-        <h1 class="descriptor-h1">SPACE</h1>
-        <p class="descriptor-body body-text">Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
+        <h1 class="descriptor-h1">Space</h1>
+        <p class="descriptor-body">Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
       </section>
       <section class="explorer">
         <button class="btn-explore" type="button">

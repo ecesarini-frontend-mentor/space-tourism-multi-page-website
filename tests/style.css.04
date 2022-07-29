@@ -14,10 +14,9 @@ body {
     width: 100%;
     max-height: 100vh;   
     height: 100vh;
-    background-image: url('../../assets/home/background-home-desktop.jpg'); /* Needs absolute path */
+    background-image: url('/assets/home/background-home-desktop.jpg'); /* Needs absolute path */
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center; /*https://developer.mozilla.org/en-US/docs/Web/CSS/background-position?retiredLocale=it*/
-    font-family: "Bellefair", sans-serif;
 }
 main {
     width: 100%;
@@ -36,32 +35,17 @@ button {
 }
 
 h1, h2, h3, h4, .subhead1 { font-family: 'Bellefair', serif; }
-h5, .subhead2, .navtext, .body-text { font-family: 'Barlow Condensed', sans-serif; }
+h5, .subhead2, .navtext, .bodytext { font-family: 'Barlow Condensed', sans-serif; }
 
-h1 { 
-    font-size: 150px; 
-}
+h1 { font-size: 150px; }
 h2 { font-size: 100px; }
 h3 { font-size: 56px; }
 h4 { font-size: 32px; }
-h1, h2, h3, h4, .body-text { color: white }
-h5 { 
-    color: var(--head);
-    font-size: 28px; 
-    letter-spacing: 4.75px;
-    text-transform: uppercase;
-}
-.body-text {
-    font-size: 18px;
-    line-height: 32px;
-}
+h1, h2, h3, h4 { color: white }
+h5 { font-size: 28px; letter-spacing: 4.75px;}
 .subhead1 { font-size: 28px; }
 .subhead2 { font-size: 14px; letter-spacing: 2.35px; }
-.navtext { 
-    font-size: 16px; 
-    letter-spacing: 2.7px; 
-    text-transform: uppercase; 
-}
+.navtext { font-size: 16px; letter-spacing: 2.7px; text-transform: uppercase; }
 
 
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
@@ -144,11 +128,6 @@ header hr {
     line-height: 37px;
 
     letter-spacing: 2px;
-}
-
-.descriptor {
-    display: flex;
-    flex-direction: column;
 }
 /*
 .descriptor {
