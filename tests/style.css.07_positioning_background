@@ -9,21 +9,19 @@
     --nav-width: 57.64vw;
 }
 
-html { 
-    background: url('../../assets/home/background-home-desktop.jpg') no-repeat center center fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path */
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
+html {
+    min-height: 100vh;
+}
 
 body {
     box-sizing: content-box;
     margin: 0;
     max-width: 100vw;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    background-image: url('../../assets/home/background-home-desktop.jpg'); /* Refers on ./style.css path */
+    background-size: cover;
+    background-position: center; /*https://developer.mozilla.org/en-US/docs/Web/CSS/background-position?retiredLocale=it*/
     font-family: "Bellefair", sans-serif;
     font-size: 18px;
 }
@@ -155,9 +153,6 @@ header hr {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-}
-.descriptor-h1 {
-    max-width: 98.89%;
 }
 
 .explorer {
