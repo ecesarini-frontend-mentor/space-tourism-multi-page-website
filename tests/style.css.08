@@ -2,7 +2,6 @@
     --back: hsl(230, 35%, 7%);
     --head: hsl(231, 77%, 90%);
     --content: hsl(0, 0%, 100%);
-    --body-text: hsl(231, 79%, 90%);
 
     --desktop-w: 1440px;
     --desktop-h: 900px;
@@ -59,7 +58,7 @@ h1 {
 h2 { font-size: 100px; }
 h3 { font-size: 56px; }
 h4 { font-size: 32px; }
-h1, h2, h3, h4 { color: var(--content) }
+h1, h2, h3, h4, .body-text { color: white }
 h5 { 
     color: var(--head);
     font-size: 28px; 
@@ -67,10 +66,8 @@ h5 {
     text-transform: uppercase;
 }
 .body-text {
-    color: var(--body-text);
     font-size: 18px;
-    line-height: 30px;
-    letter-spacing: 1px;
+    line-height: 32px;
 }
 .subhead1 { font-size: 28px; }
 .subhead2 { font-size: 14px; letter-spacing: 2.35px; }
@@ -119,27 +116,16 @@ header hr {
     padding: 0 11.46vw 0 8.54vw;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
-.navbar-content-element {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.nav-index li {
+    margin: auto 0;
     cursor: pointer;
 }
-.navbar-content-element:hover {
-    border-bottom: 3px solid rgba(255, 255, 255, 0.50);
-}
-/*.navbar-content-element:focus {
-    border-bottom: 3px solid rgba(255, 255, 255);
-} // get action via JS*/ 
-
-.navbar-content-element a span:first-child {
+.nav-index span:first-child {
     font-weight: 700;
 }
-.navbar-content-element span {
-    color: var(--content);
+.nav-index li span {
+    color: white;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -150,8 +136,7 @@ header hr {
 .grid-content {
     width: 100%;
     display: grid;
-    /*grid-template-columns: calc(100% - var(--nav-width)) 1fr;*/
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: calc(100% - var(--nav-width)) 1fr;
     justify-items: center;
     align-items: center;
     color: inherit;
@@ -161,43 +146,66 @@ header hr {
     margin: 0;
 }
 .descriptor {
-    width: 31.25vw;
-    /*max-width: 73%;*/
-    margin: 27.89vh 0 14.55vh 0;
+    max-width: 73%;
+    margin: 43vh 0 14.55vh;
     /*padding-left: 26.83%;*/
     grid-column: 1 / 2;
-    /*justify-self: end;*/
+    justify-self: end;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    text-align: justify;
 }
 .descriptor-h1 {
-    margin: 24px 0;
+    max-width: 98.89%;
 }
 
-.explore {
+.explorer {
+    max-width: 100%;
     grid-column: 2 / 3;
-    /*padding-right: 11.46vw;*/
 }
-.explore button {
-    font-family: inherit;
-    text-transform: uppercase;
-    width: 274px;
-    height: 274px;
-    margin: 39.89vh 0 14.55vh 0;
-    background-color: var(--content);
+.explorer button {
+    width: 38%;
+    height: 38%;
+    background-color: white;
     border-radius: 50%;
-    cursor: pointer;
-    outline: 0px solid;
-    transition: 0.3s ease-out;
 }
-.explore button:hover {
-    outline: 88px solid rgba(255, 255, 255, 0.1036);
-}
-.explore button span {
+.explorer button span {
     font-size: 32px;
     line-height: 37px;
+
     letter-spacing: 2px;
 }
+
+/*
+.descriptor {
+    width: 450px;
+    height: 382px;
+    left: 165px;
+    top: 387px;
+}
+.descriptor-h5 {
+    height: 34px;
+    left: 0.11%;
+    right: 15.67%;
+    top: calc(50% - 34px/2 - 174px);
+    
+    color: #D0D6F9;    
+}
+.descriptor-h1 {
+    height: 172px;
+    left: 0%;
+    right: 1.11%;
+    top: calc(50% - 172px/2 - 47px); 
+    
+    color: #FFFFFF;    
+}
+.descriptor-body {
+    height: 128px;
+    left: 0.11%;
+    right: 1.22%;
+    top: calc(50% - 128px/2 + 127px);
+    
+    color: #D0D6F9;    
+}
+*/
