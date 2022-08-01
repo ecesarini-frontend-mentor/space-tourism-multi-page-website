@@ -10,7 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet">  
   <link rel="stylesheet" href="./static/css/style.css">
-  <link rel="stylesheet" href="./static/css/home.css">
+
+  <!--<link rel="stylesheet" href="./static/css/index.css">-->
   
   <title>Frontend Mentor | Space tourism website</title>
 </head>
@@ -23,25 +24,25 @@
     <nav class="nav-index navtext">
       <ul>
         <li class="navbar-content-element">
-          <a href="./index.html">
-            <span>00<br></span> 
+          <a href="#">
+            <span>00</span> 
             <span>Home</span>
           </a>
         </li>
         <li class="navbar-content-element">
-          <a href="./destination.html">
+          <a href="#">
             <span>01</span> 
             <span>Destination</span>           
           </a>
         </li>
         <li class="navbar-content-element">
-          <a href="./crew.html">
+          <a href="#">
             <span>02</span> 
             <span>Crew</span>           
           </a>
         </li>
         <li class="navbar-content-element">
-          <a href="./technology.html">
+          <a href="#">
             <span>03</span> 
             <span>Technology</span>           
           </a>
@@ -52,12 +53,12 @@
   
   <main>
     <div class="grid-content">
-      <section class="content-description-side">
+      <section class="descriptor">
         <h5 class="descriptor-h5">So, you want to travel to</h5>
         <h1 class="descriptor-h1">Space</h1>
         <p class="descriptor-body body-text">Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
       </section>
-      <section class="content-img-side explore">
+      <section class="explore">
         <button class="btn-explore" type="button">
           <span>Explore</span>
         </button>

@@ -1,0 +1,46 @@
+/* Override 'style.css' */
+
+html {
+    background: url('../../assets/home/background-home-desktop.jpg') no-repeat center center fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path */
+}
+
+.content-description-side > * {
+    margin: 0;
+}
+.content-description-side {
+    width: 31.25vw;
+    margin: 27.89vh 0 14.55vh 0;
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: justify;
+}
+.content-description-side-h1 {
+    margin: 24px 0;
+}
+
+.explore {
+    grid-column: 2 / 3;
+}
+.explore button {
+    font-family: inherit;
+    text-transform: uppercase;
+    width: 274px;
+    height: 274px;
+    margin: 39.89vh 0 14.55vh 0;
+    background-color: var(--content);
+    border-radius: 50%;
+    cursor: pointer;
+    outline: 0px solid;
+    transition: 0.3s ease-out;
+}
+.explore button:hover {
+    outline: 88px solid rgba(255, 255, 255, 0.1036);
+}
+.explore button span {
+    font-size: 32px;
+    line-height: 37px;
+    letter-spacing: 2px;
+}

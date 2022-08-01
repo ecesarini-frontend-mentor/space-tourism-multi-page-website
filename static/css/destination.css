@@ -1,0 +1,5 @@
+/* Override 'style.css' */
+
+html {
+    background: url('../../assets/destination/background-destination-desktop.jpg') no-repeat center center fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path */
+}

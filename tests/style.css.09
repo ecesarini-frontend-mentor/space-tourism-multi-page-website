@@ -11,6 +11,7 @@
 }
 
 html { 
+    background: url('../../assets/home/background-home-desktop.jpg') no-repeat center center fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -94,12 +95,6 @@ header img {
     margin-left: 3.75vw;
     width: 48px;
     height: 48px;
-    transition: all 0.9s ease-in-out;
-}
-header a:hover img {
-    width: 40px;
-    height: 40px;
-    transform: rotate(360deg);
 }
 header hr {
     max-width: 32.85vw;
@@ -128,24 +123,22 @@ header hr {
 }
 .navbar-content-element {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
 }
 .navbar-content-element:hover {
     border-bottom: 3px solid rgba(255, 255, 255, 0.50);
 }
-.navbar-content-element a {
-    display: flex;
-    align-items: center; /* 'align-content' depends on the whole fb content, 'align-items' acts respect to each fb child */
-    height: 100%;
-}
-.navbar-content-element a:visited {
+/*.navbar-content-element:focus {
     border-bottom: 3px solid rgba(255, 255, 255);
-}
+} // get action via JS*/ 
+
 .navbar-content-element a span:first-child {
     font-weight: 700;
 }
 .navbar-content-element span {
-    display: inline-block;
-    margin: 0 3px;
     color: var(--content);
     font-style: normal;
     font-weight: 400;
@@ -154,13 +147,57 @@ header hr {
     letter-spacing: 2.7px;
 }
 
-/* Main content */
-
 .grid-content {
     width: 100%;
     display: grid;
+    /*grid-template-columns: calc(100% - var(--nav-width)) 1fr;*/
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
     color: inherit;
+}
+
+.descriptor > * {
+    margin: 0;
+}
+.descriptor {
+    width: 31.25vw;
+    /*max-width: 73%;*/
+    margin: 27.89vh 0 14.55vh 0;
+    /*padding-left: 26.83%;*/
+    grid-column: 1 / 2;
+    /*justify-self: end;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: justify;
+}
+.descriptor-h1 {
+    margin: 24px 0;
+}
+
+.explore {
+    grid-column: 2 / 3;
+    /*padding-right: 11.46vw;*/
+}
+.explore button {
+    font-family: inherit;
+    text-transform: uppercase;
+    width: 274px;
+    height: 274px;
+    margin: 39.89vh 0 14.55vh 0;
+    background-color: var(--content);
+    border-radius: 50%;
+    cursor: pointer;
+    outline: 0px solid;
+    transition: 0.3s ease-out;
+}
+.explore button:hover {
+    outline: 88px solid rgba(255, 255, 255, 0.1036);
+}
+.explore button span {
+    font-size: 32px;
+    line-height: 37px;
+    letter-spacing: 2px;
 }
