@@ -1,0 +1,7 @@
+@use 'tools';
+@use 'main';
+
+html {
+    @include tools.background(url("../assets/destination/background-destination-desktop.jpg"));
+}
+

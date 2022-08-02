@@ -1,7 +1,7 @@
 /* Override 'style.css' */
 
 html {
-    background-image: url(../../assets/home/background-home-desktop.jpg);
+    background: url('../../assets/home/background-home-desktop.jpg') no-repeat center center fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path */
 }
 
 .content-description-side > * {
