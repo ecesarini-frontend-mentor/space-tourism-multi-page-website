@@ -18,6 +18,8 @@ a {
 
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 button {
@@ -73,10 +75,14 @@ h5 {
 }
 
 .subhead1 {
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Bellefair", sans-serif;
   font-size: 28px;
 }
 
 .subhead2 {
+  color: hsl(231deg, 77%, 90%);
+  font-family: "Barlow Condensed", sans-serif;
   font-size: 14px;
   letter-spacing: 2.35px;
 }
@@ -133,24 +139,25 @@ header .nav-index ul {
   justify-content: space-between;
   align-items: center;
 }
-header .nav-index .navbar-content-element {
+
+.navbar-content-element {
   height: 100%;
 }
-header .nav-index .navbar-content-element:hover {
+.navbar-content-element:hover {
   border-bottom: 3px solid rgba(255, 255, 255, 0.5);
 }
-header .nav-index .navbar-content-element a {
+.navbar-content-element a {
   display: flex;
   align-items: center; /* 'align-content' depends on the whole fb content, 'align-items' acts respect to each fb child */
   height: 100%;
 }
-header .nav-index .navbar-content-element a:visited {
+.navbar-content-element a:visited {
   border-bottom: 3px solid rgb(255, 255, 255);
 }
-header .nav-index .navbar-content-element a span:first-child {
+.navbar-content-element a span:first-child {
   font-weight: 700;
 }
-header .nav-index .navbar-content-element span {
+.navbar-content-element span {
   display: inline-block;
   margin: 0 3px;
   color: hsl(0deg, 0%, 100%);

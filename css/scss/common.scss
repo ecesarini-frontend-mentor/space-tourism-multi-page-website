@@ -17,6 +17,8 @@ a {
 }
 ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 button {
     padding: 0;
@@ -53,8 +55,17 @@ h5 {
     line-height: 30px;
     letter-spacing: 1px;
 }
-.subhead1 { font-size: 28px; }
-.subhead2 { font-size: 14px; letter-spacing: 2.35px; }
+.subhead1 { 
+    color: tools.$color-content;
+    font-family: tools.$font-bellefair;
+    font-size: 28px; 
+}
+.subhead2 {
+    color: tools.$color-head;
+    font-family: tools.$font-barlowCondensed;
+    font-size: 14px; 
+    letter-spacing: 2.35px;
+}
 .navtext { 
     font-size: 16px; 
     letter-spacing: 2.7px; 
@@ -105,35 +116,36 @@ header {
             justify-content: space-between;
             align-items: center;
         }
-        .navbar-content-element {
-            height: 100%;
-            &:hover {
-                border-bottom: 3px solid rgba(255, 255, 255, 0.50);
-            }
-            a {
-                display: flex;
-                align-items: center; /* 'align-content' depends on the whole fb content, 'align-items' acts respect to each fb child */
-                height: 100%;
-                &:visited {
-                    border-bottom: 3px solid rgba(255, 255, 255);
-                }
-                span:first-child {
-                    font-weight: 700;
-                }
-            }
-            span {
-                display: inline-block;
-                margin: 0 3px;
-                color: tools.$color-content;
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 19px;
-                letter-spacing: 2.7px;
-            }
-        }
     }
 }
+    .navbar-content-element {
+        height: 100%;
+        &:hover {
+            border-bottom: 3px solid tools.$color-navbar-hover;
+        }
+        a {
+            display: flex;
+            align-items: center; /* 'align-content' depends on the whole fb content, 'align-items' acts respect to each fb child */
+            height: 100%;
+            &:visited {
+                border-bottom: 3px solid rgba(255, 255, 255);
+            }
+            span:first-child {
+                font-weight: 700;
+            }
+        }
+        span {
+            display: inline-block;
+            margin: 0 3px;
+            color: tools.$color-content;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 2.7px;
+        }
+    }
+
 /* Main content */
 
 .grid-content {
