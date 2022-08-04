@@ -8,43 +8,35 @@ html {
 
 .content-description-side {
     width: 31.25vw;
-    margin: 27.89vh 0 14.55vh 0;
-    grid-column: 1 / 2;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    text-align: justify;
-        
+    text-align: justify;        
     & > * {
         margin: 0;
     }
-}
-.content-description-side-h1 {
-    margin: 24px 0;
+    h1 {
+        margin: 2.67vh 0;
+    }
 }
 
-.explore {
-    grid-column: 2 / 3;
-
-    button {
-        font-family: inherit;
-        text-transform: uppercase;
-        width: 274px;
-        height: 274px;
-        margin: 39.89vh 0 14.55vh 0;
-        background-color: tools.$color-content;
-        border-radius: 50%;
-        cursor: pointer;
-        outline: 0px solid;
-        transition: 0.3s ease-out;
-        &:hover {
-            outline: 88px solid rgba(255, 255, 255, 0.1036);
-        }
-        span {
-            font-size: 32px;
-            line-height: 37px;
-            letter-spacing: 2px;
-        }
+.explore button {
+    font-family: inherit;
+    text-transform: uppercase;
+    width: 274px;
+    height: 274px;
+    background-color: tools.$color-content;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: 0px solid;
+    transition: 0.3s ease-out;
+    &:hover {
+        outline: 88px solid rgba(255, 255, 255, 0.1036);
+    }
+    span {
+        font-size: 32px;
+        line-height: 37px;
+        letter-spacing: 2px;
     }
 }
