@@ -8,7 +8,10 @@ html {
 h2, .destination-navbar li, .subhead1, .subhead2 {
     text-transform: uppercase;
 }
-
+.destination.grid-content {
+    height: unset;
+    align-items: unset;
+}
 .destination-show {
     height: 100%;
     .destination-number {
@@ -21,17 +24,22 @@ h2, .destination-navbar li, .subhead1, .subhead2 {
     width: 30.9vw;
     max-width: 30.9vw;
     height: 71.8%;
+    align-self: flex-end;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     .destination-navbar ul {
         height: 100%;
+        min-height: 31px;
         width: 64%;
         display: flex;
         justify-content: space-between;
         color: tools.$color-body-text;
         .navbar-content-element {
             cursor: pointer;
+            &.nce-current {
+                color: tools.$color-content;
+                border-bottom: 3px solid tools.$color-content;
+            }
             &:hover {
                 color: tools.$color-navbar-hover;
                 border-bottom: 2px solid tools.$color-navbar-hover;
@@ -40,12 +48,14 @@ h2, .destination-navbar li, .subhead1, .subhead2 {
     }
     .destination-interact-subgrid {
         width: 100%;
+        min-height: 18.85%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         border-top: 1px solid tools.$color-navbar-hover;
         div {
             display: flex;
             flex-direction: column;
+            justify-content: space-around;
             padding: 5.93% 0 0 0;
         }
     }

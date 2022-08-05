@@ -31,9 +31,14 @@ h1, h2, h3, h4, .subhead1 {
     font-family: tools.$font-bellefair;
     font-weight: normal;
 }
-h5, .subhead2, .navtext, .body-text { 
+h5, .subhead2, .navtext { 
     font-family: tools.$font-barlowCondensed;
     font-weight: normal;
+}
+.body-text {
+    font-family: tools.$font-barlow;
+    font-style: normal;
+    font-weight: 400;
 }
 
 h1 { 
@@ -50,7 +55,7 @@ h3 { font-size: 56px; }
 h4 { font-size: 32px; }
 h1, h2, h3, h4 { color: tools.$color-content; }
 h5 { 
-    color: tools.$color-content;
+    color: tools.$color-body-text;
     font-size: 28px; 
     letter-spacing: 4.75px;
     text-transform: uppercase;
@@ -156,7 +161,7 @@ header {
 
 .grid-content {
     width: 100%;
-    /*height: 100%;*/
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     /*justify-items: center;*/
