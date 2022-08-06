@@ -24,7 +24,8 @@ class Destination {
 
         let tg = ect.innerText;
         
-        tg = tg.charAt(0).toUpperCase() + tg.slice(1).toLowerCase();
+        tg = tg.charAt(0).toUpperCase() + tg.slice(1).toLowerCase();       
+        //from here 
         switch(e.type) {
             case 'click':
                 this.linker(this.jsonData[tg]);
@@ -34,7 +35,7 @@ class Destination {
 
     linker(target) {
         /*target = target.charAt(0).toUpperCase() + target.slice(1).toLowerCase();*/
-        //debugger;
+        debugger;
     }
 
 }
