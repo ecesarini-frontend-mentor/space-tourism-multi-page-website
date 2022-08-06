@@ -1,14 +1,6 @@
-import { getJsonData, getHtmlRef } from "./common.js";
+import * as common from "./common.js";
 
-(function init() {
-    const jsonData = getJsonData("../data.json"),
-        htmlPage = ['destination.html'],
-        htmlPageTarget = getHtmlRef(window);
+const jsonData = common.initJSON("../data.json"),
+    //htmlPage = ['destination.html'],
+    htmlPageTarget = common.getHtmlRef(window);
     
-    htmlPage.forEach( tg => {
-        switch(tg) { 
-            case 'destination.html': 
-                
-        }
-    })
-})();

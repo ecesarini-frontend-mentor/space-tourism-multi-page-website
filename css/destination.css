@@ -242,7 +242,7 @@ h2, .destination-navbar li, .subhead1, .subhead2 {
 .destination-interact .destination-navbar ul .navbar-content-element {
   cursor: pointer;
 }
-.destination-interact .destination-navbar ul .navbar-content-element.nce-current {
+.destination-interact .destination-navbar ul .navbar-content-element.nve-current {
   color: hsl(0deg, 0%, 100%);
   border-bottom: 3px solid hsl(0deg, 0%, 100%);
 }

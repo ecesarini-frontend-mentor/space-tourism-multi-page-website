@@ -36,7 +36,7 @@ h2, .destination-navbar li, .subhead1, .subhead2 {
         color: tools.$color-body-text;
         .navbar-content-element {
             cursor: pointer;
-            &.nce-current {
+            &.nve-current {
                 color: tools.$color-content;
                 border-bottom: 3px solid tools.$color-content;
             }
