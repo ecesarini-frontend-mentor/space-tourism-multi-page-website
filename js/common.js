@@ -33,3 +33,16 @@ export function getHtmlRef(w) {
     const wLoc = w.location.pathname.slice(1);
     return wLoc;
 }
+
+export function subNavMatcher(tg, phRef) {
+    const childCount = tg.parentElement.childElementCount,
+        classRef = (childCount <= 9)?
+        Array.from({length: childCount}, (elem, ind) => phRef + '-0' + ++ind):
+        Array.from({length: childCount}, (elem, ind) => phRef + '-' + ++ind);
+    let indexFound = undefined;
+    
+    classRef.forEach((cl, ind) => { 
+        if(tg.matches('.' + cl)) indexFound = ind;
+    });
+    return indexFound;
+}

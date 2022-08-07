@@ -1,17 +1,18 @@
 import * as common from "./common.js";
 
-/*const jsonData = common.initJSON("../data.json", 'destinations'),
-    htmlPageTarget = common.getHtmlRef(window);*/
-
-
 class Destination {
     constructor() {
         this.jsonData = undefined;
         this.htmlPageTarget = common.getHtmlRef(window);
         this.navDest = document.querySelectorAll('.navbar-destination-element');
         this.init();
+        this.ndeCurrent = document.querySelector('.nde-current');
         this.jsonDestTransform = [
-
+            {k: 'name', ref: document.querySelector('.destination-title')},
+            {k: 'images', ref: document.querySelector('.destination-img-bg')},
+            {k: 'description', ref: document.querySelector('.destination-description')},
+            {k: 'distance', ref: document.querySelector('.destination-distance')},
+            {k: 'travel', ref: document.querySelector('.destination-travel')}
         ];
     }
 
@@ -22,20 +23,27 @@ class Destination {
     handleEvent(e) {
         const ect = e.currentTarget;
 
-        let tg = ect.innerText;
-        
-        tg = tg.charAt(0).toUpperCase() + tg.slice(1).toLowerCase();       
-        //from here 
         switch(e.type) {
             case 'click':
-                this.linker(this.jsonData[tg]);
+                this.subNavUpdater(ect);
                 break;
         }
     }
 
-    linker(target) {
-        /*target = target.charAt(0).toUpperCase() + target.slice(1).toLowerCase();*/
-        debugger;
+
+    
+    subNavUpdater(target) {
+        const subNavInd = common.subNavMatcher(target, 'nde'),
+            elemJSON = this.jsonData[subNavInd];
+        
+        this.ndeCurrent.classList.remove('nde-current');
+        target.classList.add('nde-current');        
+
+        this.jsonDestTransform.map((jdt, ind) => {
+            //debugger;
+            if(jdt.k === 'images') jdt.src = elemJSON[ind][jdt.k]['png'];
+            else jdt.innerText =  elemJSON[ind][jdt.k];
+        });
     }
 
 }
