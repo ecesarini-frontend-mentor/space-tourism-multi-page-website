@@ -7,9 +7,10 @@ class Destination {
         this.navDest = document.querySelectorAll('.navbar-destination-element');
         this.init();
         this.ndeCurrent = document.querySelector('.nde-current');
+        this.destImg = document.querySelector('.destination-img');
         this.jsonDestTransform = [
             {k: 'name', ref: document.querySelector('.destination-title')},
-            {k: 'images', ref: document.querySelector('.destination-img-bg')},
+            {k: 'images', ref: this.destImg},
             {k: 'description', ref: document.querySelector('.destination-description')},
             {k: 'distance', ref: document.querySelector('.destination-distance')},
             {k: 'travel', ref: document.querySelector('.destination-travel')}
@@ -37,13 +38,19 @@ class Destination {
             elemJSON = this.jsonData[subNavInd];
         
         this.ndeCurrent.classList.remove('nde-current');
-        target.classList.add('nde-current');        
+        target.classList.add('nde-current');
+        this.ndeCurrent = target;
+        this.destImg.classList.add('destination-img-animation');        
 
-        this.jsonDestTransform.map((jdt, ind) => {
-            //debugger;
-            if(jdt.k === 'images') jdt.src = elemJSON[ind][jdt.k]['png'];
-            else jdt.innerText =  elemJSON[ind][jdt.k];
-        });
+        this.jsonDestTransform.map(jdt => {
+            if(jdt.k === 'images') {
+                //jdt.ref.src = elemJSON[jdt.k]['png'];
+                this.destImg.src = elemJSON[jdt.k]['png'];
+            } else { 
+                jdt.ref.innerText =  elemJSON[jdt.k];
+            }
+        });        
+        this.destImg.classList.remove('destination-img-animation');
     }
 
 }
