@@ -4,9 +4,9 @@ class Destination {
     constructor() {
         this.jsonData = undefined;
         this.htmlPageTarget = common.getHtmlRef(window);
-        this.navDest = document.querySelectorAll('.navbar-destination-element');
+        this.navDest = document.querySelectorAll('.subnavbar-destination-element');
         this.init();
-        this.ndeCurrent = document.querySelector('.nde-current');
+        this.sndeCurrent = document.querySelector('.snde-current');
         this.destImg = document.querySelector('.destination-img');
         this.jsonDestTransform = [
             {k: 'name', ref: document.querySelector('.destination-title')},
@@ -35,9 +35,9 @@ class Destination {
         const subNavInd = common.subNavMatcher(target, 'nde'),
             elemJSON = this.jsonData[subNavInd];
         
-        this.ndeCurrent.classList.remove('nde-current');
-        target.classList.add('nde-current');
-        this.ndeCurrent = target;
+        this.sndeCurrent.classList.remove('snde-current');
+        target.classList.add('snde-current');
+        this.sndeCurrent = target;
         this.destImg.classList.remove('destination-img-animation');        
         window.requestAnimationFrame(() => this.destImg.classList.add('destination-img-animation'));        
 

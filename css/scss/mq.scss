@@ -1,6 +1,8 @@
-@media screen and (max-width: 1000px) {
-    /*.subnavbar.destination-interact.destination-navbar ul {*/
-    .subnavbar ul {
+@media screen and (max-width: 1200px) {
+    h1.mq-h1, h2.mq-h2 {
+        font-size: 10vw;
+    }
+    .mq-subnavbar.subnavbar ul {
         width: 100%;
     }
 }

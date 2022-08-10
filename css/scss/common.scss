@@ -1,4 +1,5 @@
 @use 'tools';
+@use 'mq';
 
 body {
     box-sizing: border-box;
@@ -27,38 +28,24 @@ button {
     color: inherit;
     background-color: inherit;
 }
-h1, h2, h3, h4, .subhead1 { 
-    font-family: tools.$font-bellefair;
-    font-weight: normal;
-}
-h5, .subhead2, .navtext { 
-    font-family: tools.$font-barlowCondensed;
-    font-weight: normal;
-}
-.body-text {
-    font-family: tools.$font-barlow;
-    font-style: normal;
-    font-weight: 400;
-}
 
 h1 { 
     font-size: 150px;   
-    text-transform: uppercase; 
 }
 h2 { 
     margin: 0;
     font-size: 100px; 
-    text-transform: uppercase;
     line-height: 115px;
 }
 h3 { font-size: 56px; }
-h4 { font-size: 32px; }
-h1, h2, h3, h4 { color: tools.$color-content; }
+h4 { 
+    font-size: 32px; 
+    opacity: 50.42%;
+}
 h5 { 
     color: tools.$color-body-text;
     font-size: 28px; 
     letter-spacing: 4.75px;
-    text-transform: uppercase;
 }
 .body-text {
     color: tools.$color-body-text;
@@ -80,8 +67,22 @@ h5 {
 .navtext { 
     font-size: 16px; 
     letter-spacing: 2.7px; 
-    text-transform: uppercase; 
 }
+.body-text {
+    font-family: tools.$font-barlow;
+    font-style: normal;
+    font-weight: 400;
+}
+h1, h2, h3, h4, .subhead1 { 
+    font-family: tools.$font-bellefair;
+    font-weight: normal;
+}
+h5, .subhead2, .navtext { 
+    font-family: tools.$font-barlowCondensed;
+    font-weight: normal;
+}
+h1, h2, h3, h4 { color: tools.$color-content; }
+h1, h2, h3, h4, h5, .subhead1, .subhead2, .navtext { text-transform: uppercase; }
 
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
@@ -171,6 +172,11 @@ header {
 .grid-cell-01 {
     grid-column: 1 / 2;
     padding: 0 0 0 11.46vw;
+    .h5-span-number {
+        font-weight: 700;
+        opacity: 0.25;        
+    }
+    
 }
 .grid-cell-02 {
     grid-column: 2 / 3;

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @media screen and (max-width: 1200px) {
   h1.mq-h1, h2.mq-h2 {
     font-size: 10vw;
@@ -212,4 +213,85 @@ header .nav-index ul {
   justify-self: center;
 }
 
-/*# sourceMappingURL=common.css.map */
+html {
+  background: url("../assets/crew/background-crew-desktop.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+@keyframes crew-img-animation {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 25%;
+  }
+  50% {
+    width: 50%;
+  }
+  75% {
+    width: 75%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.crew.grid-content {
+  height: unset;
+  align-items: unset;
+}
+
+.crew-show {
+  height: 100%;
+  /*.crew-img.crew-img-animation {*/
+}
+.crew-show .crew-number {
+  font-weight: 700;
+  opacity: 0.25;
+}
+.crew-show .crew-img {
+  max-width: 30.9vw;
+  width: 100%;
+}
+.crew-show .crew-img-animation {
+  animation-name: crew-img-animation;
+  animation-duration: 0.5s;
+}
+
+.crew-interact {
+  width: 30.9vw;
+  max-width: 30.9vw;
+  height: 71.8%;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+.crew-interact .crew-navbar ul {
+  min-width: 132px;
+  height: 100%;
+  min-height: 15px;
+  display: flex;
+  justify-content: space-between;
+  opacity: 17.44%;
+  /*.navbar-content-element {
+      cursor: pointer;
+      &.nde-current {
+          color: tools.$color-content;
+          border-bottom: 3px solid tools.$color-content;
+      }
+      &:hover {
+          color: tools.$color-navbar-hover;
+          border-bottom: 2px solid tools.$color-navbar-hover;
+      }
+  }*/
+}
+.crew-interact .crew-navbar ul .navbar-content-element {
+  content: "•";
+  color: hsl(231deg, 79%, 90%);
+  display: inline-block;
+  width: 5em;
+  margin-left: -1em;
+}
+
+/*# sourceMappingURL=crew.css.map */

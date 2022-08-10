@@ -1,0 +1,70 @@
+@use 'tools';
+@use 'common';
+
+html {
+    @include tools.background(url("../assets/crew/background-crew-desktop.jpg"));
+}
+
+@keyframes crew-img-animation {
+    0%   {width: 0%;}
+    25%  {width: 25%;}
+    50%  {width: 50%;}
+    75%  {width: 75%;}
+    100% {width: 100%;}    
+}
+
+.crew.grid-content {
+    height: unset;
+    align-items: unset;
+}
+
+.crew-show {
+    height: 100%;
+    .crew-number {
+        font-weight: 700;
+        opacity: 0.25;        
+    }
+    .crew-img {
+        max-width: 30.9vw;
+        width: 100%;
+    }
+    /*.crew-img.crew-img-animation {*/
+    .crew-img-animation {
+        animation-name: crew-img-animation;
+        animation-duration: 0.5s;
+    }
+}
+.crew-interact {
+    width: 30.9vw;
+    max-width: 30.9vw;
+    height: 71.8%;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    .crew-navbar ul {
+        min-width: 132px;
+        height: 100%;
+        min-height: 15px;
+        display: flex;
+        justify-content: space-between;
+        opacity: 17.44%;
+        .navbar-content-element {
+            content: "\2022";
+            color: tools.$color-body-text;              
+            display: inline-block;
+            width: 5em;
+            margin-left: -1em;                        
+        }
+        /*.navbar-content-element {
+            cursor: pointer;
+            &.nde-current {
+                color: tools.$color-content;
+                border-bottom: 3px solid tools.$color-content;
+            }
+            &:hover {
+                color: tools.$color-navbar-hover;
+                border-bottom: 2px solid tools.$color-navbar-hover;
+            }
+        }*/
+    }
+}

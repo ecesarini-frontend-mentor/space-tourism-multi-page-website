@@ -1,3 +1,11 @@
+@media screen and (max-width: 1200px) {
+  h1.mq-h1, h2.mq-h2 {
+    font-size: 10vw;
+  }
+  .mq-subnavbar.subnavbar ul {
+    width: 100%;
+  }
+}
 body {
   box-sizing: border-box;
   margin: 0;
@@ -30,31 +38,13 @@ button {
   background-color: inherit;
 }
 
-h1, h2, h3, h4, .subhead1 {
-  font-family: "Bellefair", sans-serif;
-  font-weight: normal;
-}
-
-h5, .subhead2, .navtext {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: normal;
-}
-
-.body-text {
-  font-family: "Barlow", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-}
-
 h1 {
   font-size: 150px;
-  text-transform: uppercase;
 }
 
 h2 {
   margin: 0;
   font-size: 100px;
-  text-transform: uppercase;
   line-height: 115px;
 }
 
@@ -64,17 +54,13 @@ h3 {
 
 h4 {
   font-size: 32px;
-}
-
-h1, h2, h3, h4 {
-  color: hsl(0deg, 0%, 100%);
+  opacity: 50.42%;
 }
 
 h5 {
   color: hsl(231deg, 79%, 90%);
   font-size: 28px;
   letter-spacing: 4.75px;
-  text-transform: uppercase;
 }
 
 .body-text {
@@ -100,6 +86,29 @@ h5 {
 .navtext {
   font-size: 16px;
   letter-spacing: 2.7px;
+}
+
+.body-text {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, .subhead1 {
+  font-family: "Bellefair", sans-serif;
+  font-weight: normal;
+}
+
+h5, .subhead2, .navtext {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4 {
+  color: hsl(0deg, 0%, 100%);
+}
+
+h1, h2, h3, h4, h5, .subhead1, .subhead2, .navtext {
   text-transform: uppercase;
 }
 
@@ -193,18 +202,16 @@ header .nav-index ul {
   grid-column: 1/2;
   padding: 0 0 0 11.46vw;
 }
+.grid-cell-01 .h5-span-number {
+  font-weight: 700;
+  opacity: 0.25;
+}
 
 .grid-cell-02 {
   grid-column: 2/3;
   justify-self: center;
 }
 
-@media screen and (max-width: 1000px) {
-  /*.subnavbar.destination-interact.destination-navbar ul {*/
-  .subnavbar ul {
-    width: 100%;
-  }
-}
 html {
   background: url("../assets/destination/background-destination-desktop.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
   -webkit-background-size: cover;
@@ -229,10 +236,6 @@ html {
     width: 100%;
   }
 }
-h2, .destination-navbar li, .subhead1, .subhead2 {
-  text-transform: uppercase;
-}
-
 .destination.grid-content {
   height: unset;
   align-items: unset;
@@ -241,10 +244,6 @@ h2, .destination-navbar li, .subhead1, .subhead2 {
 .destination-show {
   height: 100%;
   /*.destination-img.destination-img-animation {*/
-}
-.destination-show .destination-number {
-  font-weight: 700;
-  opacity: 0.25;
 }
 .destination-show .destination-img {
   max-width: 30.9vw;
@@ -266,19 +265,19 @@ h2, .destination-navbar li, .subhead1, .subhead2 {
 .destination-interact .destination-navbar ul {
   height: 100%;
   min-height: 31px;
-  width: 64%;
+  /*width: 64%;*/
   display: flex;
   justify-content: space-between;
   color: hsl(231deg, 79%, 90%);
 }
-.destination-interact .destination-navbar ul .navbar-content-element {
+.destination-interact .destination-navbar ul .subnavbar-destination-element {
   cursor: pointer;
 }
-.destination-interact .destination-navbar ul .navbar-content-element.nde-current {
+.destination-interact .destination-navbar ul .subnavbar-destination-element.snde-current {
   color: hsl(0deg, 0%, 100%);
   border-bottom: 3px solid hsl(0deg, 0%, 100%);
 }
-.destination-interact .destination-navbar ul .navbar-content-element:hover {
+.destination-interact .destination-navbar ul .subnavbar-destination-element:hover {
   color: rgba(255, 255, 255, 0.5);
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
@@ -294,6 +293,10 @@ h2, .destination-navbar li, .subhead1, .subhead2 {
   flex-direction: column;
   justify-content: space-around;
   padding: 5.93% 0 0 0;
+}
+
+.subnavbar ul {
+  width: 64%;
 }
 
 /*# sourceMappingURL=destination.css.map */
