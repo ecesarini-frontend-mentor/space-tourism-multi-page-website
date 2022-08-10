@@ -1,0 +1,8 @@
+@media screen and (max-width: 1000px) {
+  /*.subnavbar.destination-interact.destination-navbar ul {*/
+  .subnavbar ul {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=mq.css.map */

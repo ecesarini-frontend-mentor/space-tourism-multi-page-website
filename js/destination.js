@@ -30,9 +30,7 @@ class Destination {
                 break;
         }
     }
-
-
-    
+ 
     subNavUpdater(target) {
         const subNavInd = common.subNavMatcher(target, 'nde'),
             elemJSON = this.jsonData[subNavInd];
@@ -40,7 +38,9 @@ class Destination {
         this.ndeCurrent.classList.remove('nde-current');
         target.classList.add('nde-current');
         this.ndeCurrent = target;
-        this.destImg.classList.add('destination-img-animation');        
+        this.destImg.classList.remove('destination-img-animation');        
+        window.requestAnimationFrame(() => this.destImg.classList.add('destination-img-animation'));        
+
 
         this.jsonDestTransform.map(jdt => {
             if(jdt.k === 'images') {
@@ -50,7 +50,7 @@ class Destination {
                 jdt.ref.innerText =  elemJSON[jdt.k];
             }
         });        
-        this.destImg.classList.remove('destination-img-animation');
+        //this.destImg.classList.remove('destination-img-animation');
     }
 
 }

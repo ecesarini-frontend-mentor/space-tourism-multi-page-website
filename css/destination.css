@@ -199,6 +199,12 @@ header .nav-index ul {
   justify-self: center;
 }
 
+@media screen and (max-width: 1000px) {
+  /*.subnavbar.destination-interact.destination-navbar ul {*/
+  .subnavbar ul {
+    width: 100%;
+  }
+}
 html {
   background: url("../assets/destination/background-destination-desktop.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
   -webkit-background-size: cover;
@@ -234,6 +240,7 @@ h2, .destination-navbar li, .subhead1, .subhead2 {
 
 .destination-show {
   height: 100%;
+  /*.destination-img.destination-img-animation {*/
 }
 .destination-show .destination-number {
   font-weight: 700;
@@ -243,7 +250,7 @@ h2, .destination-navbar li, .subhead1, .subhead2 {
   max-width: 30.9vw;
   width: 100%;
 }
-.destination-show .destination-img.destination-img-animation {
+.destination-show .destination-img-animation {
   animation-name: destination-img-animation;
   animation-duration: 0.5s;
 }

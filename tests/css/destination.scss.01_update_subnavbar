@@ -21,6 +21,9 @@ h2, .destination-navbar li, .subhead1, .subhead2 {
     height: unset;
     align-items: unset;
 }
+.subnavbar ul {
+    width: 64%;
+}
 
 .destination-show {
     height: 100%;
@@ -48,7 +51,6 @@ h2, .destination-navbar li, .subhead1, .subhead2 {
     .destination-navbar ul {
         height: 100%;
         min-height: 31px;
-        width: 64%;
         display: flex;
         justify-content: space-between;
         color: tools.$color-body-text;
