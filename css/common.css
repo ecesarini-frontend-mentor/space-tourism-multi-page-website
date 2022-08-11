@@ -193,11 +193,11 @@ header .nav-index ul {
 /* Main content */
 .grid-content {
   width: 100%;
-  height: 89%;
+  height: 89vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /*justify-items: center;*/
-  align-items: center;
+  /*justify-items: center;
+  align-items: center;*/
   color: inherit;
 }
 
@@ -213,6 +213,11 @@ header .nav-index ul {
 .grid-cell-02 {
   grid-column: 2/3;
   justify-self: center;
+}
+
+.grid-cell-01, .grid-cell-02 {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=common.css.map */
