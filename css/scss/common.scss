@@ -12,7 +12,7 @@ body {
 }
 main {
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
 }
 a {
     text-decoration: none;
@@ -82,7 +82,11 @@ h5, .subhead2, .navtext {
     font-weight: normal;
 }
 h1, h2, h3, h4 { color: tools.$color-content; }
-h1, h2, h3, h4, h5, .subhead1, .subhead2, .navtext { text-transform: uppercase; }
+h1, h2, h3, h4, h5, .subhead1, .subhead2, .navtext { 
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase; 
+}
 
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
@@ -90,7 +94,8 @@ header {
     min-height: 10.67%; /*To let '.nav-index' grow outer parent flexbox needs height.*/
     height: 10.67%;
     display: flex;
-    margin-top: 4.44vh;
+    /*margin-top: 4.44vh;*/
+    padding-top: 4.44vh;
     justify-content: space-between;
     align-items: center;
     img {
@@ -162,7 +167,7 @@ header {
 
 .grid-content {
     width: 100%;
-    height: 100%;
+    height: 89%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     /*justify-items: center;*/
