@@ -18,7 +18,8 @@ body {
 
 main {
   width: 100%;
-  /*height: 100%;*/
+  height: 76.45vh;
+  padding-top: 8.44vh;
 }
 
 a {
@@ -108,19 +109,23 @@ h1, h2, h3, h4 {
   color: hsl(0deg, 0%, 100%);
 }
 
-h1, h2, h3, h4, h5, .subhead1, .subhead2, .navtext {
+h1, h2, h3, h4, h5, .subhead1, .subhead2, .navtext, p {
   margin: 0;
   padding: 0;
   text-transform: uppercase;
 }
 
+p {
+  text-align: justify;
+  text-transform: unset;
+}
+
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
   width: 100%;
-  min-height: 10.67%; /*To let '.nav-index' grow outer parent flexbox needs height.*/
-  height: 10.67%;
+  min-height: 10.67vh; /*To let '.nav-index' grow outer parent flexbox needs height.*/
+  height: 10.67vh;
   display: flex;
-  /*margin-top: 4.44vh;*/
   padding-top: 4.44vh;
   justify-content: space-between;
   align-items: center;
@@ -193,17 +198,18 @@ header .nav-index ul {
 /* Main content */
 .grid-content {
   width: 100%;
-  height: 89vh;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /*justify-items: center;
-  align-items: center;*/
   color: inherit;
 }
 
 .grid-cell-01 {
+  width: 30.9vw;
+  max-width: 30.9vw;
   grid-column: 1/2;
   padding: 0 0 0 11.46vw;
+  align-items: baseline;
 }
 .grid-cell-01 .h5-span-number {
   font-weight: 700;
@@ -216,6 +222,7 @@ header .nav-index ul {
 }
 
 .grid-cell-01, .grid-cell-02 {
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -244,41 +251,17 @@ html {
     width: 100%;
   }
 }
-.crew.grid-content {
-  height: unset;
-  padding: 6.9vh 0 0 0;
-  align-items: unset;
-}
-
-.crew-show {
-  height: 100%;
-  /*.crew-img.crew-img-animation {*/
-}
-.crew-show .crew-number {
-  font-weight: 700;
-  opacity: 0.25;
-}
-.crew-show .crew-img {
-  max-width: 30.9vw;
-  width: 100%;
-}
-.crew-show .crew-img-animation {
-  animation-name: crew-img-animation;
-  animation-duration: 0.5s;
-}
-
 .crew-interact {
-  width: 30.9vw;
-  height: 100%;
-  max-width: 30.9vw;
-  align-self: flex-end;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .crew-interact .crew-interact-fb-middle-container {
+  height: 30.11vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+.crew-interact .crew-navbar {
+  padding: 0 0 10.44vh 0;
 }
 .crew-interact .crew-navbar ul {
   min-width: 132px;
@@ -304,6 +287,23 @@ html {
   opacity: unset;
   background-color: rgba(255, 255, 255, 0.17);
   outline: 1px solid white;
+}
+
+.crew-show {
+  height: 100%;
+}
+.crew-show .crew-number {
+  font-weight: 700;
+  opacity: 0.25;
+}
+.crew-show .crew-img {
+  /*max-width: 30.9vw;*/
+  width: 100%;
+  height: 100%;
+}
+.crew-show .crew-img-animation {
+  animation-name: crew-img-animation;
+  animation-duration: 0.5s;
 }
 
 /*# sourceMappingURL=crew.css.map */

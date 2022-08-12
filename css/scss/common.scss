@@ -12,7 +12,8 @@ body {
 }
 main {
     width: 100%;
-    /*height: 100%;*/
+    height: calc(100vh - tools.$nav-padding-top - tools.$nav-h - tools.$content-padding-top);
+    padding-top: tools.$content-padding-top;
 }
 a {
     text-decoration: none;
@@ -82,20 +83,23 @@ h5, .subhead2, .navtext {
     font-weight: normal;
 }
 h1, h2, h3, h4 { color: tools.$color-content; }
-h1, h2, h3, h4, h5, .subhead1, .subhead2, .navtext { 
+h1, h2, h3, h4, h5, .subhead1, .subhead2, .navtext, p { 
     margin: 0;
     padding: 0;
     text-transform: uppercase; 
+}
+p {
+    text-align: justify;
+    text-transform: unset;
 }
 
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
     width: 100%;
-    min-height: 10.67%; /*To let '.nav-index' grow outer parent flexbox needs height.*/
-    height: 10.67%;
+    min-height: tools.$nav-h; /*To let '.nav-index' grow outer parent flexbox needs height.*/
+    height: tools.$nav-h;
     display: flex;
-    /*margin-top: 4.44vh;*/
-    padding-top: 4.44vh;
+    padding-top: tools.$nav-padding-top;
     justify-content: space-between;
     align-items: center;
     img {
@@ -120,8 +124,8 @@ header {
         z-index: 1;
     }
     .nav-index { 
-        width: tools.$nav-width;
-        max-width: tools.$nav-width;
+        width: tools.$nav-w;
+        max-width: tools.$nav-w;
         height: 100%; /* Let flex item fill all 'header' container height.*/
         background: rgba(255, 255, 255, 0.04);
         backdrop-filter: blur(81.5485px);
@@ -167,16 +171,17 @@ header {
 
 .grid-content {
     width: 100%;
-    height: 89vh;
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /*justify-items: center;
-    align-items: center;*/
     color: inherit;
 }
 .grid-cell-01 {
+    width: 30.9vw;
+    max-width: 30.9vw;    
     grid-column: 1 / 2;
     padding: 0 0 0 11.46vw;
+    align-items: baseline;
     .h5-span-number {
         font-weight: 700;
         opacity: 0.25;        
@@ -189,6 +194,7 @@ header {
 }
 
 .grid-cell-01, .grid-cell-02 {
+    height: 100%;;
     display: flex;
     flex-direction: column;
 }

@@ -18,7 +18,8 @@ body {
 
 main {
   width: 100%;
-  /*height: 100%;*/
+  height: 76.45vh;
+  padding-top: 8.44vh;
 }
 
 a {
@@ -108,19 +109,23 @@ h1, h2, h3, h4 {
   color: hsl(0deg, 0%, 100%);
 }
 
-h1, h2, h3, h4, h5, .subhead1, .subhead2, .navtext {
+h1, h2, h3, h4, h5, .subhead1, .subhead2, .navtext, p {
   margin: 0;
   padding: 0;
   text-transform: uppercase;
 }
 
+p {
+  text-align: justify;
+  text-transform: unset;
+}
+
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
   width: 100%;
-  min-height: 10.67%; /*To let '.nav-index' grow outer parent flexbox needs height.*/
-  height: 10.67%;
+  min-height: 10.67vh; /*To let '.nav-index' grow outer parent flexbox needs height.*/
+  height: 10.67vh;
   display: flex;
-  /*margin-top: 4.44vh;*/
   padding-top: 4.44vh;
   justify-content: space-between;
   align-items: center;
@@ -193,17 +198,18 @@ header .nav-index ul {
 /* Main content */
 .grid-content {
   width: 100%;
-  height: 89vh;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /*justify-items: center;
-  align-items: center;*/
   color: inherit;
 }
 
 .grid-cell-01 {
+  width: 30.9vw;
+  max-width: 30.9vw;
   grid-column: 1/2;
   padding: 0 0 0 11.46vw;
+  align-items: baseline;
 }
 .grid-cell-01 .h5-span-number {
   font-weight: 700;
@@ -216,6 +222,7 @@ header .nav-index ul {
 }
 
 .grid-cell-01, .grid-cell-02 {
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
