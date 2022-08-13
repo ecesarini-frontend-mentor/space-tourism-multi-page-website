@@ -1,6 +1,7 @@
 @use 'tools';
 @use 'mq';
 
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -12,7 +13,8 @@ body {
 }
 main {
     width: 100%;
-    height: calc(100vh - tools.$nav-padding-top - tools.$nav-h - tools.$content-padding-top);
+    /*height: calc(100vh - tools.$nav-padding-top - tools.$nav-h - tools.$content-padding-top);*/
+    height: tools.$main-h;
     padding-top: tools.$content-padding-top;
 }
 a {

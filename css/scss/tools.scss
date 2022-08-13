@@ -10,7 +10,11 @@ $desktop-h: 900px;
 $nav-w: 57.64vw;
 $nav-h: 10.67vh;
 $nav-padding-top: 4.44vh;
+$content-h5-h: 3.78vh;
+/*$content-h5-h: 18px;*/
 $content-padding-top: 8.44vh;
+
+$main-h: calc(100vh - $nav-padding-top - $nav-h - $content-padding-top);
 
 $font-bellefair: "Bellefair", sans-serif;
 $font-barlow: "Barlow", sans-serif;

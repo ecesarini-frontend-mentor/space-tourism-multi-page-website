@@ -1,41 +1,39 @@
 @use 'tools';
 @use 'common';
 
+$content-padding-bottom-home: 14.56vh;
 
 html {
     @include tools.background;
 }
 
-.home-gc-01, .home-gc-02 {
-    padding: 0 0 14.56vh 0;
-    justify-content: flex-end;
-}
-
-.home-gc-01 {
-    min-height: 42.44vh;
-    /*justify-content: space-around;
-    align-items: flex-start;
-    text-align: justify;*/
-}
-
-.home-gc-02 {
-    button {
-        font-family: inherit;
-        text-transform: uppercase;
-        width: 274px;
-        height: 274px;
-        background-color: tools.$color-content;
-        border-radius: 50%;
-        cursor: pointer;
-        outline: 0px solid;
-        transition: 0.3s ease-out;
-        &:hover {
-            outline: 88px solid rgba(255, 255, 255, 0.1036);
-        }
-        span {
-            font-size: 32px;
-            line-height: 37px;
-            letter-spacing: 2px;
+.grid-content-home {
+    height: calc(tools.$main-h - $content-padding-bottom-home);
+    &>section {
+        justify-content: flex-end;
+    }
+    .gch-01 h1 {
+        padding: 24px 0;
+    }
+    .gch-02 {
+        button {
+            font-family: inherit;
+            text-transform: uppercase;
+            width: 274px;
+            height: 274px;
+            background-color: tools.$color-content;
+            border-radius: 50%;
+            cursor: pointer;
+            outline: 0px solid;
+            transition: 0.3s ease-out;
+            &:hover {
+                outline: 88px solid rgba(255, 255, 255, 0.1036);
+            }
+            span {
+                font-size: 32px;
+                line-height: 37px;
+                letter-spacing: 2px;
+            }
         }
     }
 }

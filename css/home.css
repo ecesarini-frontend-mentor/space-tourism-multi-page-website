@@ -1,3 +1,4 @@
+/*$content-h5-h: 18px;*/
 @media screen and (max-width: 1200px) {
   h1.mq-h1, h2.mq-h2 {
     font-size: 10vw;
@@ -18,6 +19,7 @@ body {
 
 main {
   width: 100%;
+  /*height: calc(100vh - tools.$nav-padding-top - tools.$nav-h - tools.$content-padding-top);*/
   height: 76.45vh;
   padding-top: 8.44vh;
 }
@@ -234,19 +236,16 @@ html {
   -o-background-size: cover;
 }
 
-.home-gc-01, .home-gc-02 {
-  padding: 0 0 14.56vh 0;
+.grid-content-home {
+  height: 61.89vh;
+}
+.grid-content-home > section {
   justify-content: flex-end;
 }
-
-.home-gc-01 {
-  min-height: 42.44vh;
-  /*justify-content: space-around;
-  align-items: flex-start;
-  text-align: justify;*/
+.grid-content-home .gch-01 h1 {
+  padding: 24px 0;
 }
-
-.home-gc-02 button {
+.grid-content-home .gch-02 button {
   font-family: inherit;
   text-transform: uppercase;
   width: 274px;
@@ -257,10 +256,10 @@ html {
   outline: 0px solid;
   transition: 0.3s ease-out;
 }
-.home-gc-02 button:hover {
+.grid-content-home .gch-02 button:hover {
   outline: 88px solid rgba(255, 255, 255, 0.1036);
 }
-.home-gc-02 button span {
+.grid-content-home .gch-02 button span {
   font-size: 32px;
   line-height: 37px;
   letter-spacing: 2px;

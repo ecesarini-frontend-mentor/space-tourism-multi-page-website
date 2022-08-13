@@ -32,7 +32,7 @@ class Destination {
     }
  
     subNavUpdater(target) {
-        const subNavInd = common.subNavMatcher(target, 'nde'),
+        const subNavInd = common.subNavMatcher(target, 'snde'),
             elemJSON = this.jsonData[subNavInd];
         
         this.sndeCurrent.classList.remove('snde-current');
@@ -47,7 +47,7 @@ class Destination {
                 //jdt.ref.src = elemJSON[jdt.k]['png'];
                 this.destImg.src = elemJSON[jdt.k]['png'];
             } else { 
-                jdt.ref.innerText =  elemJSON[jdt.k];
+                jdt.ref.innerText = elemJSON[jdt.k];
             }
         });        
         //this.destImg.classList.remove('destination-img-animation');

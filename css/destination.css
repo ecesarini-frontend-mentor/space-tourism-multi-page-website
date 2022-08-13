@@ -1,3 +1,4 @@
+/*$content-h5-h: 18px;*/
 @media screen and (max-width: 1200px) {
   h1.mq-h1, h2.mq-h2 {
     font-size: 10vw;
@@ -18,6 +19,7 @@ body {
 
 main {
   width: 100%;
+  /*height: calc(100vh - tools.$nav-padding-top - tools.$nav-h - tools.$content-padding-top);*/
   height: 76.45vh;
   padding-top: 8.44vh;
 }
@@ -251,16 +253,12 @@ html {
     width: 100%;
   }
 }
-/*.destination.grid-content {
-    height: unset;
-    align-items: unset;
-}*/
 .destination-show {
-  height: 100%;
-  /*.destination-img.destination-img-animation {*/
+  height: 64vh;
 }
 .destination-show .destination-img {
-  max-width: 30.9vw;
+  padding: 10.78vh 0 0 4.41vw;
+  /*max-width: 30.9vw;*/
   width: 100%;
 }
 .destination-show .destination-img-animation {
@@ -271,10 +269,11 @@ html {
 .destination-interact {
   width: 30.9vw;
   max-width: 30.9vw;
-  /*height: 71.8%;
-  align-self: flex-end;*/
+  height: 52.44vh;
+  padding-top: 10.89vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .destination-interact .destination-navbar ul {
   height: 100%;
