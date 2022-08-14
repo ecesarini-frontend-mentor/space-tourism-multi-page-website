@@ -1,0 +1,69 @@
+@use 'tools';
+@use 'common';
+
+$subgrid-h: 58.56vh;
+$subgrid-padding-top: 15.22vh;
+$subgrid-nav-w: 5.56vw;
+$subgrid-nav-li: 80px;
+$subgrid-descr-w: 32.64vw;
+$subgrid-descr-h: 33.67vh;
+$tech-img-padding-bottom: 11.22vh;
+
+$color-subnavbar-current: hsla(230, 35%, 7%);
+
+html {
+    @include tools.background(url("../assets/technology/background-technology-desktop.jpg"));
+}
+
+.tech-content-subgrid {
+    height: calc(100% - $subgrid-h - $subgrid-padding-top);
+    padding-top: $subgrid-padding-top;
+    display: grid;
+    grid-template-columns: $subgrid-nav-w $subgrid-descr-w;
+    column-gap: $subgrid-nav-w;
+    &>* {
+        height: $subgrid-descr-h;
+    }
+    nav {
+        width: 100%;
+        ul {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            li {
+                width: $subgrid-nav-li;
+                max-width: $subgrid-nav-li;
+                height: $subgrid-nav-li;
+                max-height: $subgrid-nav-li;
+                line-height: $subgrid-nav-li;
+                font-size: 32px;
+                text-align: center;
+                color: tools.$color-content;
+                border-radius: 50%;
+                outline: 1px solid tools.$color-navbar-hover;
+            }
+            .nte-current {
+                color: $color-subnavbar-current;
+                background-color: tools.$color-content;
+            }
+        }
+    }
+    .tech-content-sg-descr {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .tech-term { 
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+    }
+}
+.tech-show {
+    justify-self: flex-end;
+    align-self: flex-end;
+    img {
+        padding-bottom: $tech-img-padding-bottom;
+        height: $subgrid-h;
+    }
+}

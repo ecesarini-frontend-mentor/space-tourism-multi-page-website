@@ -1,10 +1,6 @@
 @use 'tools';
 @use 'common';
 
-html {
-    @include tools.background(url("../assets/crew/background-crew-desktop.jpg"));
-}
-
 @keyframes crew-img-animation {
     0%   {width: 0%;}
     25%  {width: 25%;}
@@ -12,6 +8,11 @@ html {
     75%  {width: 75%;}
     100% {width: 100%;}    
 }
+
+html {
+    @include tools.background(url("../assets/crew/background-crew-desktop.jpg"));
+}
+
 
 .crew-interact {
     justify-content: space-between;

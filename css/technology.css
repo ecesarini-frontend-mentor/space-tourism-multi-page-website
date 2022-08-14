@@ -229,83 +229,65 @@ header .nav-index ul {
   flex-direction: column;
 }
 
-@keyframes crew-img-animation {
-  0% {
-    width: 0%;
-  }
-  25% {
-    width: 25%;
-  }
-  50% {
-    width: 50%;
-  }
-  75% {
-    width: 75%;
-  }
-  100% {
-    width: 100%;
-  }
-}
 html {
-  background: url("../assets/crew/background-crew-desktop.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
+  background: url("../assets/technology/background-technology-desktop.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
 }
 
-.crew-interact {
-  justify-content: space-between;
+.tech-content-subgrid {
+  height: calc(100% - 58.56vh - 15.22vh);
+  padding-top: 15.22vh;
+  display: grid;
+  grid-template-columns: 5.56vw 32.64vw;
+  column-gap: 5.56vw;
 }
-.crew-interact .crew-interact-fb-middle-container {
-  height: 30.11vh;
+.tech-content-subgrid > * {
+  height: 33.67vh;
+}
+.tech-content-subgrid nav {
+  width: 100%;
+}
+.tech-content-subgrid nav ul {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.crew-interact .crew-navbar {
-  padding: 0 0 10.44vh 0;
+.tech-content-subgrid nav ul li {
+  width: 80px;
+  max-width: 80px;
+  height: 80px;
+  max-height: 80px;
+  line-height: 80px;
+  font-size: 32px;
+  text-align: center;
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+  outline: 1px solid rgba(255, 255, 255, 0.5);
 }
-.crew-interact .crew-navbar ul {
-  min-width: 132px;
-  width: 132px;
-  height: 100%;
-  min-height: 15px;
+.tech-content-subgrid nav ul .nte-current {
+  color: hsl(230deg, 35%, 7%);
+  background-color: hsl(0deg, 0%, 100%);
+}
+.tech-content-subgrid .tech-content-sg-descr {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
-.crew-interact .crew-navbar ul .navbar-crew-element {
-  cursor: pointer;
-  min-width: 15px;
-  min-height: 15px;
-  background-color: hsl(0deg, 0%, 100%);
-  mix-blend-mode: normal;
-  opacity: 17.44%;
-  border-radius: 50%;
-}
-.crew-interact .crew-navbar ul .navbar-crew-element.nce-current {
-  opacity: unset;
-}
-.crew-interact .crew-navbar ul .navbar-crew-element:hover {
-  opacity: unset;
-  background-color: rgba(255, 255, 255, 0.17);
-  outline: 1px solid white;
+.tech-content-subgrid .tech-content-sg-descr .tech-term {
+  text-transform: uppercase;
+  font-size: 16px;
 }
 
-.crew-show {
-  height: 100%;
+.tech-show {
+  justify-self: flex-end;
+  align-self: flex-end;
 }
-.crew-show .crew-number {
-  font-weight: 700;
-  opacity: 0.25;
-}
-.crew-show .crew-img {
-  /*max-width: 30.9vw;*/
-  width: 100%;
-  height: 100%;
-}
-.crew-show .crew-img-animation {
-  animation-name: crew-img-animation;
-  animation-duration: 0.5s;
+.tech-show img {
+  padding-bottom: 11.22vh;
+  height: 58.56vh;
 }
 
-/*# sourceMappingURL=crew.css.map */
+/*# sourceMappingURL=technology.css.map */

@@ -5,28 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="./css/technology.css">
   
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 <body>
+  <header>
+    <a href="./index.html">
+      <img alt="Logo. Back home." src="./assets/shared/logo.svg">
+    </a>
+    <hr>
+    <nav class="nav-index navtext">
+      <ul>
+        <li class="navbar-content-element">
+          <a href="./index.html">
+            <span>00<br></span> 
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="navbar-content-element">
+          <a href="./destination.html">
+            <span>01</span> 
+            <span>destination</span>           
+          </a>
+        </li>
+        <li class="navbar-content-element">
+          <a href="./crew.html">
+            <span>02</span> 
+            <span>tech</span>           
+          </a>
+        </li>
+        <li class="navbar-content-element">
+          <a href="./technology.html">
+            <span>03</span> 
+            <span>Technology</span>           
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="tech grid-content">
+      <section class="tech-interact grid-cell-01">
+        <h5>
+          <span class="h5-span-number">01</span> Space launch 101
+        </h5>
+        <div class="tech-content-subgrid">
+          <nav class="subnavbar mq-subnavbar tech-navbar navtext">
+            <ul>
+              <li class='navbar-tech-element nte-01 nte-current'>1</li>
+              <li class='navbar-tech-element nte-02'>2</li>
+              <li class='navbar-tech-element nte-03'>3</li>
+            </ul>
+          </nav>
+          <div class="tech-content-sg-descr">
+            <p class="body-text tech-term">The terminology...</p>
+            <h3 class="mq-h3 tech-name">Launch vehicle</h3>
+            <p class="body-text tech-description">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</p>
+          </div>
+        </div>
+      </section>
 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
-
-  03 Space launch 101
-
-  1
-  2
-  3
-
-  The terminology...
-  Launch vehicle
-
-  A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a 
-  payload from Earth's surface to space, usually to Earth orbit or beyond. Our 
-  WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, 
-  it's quite an awe-inspiring sight on the launch pad!
+      <section class="tech-show grid-cell-02">
+        <img class="tech-img tech-img-animation" src="assets/technology/image-launch-vehicle-portrait.jpg" alt="Launch portrait.">
+      </section>
+  </main>
+  <script src='js/tech.js' type="module"></script>
 </body>
 </html>
