@@ -1,4 +1,4 @@
-import * as common from "./common.js";
+import * as main from "./main.js";
 
 class Destination {
     constructor() {
@@ -44,16 +44,17 @@ class Destination {
 
         this.jsonDestTransform.map(jdt => {
             if(jdt.k === 'images') {
-                //jdt.ref.src = elemJSON[jdt.k]['png'];
                 this.destImg.src = elemJSON[jdt.k]['png'];
             } else { 
                 jdt.ref.innerText = elemJSON[jdt.k];
             }
         });        
-        //this.destImg.classList.remove('destination-img-animation');
     }
 
 }
 
-new Destination();
+(() => {
+    main.initPage('destination');
+    new Destination();
+})()
 

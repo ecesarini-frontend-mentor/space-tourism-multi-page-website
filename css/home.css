@@ -170,10 +170,17 @@ header .nav-index ul {
 }
 
 .navbar-content-element {
+  box-sizing: border-box;
   height: 100%;
+  /*border: 3px solid transparent;*/
+}
+.navbar-content-element.navbar-current-page {
+  border-bottom: 3px solid hsl(0deg, 0%, 100%);
+  margin-bottom: -3px;
 }
 .navbar-content-element:hover {
   border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: -3px;
 }
 .navbar-content-element a {
   display: flex;

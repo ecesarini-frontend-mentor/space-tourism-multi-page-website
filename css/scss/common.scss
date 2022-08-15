@@ -142,9 +142,16 @@ header {
     }
 }
     .navbar-content-element {
+        box-sizing: border-box;
         height: 100%;
+        /*border: 3px solid transparent;*/
+        &.navbar-current-page {
+            border-bottom: 3px solid tools.$color-content;
+            margin-bottom: -3px;
+        }
         &:hover {
             border-bottom: 3px solid tools.$color-navbar-hover;
+            margin-bottom: -3px;
         }
         a {
             display: flex;
