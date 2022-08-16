@@ -1,8 +1,7 @@
 import * as main from "./main.js";
-import * as clssTools from "./classtools.js";
 
 class Destination {
-    constructor(jsonData) {
+    constructor() {
         this.jsonData = undefined;
         this.htmlPageTarget = common.getHtmlRef(window);
         this.navDest = document.querySelectorAll('.subnavbar-destination-element');

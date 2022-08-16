@@ -43,9 +43,7 @@ html {
                     opacity: unset;
                 }
                 &:hover {
-                    opacity: unset;
-                    background-color: rgba($color: tools.$color-content, $alpha: 0.17);
-                    outline: 1px solid rgba($color: tools.$color-content, $alpha: 1);
+                    opacity: 50.01%;
                 }
             }
         }

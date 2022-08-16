@@ -1,4 +1,9 @@
 /*$content-h5-h: 18px;*/
+@media screen and (min-width: 1300px) {
+  .destination-img.destination-img-mq {
+    max-width: 25vw;
+  }
+}
 @media screen and (max-width: 1200px) {
   h1.mq-h1, h2.mq-h2 {
     font-size: 10vw;

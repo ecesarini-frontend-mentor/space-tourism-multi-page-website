@@ -1,9 +1,5 @@
 import * as common from "./common.js";
 
-const jFile = '../data.json',
-    jData = common.getJsonData(jFile),
-    htmlPageTarget = common.getHtmlRef(window),
-
 export function initPage(tg) {
     const mainNav = common.createMainNavbar(),
         body = document.querySelector('body'),

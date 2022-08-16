@@ -3,7 +3,7 @@
 
 $grid-cell-01-h: 64vh;
 $grid-cell-02-h: 52.44vh;
-$grid-cell-img-padding-top: 10.78vh;
+$grid-cell-img-padding-top: 10.7vh;
 $grid-cell-img-padding-left: 4.41vw;
 $grid-cell-content-padding-top-from-h5: 7.11vh;
 
@@ -42,7 +42,6 @@ html {
     .destination-navbar ul {
         height: 100%;
         min-height: 31px;
-        /*width: 64%;*/
         display: flex;
         justify-content: space-between;
         color: tools.$color-body-text;

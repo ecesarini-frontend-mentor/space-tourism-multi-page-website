@@ -43,6 +43,10 @@ html {
                 color: tools.$color-content;
                 border-radius: 50%;
                 outline: 1px solid tools.$color-navbar-hover;
+                &:hover {
+                    cursor: pointer;
+                    outline-color: rgba(255, 255, 255 , 1) ;
+                }
             }
             .nte-current {
                 color: $color-subnavbar-current;
