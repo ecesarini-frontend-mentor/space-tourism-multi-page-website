@@ -78,3 +78,15 @@ export function subNavMatcher(tg, phRef) {
     });
     return indexFound;
 }
+
+export function subNavUpdateStuffObj(arr) {
+    const o = {},
+        oKeys = ['tgClass', 'tgCurrentClass', 'animationClass'];
+
+    if(arr.length !== oKeys.length) {
+        throw 'Input array mismatches requested parameters.';
+    } else {
+        oKeys.forEach((val, ind) => o[val] = arr[ind]);
+        return o;
+    }
+}

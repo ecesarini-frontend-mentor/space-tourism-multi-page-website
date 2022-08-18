@@ -1,8 +1,10 @@
 import * as common from "./common.js";
 
-const jFile = '../data.json',
-    jData = common.getJsonData(jFile),
-    htmlPageTarget = common.getHtmlRef(window),
+const htmlPageTarget = common.getHtmlRef(window);
+
+export async function initJData(jFile) {
+    return await common.getJsonData(jFile).then(r => r);
+}
 
 export function initPage(tg) {
     const mainNav = common.createMainNavbar(),

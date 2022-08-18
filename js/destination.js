@@ -1,61 +1,30 @@
+import * as common from "./common.js"
 import * as main from "./main.js";
-import * as clssTools from "./classtools.js";
+import * as classTools from "./classtools.js";
 
-class Destination {
-    constructor(jsonData) {
-        this.jsonData = undefined;
-        this.htmlPageTarget = common.getHtmlRef(window);
-        this.navDest = document.querySelectorAll('.subnavbar-destination-element');
-        this.init();
-        this.sndeCurrent = document.querySelector('.snde-current');
-        this.destImg = document.querySelector('.destination-img');
-        this.jsonDestTransform = [
+(() => {
+    const jFile = '../data.json',
+        htmlPageTarget = main.getHtmlRef,
+        subNavDest = document.querySelectorAll('.subnavbar-destination-element'),
+        subNavCurrent = document.querySelector('.snde-current'),
+        imgTg = document.querySelector('.destination-img'),
+        jsonTransform = [
             {k: 'name', ref: document.querySelector('.destination-title')},
-            {k: 'images', ref: this.destImg},
+            {k: 'images', ref: imgTg},
             {k: 'description', ref: document.querySelector('.destination-description')},
             {k: 'distance', ref: document.querySelector('.destination-distance')},
             {k: 'travel', ref: document.querySelector('.destination-travel')}
-        ];
-    }
+        ],
+        subNavUpdateStuff = common.subNavUpdateStuffObj(['snde', 'sndeCurrent', 'destination-img-animation']);
 
-    async init() {
-        this.jsonData = await common.initJSON("../data.json", 'destinations');
-        this.navDest.forEach(n => n.addEventListener('click', this));
-    }
-    handleEvent(e) {
-        const ect = e.currentTarget;
-
-        switch(e.type) {
-            case 'click':
-                this.subNavUpdater(ect);
-                break;
-        }
-    }
- 
-    subNavUpdater(target) {
-        const subNavInd = common.subNavMatcher(target, 'snde'),
-            elemJSON = this.jsonData[subNavInd];
-        
-        this.sndeCurrent.classList.remove('snde-current');
-        target.classList.add('snde-current');
-        this.sndeCurrent = target;
-        this.destImg.classList.remove('destination-img-animation');        
-        window.requestAnimationFrame(() => this.destImg.classList.add('destination-img-animation'));        
-
-
-        this.jsonDestTransform.map(jdt => {
-            if(jdt.k === 'images') {
-                this.destImg.src = elemJSON[jdt.k]['png'];
-            } else { 
-                jdt.ref.innerText = elemJSON[jdt.k];
-            }
-        });        
-    }
-
-}
-
-(() => {
     main.initPage('destination');
-    new Destination();
-})()
-
+    new classTools.pageClass(
+        jFile,
+        htmlPageTarget,
+        subNavDest,
+        subNavCurrent,
+        imgTg,
+        jsonTransform,
+        subNavUpdateStuff
+    );
+})();
