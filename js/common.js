@@ -1,4 +1,4 @@
-export async function getJsonData(jsonFile) {
+export async function fectchJSON(jsonFile) {
     let jsonData = undefined;
     try {
         jsonData = await fetch(jsonFile)
@@ -8,6 +8,11 @@ export async function getJsonData(jsonFile) {
         jsonData = console.log(error);
     }
     return jsonData;
+}
+
+export async function getJSONData(jsonFile) {
+    const jData = await fectchJSON(jsonFile);
+    return jData;
 }
 
 export async function initJSON(jsonFile, index) {    

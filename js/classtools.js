@@ -2,7 +2,7 @@ import * as common from "./common.js";
 
 export class pageClass {
     constructor(
-            jFile,
+            jData,
             htmlPageTarget, 
             subNavTg, 
             subNavCurrent,
@@ -11,19 +11,18 @@ export class pageClass {
             subNavUpdateStuff
             
         ) {
-            this.jFile = jFile;
+            this.jData = jData;
             this.htmlPageTarget = htmlPageTarget;
             this.subNavTg = subNavTg;
             this.subNavCurrent = subNavCurrent;
             this.imgTg = imgTg;
             this.jsonTransform = jsonTransform;
             this.subNavUpdateStuff = subNavUpdateStuff;
-            this.jData = undefined;
+            //this.jData = undefined;
             this.init();
     }
-
-    async init() {
-        this.jData = await common.getJsonData(this.jFile);
+    init() {
+        //this.jData = await common.getJsonData(this.jFile);
         this.subNavTg.forEach(n => n.addEventListener('click', this));
     }
     handleEvent(e) {

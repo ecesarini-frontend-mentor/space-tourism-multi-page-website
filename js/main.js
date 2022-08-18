@@ -1,10 +1,9 @@
 import * as common from "./common.js";
 
-const htmlPageTarget = common.getHtmlRef(window);
-
-export async function initJData(jFile) {
-    return await common.getJsonData(jFile).then(r => r);
-}
+//You need to export variables to use'em between modules;
+const jFile = '../data.json';
+export const jData = common.getJSONData(jFile);
+export const htmlPageTarget = common.getHtmlRef(window);
 
 export function initPage(tg) {
     const mainNav = common.createMainNavbar(),

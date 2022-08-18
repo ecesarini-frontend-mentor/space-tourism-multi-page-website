@@ -1,10 +1,15 @@
-import * as common from "./common.js"
+import * as common from "./common.js";
 import * as main from "./main.js";
 import * as classTools from "./classtools.js";
 
 (() => {
-    const jFile = '../data.json',
-        htmlPageTarget = main.getHtmlRef,
+    main.initPage('destination');
+    //const jFile = '../data.json';
+    //const jData = (async () => await common.getJsonData(jFile))().then(r=>r),
+    //const jData = async () => await common.getJSONData(main.jFile);
+    //const htmlPageTarget = main.htmlPageTarget,
+    const jData = main.jData,
+        htmlPageTarget = main.htmlPageTarget,
         subNavDest = document.querySelectorAll('.subnavbar-destination-element'),
         subNavCurrent = document.querySelector('.snde-current'),
         imgTg = document.querySelector('.destination-img'),
@@ -17,9 +22,8 @@ import * as classTools from "./classtools.js";
         ],
         subNavUpdateStuff = common.subNavUpdateStuffObj(['snde', 'sndeCurrent', 'destination-img-animation']);
 
-    main.initPage('destination');
     new classTools.pageClass(
-        jFile,
+        jData,
         htmlPageTarget,
         subNavDest,
         subNavCurrent,
