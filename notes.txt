@@ -1,0 +1,7 @@
+- About passing json as promise:
+  Lodaing the html page, 'new classTools.pageClass()' @./js/destination.js is executed synchronously.
+  The class is istantiated immediately and 'this.jData = jData' variable passing jData as
+  argument to the class constructor yelds to a "before assignement", that is, before the promise is fulfilled.
+  There's no event handler related to the promise which could wait for the promise completion.
+  
+  --> Fix this making 'this.init()' method invoked by constructor async and await the promise data.

@@ -1,8 +1,8 @@
 import * as common from "./common.js";
 
 //You need to export variables to use'em between modules;
-const jFile = '../data.json';
-export const jData = common.getJSONData(jFile);
+export const jFile = '../data.json';
+export const jFetch = common.getJSONData(jFile);
 export const htmlPageTarget = common.getHtmlRef(window);
 
 export function initPage(tg) {
