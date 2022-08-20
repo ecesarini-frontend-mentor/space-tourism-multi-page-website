@@ -11,7 +11,6 @@ export class PageClass {
             jsonTransform,
             subNavUpdateStuff            
         ) {
-            //this.jFile = jFile;
             this.jFetch = jFetch;
             this.htmlPageTarget = htmlPageTarget;
             this.subNavMatchProp = subNavMatchProp;
@@ -22,21 +21,37 @@ export class PageClass {
             this.subNavUpdateStuff = subNavUpdateStuff;
             
             this.jData = undefined;
-            this.init();
+            this.mqWidthMatch = window.matchMedia('(min-width: 768px)');
+            this.mqWidthImgSw = undefined;
+            this.getJData();
     }
-    
-    
-    async init() {
+    async getJData() {
         this.jData = await this.jFetch;
-        this.subNavTg.forEach(n => n.addEventListener('click', this));
+        this.init();
     }
-
+    init() {
+        //this.jData = await this.jFetch;
+        this.eventsListener();
+    }
+    eventsListener() {
+        window.addEventListener('load', this);
+        this.subNavTg.forEach(n => n.addEventListener('click', this));
+        this.mqWidthMatch.addEventListener('change', this);
+    }
     handleEvent(e) {
         const ect = e.currentTarget;
 
         switch(e.type) {
+            case 'load':
+                this.mqImgHandle();
+                this.eventsListener();
+                break;
             case 'click':
                 this.subNavUpdater(ect);
+                break;
+            case 'change':
+                this.mqImgHandle();
+                this.eventsListener();
                 break;
         }
     }
@@ -53,11 +68,14 @@ export class PageClass {
 
         this.jsonTransform.map(jdt => {
             if(jdt.k === 'images') {
-                const jdtImgRef = Object.keys(elemJSON[jdt.k])[0];
+                const jdtImgRef = Object.keys(elemJSON[jdt.k])[this.mqWidthImgSw];
                 this.imgTg.src = elemJSON[jdt.k][jdtImgRef];
             } else { 
                 jdt.ref.innerText = elemJSON[jdt.k];
             }
         });        
+    }
+    mqImgHandle() {
+        this.mqWidthImgSw = this.mqWidthMatch.matches? 0: 1;
     }
 }
