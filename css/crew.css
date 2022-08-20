@@ -285,7 +285,7 @@ html {
   display: flex;
   justify-content: space-between;
 }
-.crew-interact .crew-navbar ul .navbar-crew-element {
+.crew-interact .crew-navbar ul .subnavbar-crew-element {
   cursor: pointer;
   min-width: 15px;
   min-height: 15px;
@@ -294,10 +294,10 @@ html {
   opacity: 17.44%;
   border-radius: 50%;
 }
-.crew-interact .crew-navbar ul .navbar-crew-element.nce-current {
+.crew-interact .crew-navbar ul .subnavbar-crew-element.nce-current {
   opacity: unset;
 }
-.crew-interact .crew-navbar ul .navbar-crew-element:hover {
+.crew-interact .crew-navbar ul .subnavbar-crew-element:hover {
   opacity: 50.01%;
 }
 

@@ -53,7 +53,8 @@ export class PageClass {
 
         this.jsonTransform.map(jdt => {
             if(jdt.k === 'images') {
-                this.imgTg.src = elemJSON[jdt.k]['png'];
+                const jdtImgRef = Object.keys(elemJSON[jdt.k])[0];
+                this.imgTg.src = elemJSON[jdt.k][jdtImgRef];
             } else { 
                 jdt.ref.innerText = elemJSON[jdt.k];
             }

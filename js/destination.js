@@ -1,13 +1,13 @@
-import * as common from "./common.js";
-import * as main from "./main.js";
-import * as classTools from "./classtools.js";
+import * as common from "./lib/common.js";
+import * as main from "./lib/main.js";
+import * as classTools from "./lib/classtools.js";
 
 (() => {
     main.initPage('destination');
     const jFetch = main.jFetch,
         htmlPageTarget = main.htmlPageTarget,
         subNavMatchProp = 'destinations',
-        subNavDest = document.querySelectorAll('.subnavbar-destination-element'),
+        subNavTg = document.querySelectorAll('.subnavbar-destination-element'),
         subNavCurrent = document.querySelector('.snde-current'),
         imgTg = document.querySelector('.destination-img'),
         jsonTransform = [
@@ -23,7 +23,7 @@ import * as classTools from "./classtools.js";
         jFetch,
         htmlPageTarget,
         subNavMatchProp,
-        subNavDest,
+        subNavTg,
         subNavCurrent,
         imgTg,
         jsonTransform,

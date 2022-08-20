@@ -283,7 +283,7 @@ html {
   cursor: pointer;
   outline-color: rgb(255, 255, 255);
 }
-.tech-content-subgrid nav ul .nte-current {
+.tech-content-subgrid nav ul .snte-current {
   color: hsl(230deg, 35%, 7%);
   background-color: hsl(0deg, 0%, 100%);
 }

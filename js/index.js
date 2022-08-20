@@ -1,4 +1,4 @@
-import * as main from "./main.js";
+import * as main from "./lib/main.js";
 
 (() => {  
     main.initPage('home');

@@ -1,13 +1,13 @@
-import * as common from "./common.js";
-import * as main from "./main.js";
-import * as classTools from "./classtools.js";
+import * as common from "./lib/common.js";
+import * as main from "./lib/main.js";
+import * as classTools from "./lib/classtools.js";
 
 (() => {
     main.initPage('crew');
     const jFetch = main.jFetch,
         htmlPageTarget = main.htmlPageTarget,
         subNavMatchProp = 'crew',
-        subNavDest = document.querySelectorAll('.subnavbar-crew-element'),
+        subNavTg = document.querySelectorAll('.subnavbar-crew-element'),
         subNavCurrent = document.querySelector('.snce-current'),
         imgTg = document.querySelector('.crew-img'),
         
@@ -17,13 +17,13 @@ import * as classTools from "./classtools.js";
             {k: 'role', ref: document.querySelector('.crew-role')},
             {k: 'bio', ref: document.querySelector('.crew-bio')}
         ],
-        // --> subNavUpdateStuff = common.subNavUpdateStuffObj(['snde', 'snde-current', 'destination-img-animation']);
+        subNavUpdateStuff = common.subNavUpdateStuffObj(['snce', 'snce-current', 'crew-img-animation']);
 
     new classTools.PageClass(
         jFetch,
         htmlPageTarget,
         subNavMatchProp,
-        subNavDest,
+        subNavTg,
         subNavCurrent,
         imgTg,
         jsonTransform,
