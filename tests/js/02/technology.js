@@ -2,21 +2,6 @@ import * as common from "./lib/common.js";
 import * as main from "./lib/main.js";
 import * as classTools from "./lib/classtools.js";
 
-class PageClassTech extends classTools.PageClass {
-    constructor(
-        mqWidthMatch,
-        mqWidthImgSw
-    ) {
-        super();
-        this.mqWidthMatch = window.matchMedia('(min-width: 768px)');
-        this.mqWidthImgSw = undefined;
-    }
-    eventsListenerTech() {
-        super.eventsListener();
-        this.mqWidthMatch.addEventListener('change', this);
-    }
-}
-
 (() => {
     main.initPage('techonology');
     const jFetch = main.jFetch,

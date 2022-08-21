@@ -18,11 +18,13 @@ export class PageClass {
             this.subNavCurrent = subNavCurrent;
             this.imgTg = imgTg;
             this.jsonTransform = jsonTransform;
-            this.subNavUpdateStuff = subNavUpdateStuff;            
-
+            this.subNavUpdateStuff = subNavUpdateStuff;
+            
             this.jData = undefined;
-            this.eventObj = undefined;
             this.init();
+            
+            //this.mqWidthMatch = window.matchMedia('(min-width: 768px)');
+            //this.mqWidthImgSw = undefined;
     }
     async init() {
         this.jData = await this.jFetch;
@@ -31,32 +33,22 @@ export class PageClass {
     eventsListener() {
         window.addEventListener('load', this);
         this.subNavTg.forEach(n => n.addEventListener('click', this));
+        this.mqWidthMatch.addEventListener('change', this);
     }
-    objEventsHandler() {
-        let o = {
-            click: (target) => {
-                this.subNavUpdater(target);
-            },
-            load: () => {},
-            change: () => {}
-        };
-        return o;
-    } 
-
     handleEvent(e) {
         const ect = e.currentTarget;
 
         switch(e.type) {
-            case 'click':
-                this.objEventsHandler()[e.type](ect);
-                break;
             case 'load':
-                //this.mqImgHandle();
-                //this.eventsListener();
+                this.mqImgHandle();
+                this.eventsListener();
+                break;
+            case 'click':
+                this.subNavUpdater(ect);
                 break;
             case 'change':
-                //this.mqImgHandle();
-                //this.eventsListener();
+                this.mqImgHandle();
+                this.eventsListener();
                 break;
         }
     }
@@ -73,14 +65,14 @@ export class PageClass {
 
         this.jsonTransform.map(jdt => {
             if(jdt.k === 'images') {
-                const jdtImgRef = Object.keys(elemJSON[jdt.k])[0];
+                const jdtImgRef = Object.keys(elemJSON[jdt.k])[this.mqWidthImgSw];
                 this.imgTg.src = elemJSON[jdt.k][jdtImgRef];
             } else { 
                 jdt.ref.innerText = elemJSON[jdt.k];
             }
         });        
     }
-    /*mqImgHandle() {
+    mqImgHandle() {
         this.mqWidthImgSw = this.mqWidthMatch.matches? 0: 1;
-    }*/
+    }
 }
