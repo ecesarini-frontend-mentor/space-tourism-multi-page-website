@@ -19,50 +19,46 @@ export class PageClass {
             this.imgTg = imgTg;
             this.jsonTransform = jsonTransform;
             this.subNavUpdateStuff = subNavUpdateStuff;            
-            
-            this.eHJob = this.eventsHandlerJob();
-            this.eHDo = undefined;
 
-            this.e = undefined;
             this.jData = undefined;
+            this.eventObj = undefined;
             this.init();
     }
     async init() {
         this.jData = await this.jFetch;
         this.eventsListener();
     }
-    
     eventsListener() {
+        window.addEventListener('load', this);
         this.subNavTg.forEach(n => n.addEventListener('click', this));
     }
-    eventsHandlerJob() {
-        return {
+    objEventsHandler() {
+        let o = {
             click: (target) => {
                 this.subNavUpdater(target);
-            }
+            },
+            load: () => {},
+            change: () => {}
         };
-    }
-    eventsHandlerDo(e) {
-        const eO = {
-            click: this.eHJob[e.type][e.currentTarget]
-        };
-        this.eHDo = eO;
-    }
+        return o;
+    } 
 
     handleEvent(e) {
-        //this.e = e;
-        this.eventsHandlerDo(e);
-        const ect = e.currentTarget,
-            this.eHJob = this.eventsHandlerJob(),
-            //hEObj = this.eventsHandlerDo(e);
-            hEDo = this.eHDo;
+        const ect = e.currentTarget;
 
-        for(let prop in hEDo) {
-            if(e.type === prop) {
-                eHJ[prop];
-            }
+        switch(e.type) {
+            case 'click':
+                this.objEventsHandler()[e.type](ect);
+                break;
+            case 'load':
+                //this.mqImgHandle();
+                //this.eventsListener();
+                break;
+            case 'change':
+                //this.mqImgHandle();
+                //this.eventsListener();
+                break;
         }
-        this.e = undefined;
     }
     subNavUpdater(target) {
         const subNavInd = common.subNavMatcher(target, this.subNavUpdateStuff.tgClass),

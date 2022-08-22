@@ -3,23 +3,17 @@ import * as main from "./lib/main.js";
 import * as classTools from "./lib/classtools.js";
 
 class PageClassTech extends classTools.PageClass {
-    constructor() {        
+    constructor(
+        mqWidthMatch,
+        mqWidthImgSw
+    ) {
         super();
         this.mqWidthMatch = window.matchMedia('(min-width: 768px)');
         this.mqWidthImgSw = undefined;
-        this.initTech();
     }
-    initTech() {
-        this.eventObj['load'] = () => {this.mqImgHandle()};
-        this.eventObj['change'] = () => {this.mqImgHandle()};
-    }
-
     eventsListenerTech() {
         super.eventsListener();
         this.mqWidthMatch.addEventListener('change', this);
-    }
-    mqImgHandle() {
-        this.mqWidthImgSw = this.mqWidthMatch.matches? 0: 1;
     }
 }
 
@@ -47,6 +41,6 @@ class PageClassTech extends classTools.PageClass {
         subNavCurrent,
         imgTg,
         jsonTransform,
-        subNavUpdateStuff,
+        subNavUpdateStuff
     );
 })();
