@@ -7,9 +7,9 @@ import * as classTools from "./lib/classtools.js";
     main.initPage('destination');
     const jFetch = main.jFetch,
         htmlPageTarget = main.htmlPageTarget,
-        subnavMatchProp = 'destinations',
-        subnavTg = document.querySelectorAll('.subnavbar-destination-element'),
-        subnavCurrent = document.querySelector('.snde-current'),
+        subNavMatchProp = 'destinations',
+        subNavTg = document.querySelectorAll('.subnavbar-destination-element'),
+        subNavCurrent = document.querySelector('.snde-current'),
         imgTg = document.querySelector('.destination-img'),
         jsonTransform = [
             {k: 'name', ref: document.querySelector('.destination-title')},
@@ -18,16 +18,16 @@ import * as classTools from "./lib/classtools.js";
             {k: 'distance', ref: document.querySelector('.destination-distance')},
             {k: 'travel', ref: document.querySelector('.destination-travel')}
         ],
-        subnavUpdateStuff = common.subnavUpdateStuffObj(['snde', 'snde-current', 'destination-img-animation']);
+        subNavUpdateStuff = common.subNavUpdateStuffObj(['snde', 'snde-current', 'destination-img-animation']);
 
     new classTools.PageClass(
         jFetch,
         htmlPageTarget,
-        subnavMatchProp,
-        subnavTg,
-        subnavCurrent,
+        subNavMatchProp,
+        subNavTg,
+        subNavCurrent,
         imgTg,
         jsonTransform,
-        subnavUpdateStuff
+        subNavUpdateStuff
     );
 })();

@@ -3,23 +3,56 @@ import * as main from "./lib/main.js";
 import * as classTools from "./lib/classtools.js";
 
 class PageClassTech extends classTools.PageClass {
-    constructor() {        
-        super();
+    constructor(
+        jFetch,
+        htmlPageTarget,
+        subnavMatchProp,
+        subnavTg,
+        subnavCurrent,
+        imgTg,
+        jsonTransform,
+        subnavUpdateStuff,
+    ) {        
+        super(
+            jFetch,
+            htmlPageTarget,
+            subnavMatchProp,
+            subnavTg,
+            subnavCurrent,
+            imgTg,
+            jsonTransform,
+            subnavUpdateStuff,
+        );        
+        this.subnavImgIndex = 0;
         this.mqWidthMatch = window.matchMedia('(min-width: 768px)');
-        this.mqWidthImgSw = undefined;
+        //this.mqWidthImgSw = undefined;
         this.initTech();
     }
     initTech() {
-        this.eventObj['load'] = () => {this.mqImgHandle()};
-        this.eventObj['change'] = () => {this.mqImgHandle()};
+        this.mqSubnavImgCheck();
+        this.eventsListenerTech();
+        //this.eventObj['load'] = () => {this.mqImgHandle()};
+        //this.eventObj['change'] = () => {this.mqImgHandle()};
     }
 
     eventsListenerTech() {
         super.eventsListener();
-        this.mqWidthMatch.addEventListener('change', this);
+        window.addEventListener('load', this.eventsLoadTech)
+        this.mqWidthMatch.addEventListener('change', this.eventsChangeTech);
     }
-    mqImgHandle() {
-        this.mqWidthImgSw = this.mqWidthMatch.matches? 0: 1;
+
+    eventsLoadTech = (e) => {
+        this.mqSubnavImgCheck();
+    }
+    eventsChangeTech = (e) => {
+
+    }
+
+    mqSubnavImgCheck() {
+        //const techImg = document.querySelector('.tech-img');
+        this.subnavImgIndex = this.mqWidthMatch.matches? 0: 1;
+
+        //techImg.src = 
     }
 }
 
@@ -27,9 +60,9 @@ class PageClassTech extends classTools.PageClass {
     main.initPage('techonology');
     const jFetch = main.jFetch,
         htmlPageTarget = main.htmlPageTarget,
-        subNavMatchProp = 'technology',
-        subNavTg = document.querySelectorAll('.subnavbar-tech-element'),
-        subNavCurrent = document.querySelector('.snte-current'),
+        subnavMatchProp = 'technology',
+        subnavTg = document.querySelectorAll('.subnavbar-tech-element'),
+        subnavCurrent = document.querySelector('.snte-current'),
         imgTg = document.querySelector('.tech-img'),
         
         jsonTransform = [
@@ -37,16 +70,16 @@ class PageClassTech extends classTools.PageClass {
             {k: 'images', ref: imgTg},
             {k: 'description', ref: document.querySelector('.tech-description')}
         ],
-        subNavUpdateStuff = common.subNavUpdateStuffObj(['snte', 'snte-current', 'tech-img-animation']);
-
-    new classTools.PageClass(
+        subnavUpdateStuff = common.subnavUpdateStuffObj(['snte', 'snte-current', 'tech-img-animation']);
+    
+    new PageClassTech(
         jFetch,
         htmlPageTarget,
-        subNavMatchProp,
-        subNavTg,
-        subNavCurrent,
+        subnavMatchProp,
+        subnavTg,
+        subnavCurrent,
         imgTg,
         jsonTransform,
-        subNavUpdateStuff,
+        subnavUpdateStuff
     );
 })();

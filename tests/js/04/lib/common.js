@@ -71,7 +71,7 @@ export function createMainNavbar() {
     return header;
 }
 
-export function subnavMatcher(tg, phRef) {
+export function subNavMatcher(tg, phRef) {
     const childCount = tg.parentElement.childElementCount,
         classRef = (childCount <= 9)?
         Array.from({length: childCount}, (elem, ind) => phRef + '-0' + ++ind):
@@ -84,7 +84,7 @@ export function subnavMatcher(tg, phRef) {
     return indexFound;
 }
 
-export function subnavUpdateStuffObj(arr) {
+export function subNavUpdateStuffObj(arr) {
     const o = {},
         oKeys = ['tgClass', 'tgCurrentClass', 'animationClass'];
 

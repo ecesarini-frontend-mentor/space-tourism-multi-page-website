@@ -4,87 +4,59 @@ export class PageClass {
     constructor(
             jFetch,
             htmlPageTarget,
-            subNavMatchProp,
-            subNavTg, 
-            subNavCurrent,
+            subnavMatchProp,
+            subnavTg, 
+            subnavCurrent,
             imgTg,
             jsonTransform,
-            subNavUpdateStuff            
+            subnavUpdateStuff            
         ) {
             this.jFetch = jFetch;
             this.htmlPageTarget = htmlPageTarget;
-            this.subNavMatchProp = subNavMatchProp;
-            this.subNavTg = subNavTg;
-            this.subNavCurrent = subNavCurrent;
+            this.subnavMatchProp = subnavMatchProp;
+            this.subnavTg = subnavTg;
+            this.subnavCurrent = subnavCurrent;
             this.imgTg = imgTg;
             this.jsonTransform = jsonTransform;
-            this.subNavUpdateStuff = subNavUpdateStuff;            
+            this.subnavUpdateStuff = subnavUpdateStuff;
             
-            this.eHJob = this.eventsHandlerJob();
-            this.eHDo = undefined;
-
-            this.e = undefined;
+            this.subnavImgIndex = 0;
             this.jData = undefined;
             this.init();
     }
+
+    subnavImgIndex
+
     async init() {
         this.jData = await this.jFetch;
         this.eventsListener();
     }
     
     eventsListener() {
-        this.subNavTg.forEach(n => n.addEventListener('click', this));
+        this.subnavTg.forEach(n => n.addEventListener('click', this.eventsClick));
     }
-    eventsHandlerJob() {
-        return {
-            click: (target) => {
-                this.subNavUpdater(target);
-            }
-        };
-    }
-    eventsHandlerDo(e) {
-        const eO = {
-            click: this.eHJob[e.type][e.currentTarget]
-        };
-        this.eHDo = eO;
+    eventsClick = (e) => {
+        this.subnavUpdater(e.currentTarget);
     }
 
-    handleEvent(e) {
-        //this.e = e;
-        this.eventsHandlerDo(e);
-        const ect = e.currentTarget,
-            this.eHJob = this.eventsHandlerJob(),
-            //hEObj = this.eventsHandlerDo(e);
-            hEDo = this.eHDo;
-
-        for(let prop in hEDo) {
-            if(e.type === prop) {
-                eHJ[prop];
-            }
-        }
-        this.e = undefined;
-    }
-    subNavUpdater(target) {
-        const subNavInd = common.subNavMatcher(target, this.subNavUpdateStuff.tgClass),
-            elemJSON = this.jData[this.subNavMatchProp][subNavInd];
+    subnavUpdater(target) {
+        const subnavInd = common.subnavMatcher(target, this.subnavUpdateStuff.tgClass),
+            elemJSON = this.jData[this.subnavMatchProp][subnavInd];
         
-        this.subNavCurrent.classList.remove(this.subNavUpdateStuff.tgCurrentClass);
-        target.classList.add(this.subNavUpdateStuff.tgCurrentClass);
-        this.subNavCurrent = target;
-        this.imgTg.classList.remove(this.subNavUpdateStuff.animationClass);        
-        window.requestAnimationFrame(() => this.imgTg.classList.add(this.subNavUpdateStuff.animationClass));        
+        this.subnavCurrent.classList.remove(this.subnavUpdateStuff.tgCurrentClass);
+        target.classList.add(this.subnavUpdateStuff.tgCurrentClass);
+        this.subnavCurrent = target;
+        this.imgTg.classList.remove(this.subnavUpdateStuff.animationClass);        
+        window.requestAnimationFrame(() => this.imgTg.classList.add(this.subnavUpdateStuff.animationClass));        
 
 
         this.jsonTransform.map(jdt => {
             if(jdt.k === 'images') {
-                const jdtImgRef = Object.keys(elemJSON[jdt.k])[0];
+                const jdtImgRef = Object.keys(elemJSON[jdt.k])[this.subnavImgIndex];
                 this.imgTg.src = elemJSON[jdt.k][jdtImgRef];
             } else { 
                 jdt.ref.innerText = elemJSON[jdt.k];
             }
         });        
     }
-    /*mqImgHandle() {
-        this.mqWidthImgSw = this.mqWidthMatch.matches? 0: 1;
-    }*/
 }
