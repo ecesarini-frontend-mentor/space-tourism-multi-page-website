@@ -5,6 +5,7 @@ export const jFile = '../data.json';
 export const jFetch = common.getJSONData(jFile);
 export const htmlPageTarget = common.getHtmlRef(window);
 
+
 export function initPage(tg) {
     const mainNav = common.createMainNavbar(),
         body = document.querySelector('body'),

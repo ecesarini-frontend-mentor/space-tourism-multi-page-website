@@ -74,8 +74,8 @@ export function createMainNavbar() {
 export function subnavMatcher(tg, phRef) {
     const childCount = tg.parentElement.childElementCount,
         classRef = (childCount <= 9)?
-        Array.from({length: childCount}, (elem, ind) => phRef + '-0' + ++ind):
-        Array.from({length: childCount}, (elem, ind) => phRef + '-' + ++ind);
+            Array.from({length: childCount}, (elem, ind) => phRef + '-0' + ++ind):
+            Array.from({length: childCount}, (elem, ind) => phRef + '-' + ++ind);
     let indexFound = undefined;
     
     classRef.forEach((cl, ind) => { 

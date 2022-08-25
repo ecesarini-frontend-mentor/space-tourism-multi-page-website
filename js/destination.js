@@ -6,6 +6,7 @@ import * as classTools from "./lib/classtools.js";
 (() => {
     main.initPage('destination');
     const jFetch = main.jFetch,
+        //htmlPageTarget = common.getHtmlRef(main.htmlPageTarget),
         htmlPageTarget = main.htmlPageTarget,
         subnavMatchProp = 'destinations',
         subnavTg = document.querySelectorAll('.subnavbar-destination-element'),
