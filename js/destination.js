@@ -3,6 +3,35 @@ import * as main from "./lib/main.js";
 import * as classTools from "./lib/classtools.js";
 
 
+class PageClassDest extends classTools.PageClass {
+    constructor(
+        jFetch,
+        htmlPageTarget,
+        subnavMatchProp,
+        subnavTg,
+        subnavCurrent,
+        imgTg,
+        jsonTransform,
+        subnavUpdateStuff,
+    ) {        
+        super(
+            jFetch,
+            htmlPageTarget,
+            subnavMatchProp,
+            subnavTg,
+            subnavCurrent,
+            imgTg,
+            jsonTransform,
+            subnavUpdateStuff,
+        );
+    }
+    jsonGetPageRef() {
+        const j = this.htmlPageTarget.split('.')[0] + 's';
+        return j;
+    }
+}
+
+
 (() => {
     main.initPage('destination');
     const jFetch = main.jFetch,
@@ -21,7 +50,8 @@ import * as classTools from "./lib/classtools.js";
         ],
         subnavUpdateStuff = common.subnavUpdateStuffObj(['snde', 'snde-current', 'destination-img-animation']);
 
-    new classTools.PageClass(
+    
+    new PageClassDest(
         jFetch,
         htmlPageTarget,
         subnavMatchProp,

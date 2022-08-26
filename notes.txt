@@ -1,7 +1,11 @@
-- About passing json as promise:
+- Passing json as promise:
   Lodaing the html page, 'new classTools.pageClass()' @./js/destination.js is executed synchronously.
   The class is istantiated immediately and 'this.jData = jData' variable passing jData as
   argument to the class constructor yelds to a "before assignement", that is, before the promise is fulfilled.
   There's no event handler related to the promise which could wait for the promise completion.
-  
   --> Fix this making 'this.init()' method invoked by constructor async and await the promise data.
+
+- Use Class properties (fields) outside constructor:
+  Check: https://stackoverflow.com/questions/64436532/javascript-class-property-inside-vs-outside-constructor.
+  The difference is about methods: a method is associated to the Class and not to the Object, so if you assign a field 'myField',
+  it doesn't belong to Class but to 'const myObj = new MyClass()': 'myObj.myField' ok, 'MyClass.myField' undefined. (https://it.javascript.info/class#proprieta-di-una-classe)

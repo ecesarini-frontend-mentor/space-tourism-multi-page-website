@@ -70,7 +70,7 @@ class PageClassTech extends classTools.PageClass {
         ],
         subnavUpdateStuff = common.subnavUpdateStuffObj(['snte', 'snte-current', 'tech-img-animation']);
     
-    new PageClassTech(
+    let pct = new classTools.PageClass(
         jFetch,
         htmlPageTarget,
         subnavMatchProp,

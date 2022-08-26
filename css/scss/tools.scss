@@ -5,8 +5,14 @@ $color-content: hsl(0, 0%, 100%);
 $color-body-text: hsl(231, 79%, 90%);
 $color-navbar-hover: rgba(255, 255, 255, 0.50);
 
+// Viewports
 $desktop-w: 1440px;
 $desktop-h: 900px;
+$tablet-w: 768px;
+$tablet-h: 1024px;
+$mobile-w: 365px;
+//$mobile-h: 667px;
+
 $nav-w: 57.64vw;
 $nav-h: 10.67vh;
 $nav-padding-top: 4.44vh;

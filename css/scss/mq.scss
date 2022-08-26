@@ -1,3 +1,6 @@
+@use 'tools';
+
+// Refinements
 @media screen and (min-width: 1300px) {
     .destination-img.destination-img-mq {
         max-width: 25vw;
@@ -12,3 +15,10 @@
         width: 100%;
     }
 }
+
+// Work:
+//
+// Tab
+@media screen and (max-width: tools.$tablet-w) {
+    
+ }

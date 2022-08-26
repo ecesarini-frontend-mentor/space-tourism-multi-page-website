@@ -1,6 +1,10 @@
 import * as common from "./common.js";
 
 export class PageClass {
+    subnavInd = 0;
+    subnavImgIndex = undefined;
+    mqWidthMatch = window.matchMedia('(max-width: 768px)');
+    jData = undefined;
     constructor(
             jFetch,
             htmlPageTarget,
@@ -20,10 +24,6 @@ export class PageClass {
             this.jsonTransform = jsonTransform;
             this.subnavUpdateStuff = subnavUpdateStuff;
 
-            this.subnavInd = 1;
-            this.subnavImgIndex = undefined;
-            this.mqWidthMatch = window.matchMedia('(max-width: 768px)');
-            this.jData = undefined;
             this.init();
     }
 
@@ -45,15 +45,19 @@ export class PageClass {
     }
     eventsChange = (e) => {
         this.mqSubnavImgCheck();
-        this.imgTg.src =this.subnavGetImgSrc(this.subnavInd);
+        this.imgTg.src = this.subnavGetImgSrc(this.subnavInd);
     }
 
     mqSubnavImgCheck() {
         this.subnavImgIndex = this.mqWidthMatch.matches? 1: 0;
     }
+    jsonGetPageRef() {
+        const j = this.htmlPageTarget.split('.')[0];
+        return j;
+    }
     subnavGetImgSrc(ind) {
         let src = undefined;
-        const jsonToPage = this.htmlPageTarget.split('.')[0],
+        const jsonToPage = this.jsonGetPageRef(),
             jsonTgObj = this.jData[jsonToPage][ind]['images'],
             jsonTgInd = Object.keys(jsonTgObj)[this.subnavImgIndex];
 
