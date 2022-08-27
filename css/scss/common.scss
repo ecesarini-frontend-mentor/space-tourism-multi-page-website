@@ -1,9 +1,11 @@
 @use 'tools';
 @use 'mq';
 
+* {
+    box-sizing: border-box;
+}
 
 body {
-    box-sizing: border-box;
     margin: 0;
     max-width: 100vw;
     width: 100%;
@@ -13,7 +15,6 @@ body {
 }
 main {
     width: 100%;
-    /*height: calc(100vh - tools.$nav-padding-top - tools.$nav-h - tools.$content-padding-top);*/
     height: tools.$main-h;
     padding-top: tools.$content-padding-top;
 }
@@ -98,7 +99,6 @@ p {
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
     width: 100%;
-    min-height: tools.$nav-h; /*To let '.nav-index' grow outer parent flexbox needs height.*/
     height: tools.$nav-h;
     display: flex;
     padding-top: tools.$nav-padding-top;
@@ -144,7 +144,6 @@ header {
     .navbar-content-element {
         box-sizing: border-box;
         height: 100%;
-        /*border: 3px solid transparent;*/
         &.navbar-current-page {
             border-bottom: 3px solid tools.$color-content;
             margin-bottom: -3px;
@@ -185,9 +184,8 @@ header {
     grid-template-columns: 1fr 1fr;
     color: inherit;
 }
+
 .grid-cell-01 {
-    width: 30.9vw;
-    max-width: 30.9vw;    
     grid-column: 1 / 2;
     padding: 0 0 0 11.46vw;
     align-items: baseline;

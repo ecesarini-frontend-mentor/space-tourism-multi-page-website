@@ -12,8 +12,38 @@
     width: 100%;
   }
 }
-body {
+@media screen and (max-width: 768px) {
+  header hr {
+    display: none;
+  }
+  main .grid-content {
+    width: 100%;
+    height: 100%;
+    padding: 0 20.7vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  main .grid-content .grid-cell-01, main .grid-content .grid-cell-02 {
+    grid-column: unset;
+    max-width: unset;
+    width: unset;
+    height: unset;
+    padding: 0;
+  }
+  main .grid-content .grid-cell-01 {
+    width: 58.6vw;
+    height: 32.6vh;
+    grid-row: 1/2;
+  }
+  main .grid-content .grid-cell-02 {
+    grid-row: 2/3;
+  }
+}
+* {
   box-sizing: border-box;
+}
+
+body {
   margin: 0;
   max-width: 100vw;
   width: 100%;
@@ -24,8 +54,7 @@ body {
 
 main {
   width: 100%;
-  /*height: calc(100vh - tools.$nav-padding-top - tools.$nav-h - tools.$content-padding-top);*/
-  height: 76.45vh;
+  height: 84.89vh;
   padding-top: 8.44vh;
 }
 
@@ -130,8 +159,7 @@ p {
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
   width: 100%;
-  min-height: 10.67vh; /*To let '.nav-index' grow outer parent flexbox needs height.*/
-  height: 10.67vh;
+  height: 15.11vh;
   display: flex;
   padding-top: 4.44vh;
   justify-content: space-between;
@@ -177,7 +205,6 @@ header .nav-index ul {
 .navbar-content-element {
   box-sizing: border-box;
   height: 100%;
-  /*border: 3px solid transparent;*/
 }
 .navbar-content-element.navbar-current-page {
   border-bottom: 3px solid hsl(0deg, 0%, 100%);
@@ -219,8 +246,6 @@ header .nav-index ul {
 }
 
 .grid-cell-01 {
-  width: 30.9vw;
-  max-width: 30.9vw;
   grid-column: 1/2;
   padding: 0 0 0 11.46vw;
   align-items: baseline;
