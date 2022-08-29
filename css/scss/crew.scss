@@ -1,6 +1,12 @@
 @use 'tools';
 @use 'common';
 
+//$fb-middle-container-min-h: 271px;
+$h5-padding-bottom: 17.1vh;
+$nav-padding-top: 13.3vh;
+$fb-middle-container-h: calc(100% - $h5-padding-bottom - $nav-padding-top);
+$description-max-w: 30.4vw;
+
 @keyframes crew-img-animation {
     0%   {width: 0%;}
     25%  {width: 25%;}
@@ -13,17 +19,24 @@ html {
     @include tools.background(url("../assets/crew/background-crew-desktop.jpg"));
 }
 
-
 .crew-interact {
-    justify-content: space-between;
+    //justify-content: space-between;
+    h5 {
+        padding-bottom: $h5-padding-bottom;
+    }
     .crew-interact-fb-middle-container {
-        height: 30.11vh;
+        //box-sizing: initial;
+        height: 100%;
+        max-height: $fb-middle-container-h;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        .crew-role, .crew-description {
+            max-width: $description-max-w;
+        }
     }
     .crew-navbar {
-        padding: 0 0 10.44vh 0;
+        padding: $nav-padding-top 0 10.44vh 0;
         ul {
             min-width: 132px;
             width: 132px;

@@ -1,19 +1,24 @@
 @use 'tools';
 @use 'common';
 
-$content-padding-bottom-home: 14.56vh;
+$gc01-padding-right: 8.2vw;
+$content-padding-bottom: 14.56vh;
 
 html {
     @include tools.background;
 }
 
 .grid-content-home {
-    height: calc(tools.$main-h - $content-padding-bottom-home);
+    height: 100%;
+    padding-bottom: $content-padding-bottom;
     &>section {
         justify-content: flex-end;
     }
-    .gch-01 h1 {
-        padding: 24px 0;
+    .gch-01 {
+        padding-right: $gc01-padding-right;
+        h1 {
+            padding: 24px 0;
+        }
     }
     .gch-02 {
         button {
