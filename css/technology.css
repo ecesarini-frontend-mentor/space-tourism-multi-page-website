@@ -13,29 +13,33 @@
   }
 }
 @media screen and (max-width: 768px) {
-  header hr {
+  body header {
+    height: 10.67vh;
+    padding-top: unset;
+  }
+  body header hr {
     display: none;
   }
-  main .grid-content {
+  body main .grid-content {
     width: 100%;
     height: 100%;
     padding: 0 20.7vw;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  main .grid-content .grid-cell-01, main .grid-content .grid-cell-02 {
+  body main .grid-content .grid-cell-01, body main .grid-content .grid-cell-02 {
     grid-column: unset;
     max-width: unset;
     width: unset;
     height: unset;
     padding: 0;
   }
-  main .grid-content .grid-cell-01 {
+  body main .grid-content .grid-cell-01 {
     width: 58.6vw;
     height: 32.6vh;
     grid-row: 1/2;
   }
-  main .grid-content .grid-cell-02 {
+  body main .grid-content .grid-cell-02 {
     grid-row: 2/3;
   }
 }
@@ -274,26 +278,28 @@ html {
   -o-background-size: cover;
 }
 
-.tech-content-subgrid {
-  height: calc(100% - 58.56vh - 15.22vh);
+.grid-content {
+  height: 65.3vh;
+}
+.grid-content .tech-content-subgrid {
   padding-top: 15.22vh;
   display: grid;
   grid-template-columns: 5.56vw 32.64vw;
   column-gap: 5.56vw;
 }
-.tech-content-subgrid > * {
+.grid-content .tech-content-subgrid > * {
   height: 33.67vh;
 }
-.tech-content-subgrid nav {
+.grid-content .tech-content-subgrid nav {
   width: 100%;
 }
-.tech-content-subgrid nav ul {
+.grid-content .tech-content-subgrid nav ul {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.tech-content-subgrid nav ul li {
+.grid-content .tech-content-subgrid nav ul li {
   width: 80px;
   max-width: 80px;
   height: 80px;
@@ -305,33 +311,32 @@ html {
   border-radius: 50%;
   outline: 1px solid rgba(255, 255, 255, 0.5);
 }
-.tech-content-subgrid nav ul li:hover {
+.grid-content .tech-content-subgrid nav ul li:hover {
   cursor: pointer;
   outline-color: rgb(255, 255, 255);
 }
-.tech-content-subgrid nav ul .snte-current {
+.grid-content .tech-content-subgrid nav ul .snte-current {
   color: hsl(230deg, 35%, 7%);
   background-color: hsl(0deg, 0%, 100%);
 }
-.tech-content-subgrid .tech-content-sg-descr {
+.grid-content .tech-content-subgrid .tech-content-sg-descr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.tech-content-subgrid .tech-content-sg-descr .tech-term {
+.grid-content .tech-content-subgrid .tech-content-sg-descr .tech-term {
   text-transform: uppercase;
   font-size: 16px;
 }
-
-.tech-show {
+.grid-content .tech-show {
+  justify-content: flex-end;
   justify-self: flex-end;
-  align-self: flex-end;
 }
-.tech-show img {
-  padding-bottom: 11.22vh;
-  height: 58.56vh;
-  width: 35.76vw;
-  max-width: 35.76vw;
+.grid-content .tech-show img {
+  max-width: 35.8vw;
+  max-height: 58.6vh;
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=technology.css.map */

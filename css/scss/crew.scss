@@ -5,6 +5,7 @@
 $h5-padding-bottom: 17.1vh;
 $nav-padding-top: 13.3vh;
 $fb-middle-container-h: calc(100% - $h5-padding-bottom - $nav-padding-top);
+$fb-middle-container-crew-name-w: 42.6vw;
 $description-max-w: 30.4vw;
 
 @keyframes crew-img-animation {
@@ -33,6 +34,9 @@ html {
         justify-content: space-evenly;
         .crew-role, .crew-description {
             max-width: $description-max-w;
+        }
+        .crew-name {
+            min-width: $fb-middle-container-crew-name-w;
         }
     }
     .crew-navbar {

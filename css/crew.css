@@ -13,29 +13,33 @@
   }
 }
 @media screen and (max-width: 768px) {
-  header hr {
+  body header {
+    height: 10.67vh;
+    padding-top: unset;
+  }
+  body header hr {
     display: none;
   }
-  main .grid-content {
+  body main .grid-content {
     width: 100%;
     height: 100%;
     padding: 0 20.7vw;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  main .grid-content .grid-cell-01, main .grid-content .grid-cell-02 {
+  body main .grid-content .grid-cell-01, body main .grid-content .grid-cell-02 {
     grid-column: unset;
     max-width: unset;
     width: unset;
     height: unset;
     padding: 0;
   }
-  main .grid-content .grid-cell-01 {
+  body main .grid-content .grid-cell-01 {
     width: 58.6vw;
     height: 32.6vh;
     grid-row: 1/2;
   }
-  main .grid-content .grid-cell-02 {
+  body main .grid-content .grid-cell-02 {
     grid-row: 2/3;
   }
 }
@@ -303,6 +307,9 @@ html {
 }
 .crew-interact .crew-interact-fb-middle-container .crew-role, .crew-interact .crew-interact-fb-middle-container .crew-description {
   max-width: 30.4vw;
+}
+.crew-interact .crew-interact-fb-middle-container .crew-name {
+  min-width: 42.6vw;
 }
 .crew-interact .crew-navbar {
   padding: 13.3vh 0 10.44vh 0;
