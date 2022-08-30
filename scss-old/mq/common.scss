@@ -1,4 +1,4 @@
-@use 'tools';
+@use '../tools';
 
 
 // Refinements
@@ -34,6 +34,11 @@ $tab-navbar-h: 10.67vh;
             hr {
                 display: none;
             }
+        nav.nav-index {
+            .navbar-content-element a span:first-child { //:first-child get element from a list of siblings
+                display: none;
+            }
+        }
         }
   
         main {

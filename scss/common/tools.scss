@@ -1,0 +1,44 @@
+@use 'sass:string';
+
+//Global var
+$color-back: hsl(230, 35%, 7%);
+$color-head: hsl(231, 77%, 90%);
+$color-content: hsl(0, 0%, 100%);
+$color-body-text: hsl(231, 79%, 90%);
+$color-navbar-hover: rgba(255, 255, 255, 0.50);
+
+// Viewports
+$desktop-w: 1440px;
+$desktop-h: 900px;
+$tablet-w: 768px;
+$tablet-h: 1024px;
+$mobile-w: 365px;
+//$mobile-h: 667px;
+
+$nav-padding-top: 4.44vh;
+$nav-w: 57.64vw;
+$nav-h: calc($nav-padding-top + 10.67vh);
+$content-h5-h: 3.78vh;
+$content-padding-top: 8.44vh;
+
+$main-h: calc(100vh - $nav-h);
+$main-gc01-padding-left: 11.46vw;
+
+$font-bellefair: "Bellefair", sans-serif;
+$font-barlow: "Barlow", sans-serif;
+$font-barlowCondensed: 'Barlow Condensed', sans-serif; 
+
+
+@mixin background($vw, $page) {//$img: url("../assets/home/background-home-desktop.jpg")) {
+    $tg: string;
+    @if $vw >= $desktop-w {
+        $tg: 
+    }
+    background: $img no-repeat center center / cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+
+@mixin bac

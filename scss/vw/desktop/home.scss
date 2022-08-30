@@ -1,0 +1,44 @@
+//@use 'tools';
+//@use 'common';
+
+$gc01-padding-right: 8.2vw;
+$content-padding-bottom: 14.56vh;
+
+html {
+    @include tools.background;
+}
+
+.grid-content-home {
+    height: 100%;
+    padding-bottom: $content-padding-bottom;
+    &>section {
+        justify-content: flex-end;
+    }
+    .gch-01 {
+        padding-right: $gc01-padding-right;
+        h1 {
+            padding: 24px 0;
+        }
+    }
+    .gch-02 {
+        button {
+            font-family: inherit;
+            text-transform: uppercase;
+            width: 274px;
+            height: 274px;
+            background-color: tools.$color-content;
+            border-radius: 50%;
+            cursor: pointer;
+            outline: 0px solid;
+            transition: 0.3s ease-out;
+            &:hover {
+                outline: 88px solid rgba(255, 255, 255, 0.1036);
+            }
+            span {
+                font-size: 32px;
+                line-height: 37px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}
