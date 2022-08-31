@@ -16,15 +16,11 @@ $mobile-w: 365px;
 $nav-padding-top: 4.44vh;
 $nav-w: 57.64vw;
 $nav-h: calc($nav-padding-top + 10.67vh);
-//$nav-h: 10.67vh;
 $content-h5-h: 3.78vh;
-/*$content-h5-h: 18px;*/
 $content-padding-top: 8.44vh;
 
-//$main-h: calc(100vh - $nav-padding-top - $nav-h - $content-padding-top);
 $main-h: calc(100vh - $nav-h);
 $main-gc01-padding-left: 11.46vw;
-//$main-h: 100%;
 
 $font-bellefair: "Bellefair", sans-serif;
 $font-barlow: "Barlow", sans-serif;

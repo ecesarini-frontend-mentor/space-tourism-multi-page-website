@@ -1,5 +1,3 @@
-@use 'sass:string';
-
 //Global var
 $color-back: hsl(230, 35%, 7%);
 $color-head: hsl(231, 77%, 90%);
@@ -29,16 +27,28 @@ $font-barlow: "Barlow", sans-serif;
 $font-barlowCondensed: 'Barlow Condensed', sans-serif; 
 
 
-@mixin background($vw, $page) {//$img: url("../assets/home/background-home-desktop.jpg")) {
-    $tg: string;
-    @if $vw >= $desktop-w {
-        $tg: 
-    }
+@mixin background($img: url("../assets/home/background-home-desktop.jpg")) {
     background: $img no-repeat center center / cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
 }
 
-
-@mixin bac
+@mixin font-styler($max-vw: $desktop-w) {
+    @if $max-vw >= $desktop-w {
+        body {font-size: 18px;}
+        h1 {font-size: 150px;}
+        h2 {font-size: 100px;}
+        h3 {font-size: 56px;}
+        h4 {font-size: 50.42%}
+        h5 {font-size: 28px}
+        span {font-size: 16px}
+        .body-text {font-size: 18px;}
+        .subhead1 {font-size: 28px;}
+        .subhead2 {font-size: 14px;}
+    } @else if $max-vw < $desktop-w and $max-vw >= $mobile-w {
+        h5 {font-size: 20px;}
+        span {font-size: 14px;}
+        .body-text {font-size: 16px;}
+    }
+} 

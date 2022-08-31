@@ -64,9 +64,10 @@ export class PageClass {
         return src = jsonTgObj[jsonTgInd];
     }
 
-    async subnavUpdater(target) {
+    subnavUpdater(target) {
+        this.mqSubnavImgCheck();
         this.subnavInd = common.subnavMatcher(target, this.subnavUpdateStuff.tgClass);
-        this.imgTg.src = await this.subnavGetImgSrc(this.subnavInd);
+        this.imgTg.src = this.subnavGetImgSrc(this.subnavInd);
         
         const elemJSON = this.jData[this.subnavMatchProp][this.subnavInd];
 
