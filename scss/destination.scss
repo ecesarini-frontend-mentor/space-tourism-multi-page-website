@@ -2,7 +2,7 @@
 @use 'common';
 
 $grid-cell-01-h: 64vh;
-$grid-cell-02-h: 52.44vh;
+$grid-cell-02-h: 52.4vh;
 $grid-cell-img-padding-top: 10.7vh;
 $grid-cell-img-padding-left: 4.41vw;
 $grid-cell-content-padding-top-from-h5: 7.11vh;
@@ -26,7 +26,6 @@ html {
         height: 100%;
     }
     .destination-show {
-        //height: $grid-cell-01-h;
         .destination-img {
             padding: $grid-cell-img-padding-top 0 0 $grid-cell-img-padding-left;
             max-width: 30.9vw;
@@ -39,15 +38,11 @@ html {
     }
     .destination-interact {
         width: 30.9vw;
-        height: $grid-cell-02-h;
-        max-width: 30.9vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
         .digc-02-cont-01 {
             height: $grid-cell-02-h;
             display: flex;
             flex-direction: column;
+            justify-content: space-evenly;
             .destination-navbar ul {
                 width: 64%;
                 height: 100%;
@@ -85,4 +80,20 @@ html {
             }
         }
     }
+}
+
+// Media Query
+//Tab
+$tab-h5-padding-left: 5vw;
+@media screen and (max-width: tools.$tablet-w) {
+    html {
+        @include tools.background(url("../assets/destination/background-destination-tablet.jpg"));
+        body {
+            @include tools.font-styler($max-vw: tools.$tablet-w);
+            .grid-content-destination {
+                
+            }
+        }
+    }
+    
 }

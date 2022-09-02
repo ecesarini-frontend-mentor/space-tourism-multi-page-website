@@ -46,17 +46,20 @@ html {
 // Media Query
 
 //Tab
+$tab-content-padding: calc((100vw - tools.$tab-gc-01-w)/2);
 @media screen and (max-width: tools.$tablet-w) {
     html {
         @include tools.background(url("../assets/home/background-home-tablet.jpg"));
         body {
             @include tools.font-styler($max-vw: tools.$tablet-w);
-            .grid-content-home {
+            .grid-content.grid-content-home {
+                padding: 0 $tab-content-padding;
                 .gch-01 {
                     justify-content: flex-end;
                     .body-text {
                         text-align: center;
                     }
+                .gch-h5 {width: unset;}
                 }
             }
         }

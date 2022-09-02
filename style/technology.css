@@ -22,7 +22,7 @@ body h3 {
   font-size: 56px;
 }
 body h4 {
-  font-size: 50.42%;
+  font-size: 32px;
 }
 body h5 {
   font-size: 28px;
@@ -261,7 +261,6 @@ header .navbar-content-element span {
   body main .grid-content {
     width: 100%;
     height: 100%;
-    padding: 0 20.7vw;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
@@ -274,10 +273,12 @@ header .navbar-content-element span {
     padding: 0;
   }
   body main .grid-content .grid-cell-01 {
-    width: 58.6vw;
     height: 100%;
     grid-row: 1/2;
     align-items: center;
+  }
+  body main .grid-content .grid-cell-01 h5 {
+    width: 100%;
   }
   body main .grid-content .grid-cell-02 {
     grid-row: 2/3;

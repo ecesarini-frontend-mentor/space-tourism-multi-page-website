@@ -200,33 +200,25 @@ header {
     }
 }
 
-// Tablet
-$tab-gc-01-w: 58.6vw;
-$tab-gc-01-h: 32.6vh;
-$tab-content-padding: calc((100vw - $tab-gc-01-w)/2);
-$tab-navbar-h: 10.67vh;
-
 @media screen and (max-width: tools.$tablet-w) {
     body {
         header {
-            height: $tab-navbar-h;
+            height: tools.$tab-navbar-h;
             padding-top: unset;
-            hr {
-                display: none;
-            }
+            hr {display: none;}
             nav.nav-index {
-                .navbar-content-element a span:first-child { //:first-child get element from a list of siblings
+                .navbar-content-element a span:first-child { //selector ':first-child' gets element from a list of siblings
                     display: none;
                 }
             }
         }
         main {
-            height: calc(100% - $tab-navbar-h);
+            height: calc(100% - tools.$tab-navbar-h);
             padding: unset;
             .grid-content {
                 width: 100%;
                 height: 100%;
-                padding: 0 $tab-content-padding;
+                //padding: 0 tools.$tab-content-padding;
                 grid-template-columns: 1fr;
                 grid-template-rows: 1fr 1fr;
                 .grid-cell-01, .grid-cell-02 {
@@ -238,11 +230,14 @@ $tab-navbar-h: 10.67vh;
                     padding: 0;
                 }
                 .grid-cell-01 {
-                    width: $tab-gc-01-w;
-                    //height: $tab-gc-01-h;
+                    //width: tools.$tab-gc-01-w;
+                    //height: tools.$tab-gc-01-h;
                     height: 100%;
                     grid-row: 1/2;
                     align-items: center;
+                    h5 {
+                        width: 100%;
+                    }
                 }
                 .grid-cell-02 {
                     grid-row: 2/3;
