@@ -215,22 +215,32 @@ header {
         main {
             height: calc(100% - tools.$tab-navbar-h);
             padding: unset;
-            .grid-content.grid-to-fb-content {
-                * {
-                    padding: unset;
-                }
+            .grid-content {
                 width: 100%;
                 height: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                &>section {
+                //padding: 0 tools.$tab-content-padding;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                .grid-cell-01, .grid-cell-02 {
+                    justify-content: center;
+                    grid-column: unset;
+                    max-width: unset;
+                    width: unset;
                     height: unset;
+                    padding: 0;
+                }
+                .grid-cell-01 {
+                    //width: tools.$tab-gc-01-w;
+                    //height: tools.$tab-gc-01-h;
+                    height: 100%;
+                    grid-row: 1/2;
                     align-items: center;
-                    //justify-content: flex-end;
-                    .body-text {
-                        text-align: center;
+                    h5 {
+                        width: 100%;
                     }
+                }
+                .grid-cell-02 {
+                    grid-row: 2/3;
                 }
             }
         }

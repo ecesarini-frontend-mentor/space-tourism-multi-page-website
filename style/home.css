@@ -258,30 +258,22 @@ header .navbar-content-element span {
     height: calc(100% - 10.67vh);
     padding: unset;
   }
-  body main .grid-content {
+  body main .grid-content.grid-to-fb-content {
     width: 100%;
     height: 100%;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-  body main .grid-content .grid-cell-01, body main .grid-content .grid-cell-02 {
-    justify-content: center;
-    grid-column: unset;
-    max-width: unset;
-    width: unset;
-    height: unset;
-    padding: 0;
-  }
-  body main .grid-content .grid-cell-01 {
-    height: 100%;
-    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
-  body main .grid-content .grid-cell-01 h5 {
-    width: 100%;
+  body main .grid-content.grid-to-fb-content * {
+    padding: unset;
   }
-  body main .grid-content .grid-cell-02 {
-    grid-row: 2/3;
+  body main .grid-content.grid-to-fb-content > section {
+    height: unset;
+    align-items: center;
+  }
+  body main .grid-content.grid-to-fb-content > section .body-text {
+    text-align: center;
   }
 }
 html {
@@ -340,17 +332,20 @@ html {
   html body .body-text {
     font-size: 16px;
   }
-  html body .grid-content.grid-content-home {
-    padding: 0 20.7vw;
+  html body main {
+    padding: 2.3vh 0 8.8vh 0;
   }
-  html body .grid-content.grid-content-home .gch-01 {
-    justify-content: flex-end;
+  html body main .grid-to-fb-content.grid-content-home .gch-01 {
+    height: 37.11vh;
+    width: 58.6vw;
   }
-  html body .grid-content.grid-content-home .gch-01 .body-text {
-    text-align: center;
-  }
-  html body .grid-content.grid-content-home .gch-01 .gch-h5 {
-    width: unset;
+  html body main .grid-to-fb-content.grid-content-home .gch-02 {
+    width: 100%;
+    height: 100%;
+    /*.btn-explore {
+        width: $tab-content-gch02-dim;
+        height: $tab-content-gch02-dim;
+    }*/
   }
 }
 
