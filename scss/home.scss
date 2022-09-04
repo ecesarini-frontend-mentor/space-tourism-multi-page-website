@@ -46,40 +46,25 @@ html {
 // Media Query
 //Tab
 @media screen and (max-width: tools.$tablet-w) {
-    $main-padding-top: 11.8vh;
+    $main-padding: 10.4vh 0 8.8vh 0;
     $tab-content-gch01-h: 37.11vh;
     $tab-content-gch01-w: 58.6vw;
-    $tab-content-gch02-dim: 23.6vw;
-    $tab-content-padding-bottom: 8.8vh;
-    $tab-content-padding-tb-h1: 2.3vh;
 
     html {
         @include tools.background(url("../assets/home/background-home-tablet.jpg"));
         body {
             @include tools.font-styler($max-vw: tools.$tablet-w);
-            main {
-                //padding-top: $main-padding-top;
-                padding: $tab-content-padding-tb-h1 0 $tab-content-padding-bottom 0;
+            main.mq-tab.main-home {
+                padding: $main-padding;
                 .grid-to-fb-content.grid-content-home {
-                    //padding-bottom: $tab-content-padding-bottom;
-                    //padding: $tab-content-padding-tb-h1 0 $tab-content-padding-bottom 0;
+                    padding: unset;
                     .gch-01 {
                         height: $tab-content-gch01-h;
                         width: $tab-content-gch01-w;
-                        h1 {
-                            //padding: $tab-content-padding-tb-h1 0;
-                        }
                     }
                     .gch-02 {
                         width: 100%;
                         height: 100%;
-                        //justify-content: flex-end;
-                        /*.btn-explore {
-                            width: $tab-content-gch02-dim;
-                            height: $tab-content-gch02-dim;
-                        }*/
-                        //height: 100%;
-
                     }
                 }
             }

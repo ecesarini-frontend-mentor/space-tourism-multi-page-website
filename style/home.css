@@ -254,26 +254,32 @@ header .navbar-content-element span {
   body header nav.nav-index .navbar-content-element a span:first-child {
     display: none;
   }
-  body main {
+  body main.mq-tab {
     height: calc(100% - 10.67vh);
-    padding: unset;
+    padding: 2.8vh 0 0 0;
   }
-  body main .grid-content.grid-to-fb-content {
+  body main.mq-tab .grid-content.grid-to-fb-content {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  body main .grid-content.grid-to-fb-content * {
-    padding: unset;
+  body main.mq-tab .grid-content.grid-to-fb-content * {
+    padding: 0;
   }
-  body main .grid-content.grid-to-fb-content > section {
-    height: unset;
+  body main.mq-tab .grid-content.grid-to-fb-content > section {
+    width: 100%;
+    height: initial;
     align-items: center;
   }
-  body main .grid-content.grid-to-fb-content > section .body-text {
+  body main.mq-tab .grid-content.grid-to-fb-content > section .body-text {
     text-align: center;
+  }
+  body main.mq-tab .grid-content.grid-to-fb-content .grid-cell-01 .gc-01-h5 {
+    width: 100%;
+    padding-left: 5vw;
+    margin-bottom: 5.9vh;
   }
 }
 html {
@@ -332,20 +338,19 @@ html {
   html body .body-text {
     font-size: 16px;
   }
-  html body main {
-    padding: 2.3vh 0 8.8vh 0;
+  html body main.mq-tab.main-home {
+    padding: 10.4vh 0 8.8vh 0;
   }
-  html body main .grid-to-fb-content.grid-content-home .gch-01 {
+  html body main.mq-tab.main-home .grid-to-fb-content.grid-content-home {
+    padding: unset;
+  }
+  html body main.mq-tab.main-home .grid-to-fb-content.grid-content-home .gch-01 {
     height: 37.11vh;
     width: 58.6vw;
   }
-  html body main .grid-to-fb-content.grid-content-home .gch-02 {
+  html body main.mq-tab.main-home .grid-to-fb-content.grid-content-home .gch-02 {
     width: 100%;
     height: 100%;
-    /*.btn-explore {
-        width: $tab-content-gch02-dim;
-        height: $tab-content-gch02-dim;
-    }*/
   }
 }
 

@@ -84,14 +84,27 @@ html {
 
 // Media Query
 //Tab
-$tab-h5-padding-left: 5vw;
 @media screen and (max-width: tools.$tablet-w) {
+    $tab-gc-01-h: 37.5vh; 
+    $tab-gc-01-img-dim: 29.3vmax; 
+    $tab-gc-02-w: 74.6vw; 
     html {
         @include tools.background(url("../assets/destination/background-destination-tablet.jpg"));
         body {
             @include tools.font-styler($max-vw: tools.$tablet-w);
-            .grid-content-destination {
-                
+            main.mq-tab {
+                .grid-content.grid-to-fb-content.grid-content-destination {
+                    .grid-cell-01 {
+                        .destination-img {
+                            max-width: $tab-gc-01-img-dim;
+                            width: $tab-gc-01-img-dim;
+                            height: $tab-gc-01-img-dim;
+                        }
+                    }
+                    .grid-cell-02 {
+                        width: $tab-gc-02-w;
+                    }
+                }
             }
         }
     }

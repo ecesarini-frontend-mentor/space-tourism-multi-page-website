@@ -212,12 +212,12 @@ header {
                 }
             }
         }
-        main {
+        main.mq-tab {
             height: calc(100% - tools.$tab-navbar-h);
-            padding: unset;
+            padding: tools.$tab-content-padding;
             .grid-content.grid-to-fb-content {
                 * {
-                    padding: unset;
+                    padding: 0;
                 }
                 width: 100%;
                 height: 100%;
@@ -225,13 +225,21 @@ header {
                 flex-direction: column;
                 align-items: center;
                 &>section {
-                    height: unset;
+                    width: 100%;
+                    height: initial;
                     align-items: center;
-                    //justify-content: flex-end;
                     .body-text {
                         text-align: center;
                     }
                 }
+                .grid-cell-01 {
+                    .gc-01-h5 {
+                        width: 100%;
+                        padding-left: tools.$tab-cg-01-h5-padding-left;
+                        margin-bottom: tools.$tab-cg-01-h5-margin-bottom;
+                    }
+                }
+                .grid-cell-02 {}
             }
         }
     }
