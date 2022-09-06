@@ -215,6 +215,10 @@ header .navbar-content-element span {
   grid-template-columns: 1fr 1fr;
   color: inherit;
 }
+.grid-content .subnavbar {
+  display: flex;
+  justify-content: center;
+}
 
 .grid-cell-01 {
   grid-column: 1/2;
@@ -275,6 +279,9 @@ header .navbar-content-element span {
   }
   body main.mq-tab .grid-content.grid-to-fb-content > section .body-text {
     text-align: center;
+  }
+  body main.mq-tab .grid-content.grid-to-fb-content .mq-subnavbar.subnavbar {
+    width: 100%;
   }
   body main.mq-tab .grid-content.grid-to-fb-content .grid-cell-01 .gc-01-h5 {
     width: 100%;

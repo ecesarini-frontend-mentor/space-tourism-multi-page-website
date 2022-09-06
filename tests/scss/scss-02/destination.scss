@@ -38,7 +38,7 @@ html {
     }
     .destination-interact {
         width: 30.9vw;
-        .destination-interact-child-01 {
+        .digc-02-cont-01 {
             height: $grid-cell-02-h;
             display: flex;
             flex-direction: column;
@@ -63,7 +63,7 @@ html {
                 }
             }
         }
-        .destination-interact-child-02 {
+        .digc-02-cont-02 {
             .destination-interact-subgrid {
                 width: 100%;
                 //min-height: 18.85%;
@@ -98,33 +98,27 @@ html {
             @include tools.font-styler($max-vw: tools.$tablet-w);
             main.mq-tab {
                 .grid-content.grid-to-fb-content.grid-content-destination {
-                    .destination-show.grid-cell-01 {
+                    .grid-cell-01 {
                         .destination-img {
                             height: $tab-gc-01-img-dim;
                             max-width: $tab-gc-01-img-dim;
                             width: $tab-gc-01-img-dim;
                         }
                     }
-                    .destination-interact.grid-cell-02 {
+                    .grid-cell-02 {
                         height: 100%;
                         width: $tab-gc-02-w;
-                        padding: $tab-gc-02-padding-top 0 $tab-gc-02-padding-bottom 0;
-                        .destination-interact-child {
+                        //padding: $tab-gc-02-padding;
+                        /*&>div {
                             height: 100%;
                             width: 100%;
+                        }*/
+                        .destination-navbar ul {
+                            width: $tab-subnav-w;                            
                         }
-                        .destination-interact-child-01 {
+                        .digc-02-cont-01 {
                             align-items: center;
-                            //padding: $tab-gc-02-padding;
-                            //&>div {
-                            //  height: 100%;
-                            //  width: 100%;
-                            //}
-                            .destination-navbar ul {
-                                width: $tab-subnav-w;                            
-                            }
                         }
-                        .destination-interact-child-02 {}
                     }
                 }
             }
