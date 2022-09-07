@@ -45,13 +45,19 @@ $tab-content-padding: 2.8vh 0 0 0;
     -o-background-size: cover;
 }
 
+//@mixin img-page($img) {
+//    background: $img no-repeat center center / cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
+//    -webkit-background-size: cover;
+//    -moz-background-size: cover;
+//    -o-background-size: cover;
+//}
+
 @mixin font-styler($max-vw: $desktop-w) {
     @if $max-vw >= $desktop-w {
         body {font-size: 18px;}
         h1 {font-size: 150px;}
         h2 {font-size: 100px;}
         h3 {font-size: 56px;}
-        //h4 {font-size: 50.42%}
         h4 {font-size: 32px;}
         h5 {font-size: 28px;}
         ul span {font-size: 16px;}
@@ -59,6 +65,8 @@ $tab-content-padding: 2.8vh 0 0 0;
         .subhead1 {font-size: 28px;}
         .subhead2 {font-size: 14px;}
     } @else if $max-vw < $desktop-w and $max-vw >= $mobile-w {
+        h3 { font-size: 40px; }
+        h4 { font-size: 24px; }
         h5, .h5-span-number {font-size: 20px;}
         span {font-size: 14px;}
         .body-text {font-size: 16px;}

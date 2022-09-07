@@ -374,6 +374,12 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
   }
+  html body h3 {
+    font-size: 40px;
+  }
+  html body h4 {
+    font-size: 24px;
+  }
   html body h5, html body .h5-span-number {
     font-size: 20px;
   }
@@ -394,14 +400,25 @@ html {
     padding: 5.2vh 0 6.1vh 0;
   }
   html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 .destination-interact-child {
-    height: 100%;
     width: 100%;
+    align-items: center;
   }
   html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 .destination-interact-child-01 {
-    align-items: center;
+    height: 100%;
   }
   html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 .destination-interact-child-01 .destination-navbar ul {
     width: 37.2vw;
+  }
+  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 .destination-interact-child-02 {
+    height: 8.8vh;
+  }
+  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 .destination-interact-child-02 .destination-interact-subgrid .dis-subgrid-fb {
+    padding: 0;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 .destination-interact-child-02 .destination-interact-subgrid .dis-subgrid-fb span:nth-child(1) {
+    margin-bottom: 1.2vh;
   }
 }
 

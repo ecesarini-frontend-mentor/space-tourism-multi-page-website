@@ -336,6 +336,12 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
   }
+  html body h3 {
+    font-size: 40px;
+  }
+  html body h4 {
+    font-size: 24px;
+  }
   html body h5, html body .h5-span-number {
     font-size: 20px;
   }
