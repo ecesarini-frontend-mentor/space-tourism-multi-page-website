@@ -27,7 +27,7 @@ html {
             .crew-interact-fb-middle-container {
                 //box-sizing: initial;
                 height: 100%;
-                max-height: $fb-middle-container-h;
+                //max-height: $fb-middle-container-h;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
@@ -87,6 +87,8 @@ html {
 // Media Query
 //Tab
 @media screen and (max-width: tools.$tablet-w) {
+    $tab-gc-01-h: 22.7vh;
+    $tab-gc-01-w: 59.6vw;
     /*$tab-gc-01-img-dim: 29.3vmax; 
     $tab-gc-02-w: 74.6vw;
     $tab-gc-02-padding-top: 5.2vh;
@@ -98,7 +100,16 @@ html {
         @include tools.background(url("../assets/crew/background-crew-tablet.jpg"));
         body {
             @include tools.font-styler($max-vw: tools.$tablet-w);
-            main.mq-tab { }
+            main.mq-tab {
+                .grid-content.grid-to-fb-content.grid-content-crew {
+                    .grid-cell-01 {
+                        .crew-interact-fb-middle-container {
+                            height: $tab-gc-01-h;
+                            width: $tab-gc-01-w;
+                        }
+                    }
+                }
+            }
         }
     }
 }

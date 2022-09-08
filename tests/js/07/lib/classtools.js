@@ -1,23 +1,26 @@
 import * as common from "./common.js";
 
 export class PageClass {
-    imgPage = document.querySelector('.img-page');
     subnavInd = 0;
     subnavImgIndex = undefined;
     mqWidthMatch = window.matchMedia('(max-width: 768px)');
     jData = undefined;
     constructor(
             jFetch,
+            htmlPageTarget,
             subnavMatchProp,
             subnavTg, 
             subnavCurrent,
+            imgTg,
             jsonTransform,
             subnavUpdateStuff            
         ) {
             this.jFetch = jFetch;
+            this.htmlPageTarget = htmlPageTarget;
             this.subnavMatchProp = subnavMatchProp;
             this.subnavTg = subnavTg;
             this.subnavCurrent = subnavCurrent;
+            this.imgTg = imgTg;
             this.jsonTransform = jsonTransform;
             this.subnavUpdateStuff = subnavUpdateStuff;
 
@@ -26,7 +29,6 @@ export class PageClass {
 
     async init() {
         this.jData = await this.jFetch;
-        this.jData = await this.jData[this.subnavMatchProp];
         this.eventsListener();
     }
     
@@ -37,22 +39,26 @@ export class PageClass {
     }
     eventsLoad = (e) => {
         this.mqSubnavImgCheck();
-        this.imgPage.src = this.subnavGetImgSrc(this.subnavInd);
     }
     eventsClick = (e) => {
         this.subnavUpdater(e.currentTarget);
     }
     eventsChange = (e) => {
         this.mqSubnavImgCheck();
-        this.imgPage.src = this.subnavGetImgSrc(this.subnavInd);
+        this.imgTg.src = this.subnavGetImgSrc(this.subnavInd);
     }
 
     mqSubnavImgCheck() {
         this.subnavImgIndex = this.mqWidthMatch.matches? 1: 0;
     }
+    jsonGetPageRef() {
+        const j = this.htmlPageTarget.split('.')[0];
+        return j;
+    }
     subnavGetImgSrc(ind) {
         let src = undefined;
-        const jsonTgObj = this.jData[ind]['images'],
+        const jsonToPage = this.jsonGetPageRef(),
+            jsonTgObj = this.jData[jsonToPage][ind]['images'],
             jsonTgInd = Object.keys(jsonTgObj)[this.subnavImgIndex];
 
         return src = jsonTgObj[jsonTgInd];
@@ -61,18 +67,21 @@ export class PageClass {
     subnavUpdater(target) {
         this.mqSubnavImgCheck();
         this.subnavInd = common.subnavMatcher(target, this.subnavUpdateStuff.tgClass);
-        this.imgPage.src = this.subnavGetImgSrc(this.subnavInd);
+        this.imgTg.src = this.subnavGetImgSrc(this.subnavInd);
         
-        const elemJSON = this.jData[this.subnavInd];
+        const elemJSON = this.jData[this.subnavMatchProp][this.subnavInd];
 
         this.subnavCurrent.classList.remove(this.subnavUpdateStuff.tgCurrentClass);
         target.classList.add(this.subnavUpdateStuff.tgCurrentClass);
         this.subnavCurrent = target;
-        this.imgPage.classList.remove(this.subnavUpdateStuff.animationClass);        
-        window.requestAnimationFrame(() => this.imgPage.classList.add(this.subnavUpdateStuff.animationClass));        
+        this.imgTg.classList.remove(this.subnavUpdateStuff.animationClass);        
+        window.requestAnimationFrame(() => this.imgTg.classList.add(this.subnavUpdateStuff.animationClass));        
 
-        this.jsonTransform.forEach((jdt) => { 
-            jdt.ref.innerText = elemJSON[jdt.k];
-        });
+
+        this.jsonTransform.forEach((jdt) => { //, jInd) => {
+            if(jdt.k !== 'images') {
+                jdt.ref.innerText = elemJSON[jdt.k];
+            }
+        });        
     }
 }
