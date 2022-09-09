@@ -17,19 +17,26 @@ class PageClassCrew extends classTools.PageClass {
             subnavTg, 
             subnavCurrent,
             jsonTransform,
-            subnavUpdateStuff,
+            subnavUpdateStuff
             ) 
         }
+
+    eventsListener() {
+        super.eventsListener();
+        window.addEventListener('load', this.eventsLoadCrew);
+        this.mqWidthMatch.addEventListener('change', this.eventsChangeCrew);
+    }
+    eventsLoadCrew = () => {
+        this.subnavAppend();
+    }
+    eventsChangeCrew = () => {
+        this.subnavAppend();
+    }
+
     subnavAppend() {
-        if(this.mqWidthMatch) document.querySelector('.crew-interact-fb-middle-container').append(document.querySelector('.subnavbar'));
-    }
-    eventsLoad = (e) => {
-        super.eventsLoad();
-        this.subnavAppend();
-    }
-    eventsChange = (e) => {
-        super.eventsChange();
-        this.subnavAppend();
+        if(this.mqWidthMatch) {
+            document.querySelector('.crew-interact-fb-middle-container').append(document.querySelector('.subnavbar'));
+        }
     }
 }
 
@@ -47,7 +54,7 @@ class PageClassCrew extends classTools.PageClass {
         subnavUpdateStuff = common.subnavUpdateStuffObj(['snce', 'snce-current', 'crew-img-animation']);
 
     //new classTools.PageClass(
-    new PageClassCrew(
+    const pcc = new PageClassCrew(
         jFetch,
         subnavMatchProp,
         subnavTg,
@@ -55,4 +62,5 @@ class PageClassCrew extends classTools.PageClass {
         jsonTransform,
         subnavUpdateStuff
     );
+//    console.log('debug');
 })();

@@ -205,9 +205,10 @@ header {
 }
 
 @media screen and (max-width: tools.$tablet-w) {
+    $tab-navbar-h: 9.4vh;
     body {
         header {
-            height: tools.$tab-navbar-h;
+            height: $tab-navbar-h;
             padding-top: unset;
             hr {display: none;}
             nav.nav-index {

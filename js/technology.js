@@ -14,7 +14,7 @@ import * as classTools from "./lib/classtools.js";
         ],
         subnavUpdateStuff = common.subnavUpdateStuffObj(['snte', 'snte-current', 'tech-img-animation']);
     
-    new classTools.PageClass(
+    let pc = new classTools.PageClass(
         jFetch,
         subnavMatchProp,
         subnavTg,
@@ -22,4 +22,5 @@ import * as classTools from "./lib/classtools.js";
         jsonTransform,
         subnavUpdateStuff
     );
+    //debugger;
 })();

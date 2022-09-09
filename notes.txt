@@ -9,6 +9,16 @@
   Check: https://stackoverflow.com/questions/64436532/javascript-class-property-inside-vs-outside-constructor.
   The difference is about methods: a method is associated to the Class and not to the Object, so if you assign a field 'myField',
   it doesn't belong to Class but to 'const myObj = new MyClass()': 'myObj.myField' ok, 'MyClass.myField' undefined. (https://it.javascript.info/class#proprieta-di-una-classe)
+- Reference to './js/crew.js': 
+    *Cosa ho imparato oggi:
+    - Estendere una classe con metodi che hanno arrow functions (non possono usare super al loro interno);
+    - Ho sovrascritto tramite 'super' la classe che vuole richiamare questi metodi; trattandosi di gestori di eventi e' necessario 
+      impostare le callback come 'arrow functions' altrimenti si avrebbe errore undefined utilizzando 'this.callback'
+    - Dopo aver richiamato 'super.eventHandler()' nel metodo ho aggiunto nella classe figlio nuovi metodi rinonminati: essendo il metodo 'childEvenetHandler'
+      dichiratao come funzione 'non arrow' puo' utilizzare 'super' per ereditare dalla classe generatrice
+    - Le callback nelle funzioni dopo 'super.parentEventHandler()' possono richiamare i metodi presenti nella classe figlio, che dovendo gestire eventi,
+      necessita di utilizzare this, quindi questi metodi sono dichiarati nuovamente come 'arrow functions'.
+
 
   - Dig into 404 error loading img reference in content element: it depends on "classtools.js.PageClass@"subnavUpdater": 
     need to make it 'async' and 'await' for this.imgTgSrc otherwise you'll get errors from server like:

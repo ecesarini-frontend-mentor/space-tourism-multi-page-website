@@ -249,7 +249,7 @@ header .navbar-content-element span {
 }
 @media screen and (max-width: 768px) {
   body header {
-    height: 10.67vh;
+    height: 9.4vh;
     padding-top: unset;
   }
   body header hr {
