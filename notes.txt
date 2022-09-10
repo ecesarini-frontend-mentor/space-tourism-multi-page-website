@@ -18,6 +18,9 @@
       dichiratao come funzione 'non arrow' puo' utilizzare 'super' per ereditare dalla classe generatrice
     - Le callback nelle funzioni dopo 'super.parentEventHandler()' possono richiamare i metodi presenti nella classe figlio, che dovendo gestire eventi,
       necessita di utilizzare this, quindi questi metodi sono dichiarati nuovamente come 'arrow functions'.
+    
+    - La classe estesa 'PageClassCrew' necessita di un'attivazione, infatti invocandola con new si ha riferimento a 'PageClass' che ha un suo 'init()' nel costruttore,
+      occorre richiamare il controllo dell'azione inserendo nel suo costruttore un richiamo alla funzione che governa i task in questa classe ('evensListener').
 
 
   - Dig into 404 error loading img reference in content element: it depends on "classtools.js.PageClass@"subnavUpdater": 

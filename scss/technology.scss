@@ -14,8 +14,6 @@ $tech-img-w: 35.8vw;
 $tech-img-h: 58.6vh;
 $grid-content-h: calc($h5-h + $h5-to-tech-img-gap + $tech-img-h);
 
-//$tech-img-w: 35.76vw;
-//$tech-img-padding-bottom: 11.22vh;
 
 $color-subnavbar-current: hsla(230, 35%, 7%);
 
@@ -26,7 +24,6 @@ html {
 .grid-content {
     height: $grid-content-h;
     .tech-content-subgrid {
-        //height: calc(100% - $subgrid-h - $subgrid-padding-top);
         $color-head: $subgrid-h;
         padding-top: $subgrid-padding-top;
         display: grid;
@@ -77,13 +74,38 @@ html {
     .tech-show {
         justify-content: flex-end;
         justify-self: flex-end;
-        //align-self: flex-end;
         img {
-            //width: 100%;
             max-width: $tech-img-w;
             max-height: $tech-img-h;
             width: 100%;
             height: 100%;
+        }
+    }
+}
+
+// Media Query
+//Tab
+@media screen and (max-width: tools.$tablet-w) {
+    /*$tab-gc-01-h: 22.7vh;
+    $tab-gc-01-w: 59.6vw;
+    $tab-gc-01-subnav-h: 1vh;
+    $tab-gc-02-padding-top: 3.9vh;
+    $tab-gc-02-img-w: 59.4vw;
+    $tab-gc-02-img-h: 55vh;*/
+    html {
+        @include tools.background(url("../assets/technology/background-technology-tablet.jpg"));
+        body {
+            @include tools.font-styler($max-vw: tools.$tablet-w);
+            main.mq-tab {
+                .grid-content.grid-to-fb-content.grid-content-crew {
+                    .grid-cell-01 {
+                        order: 3;
+                    }
+                    .grid-cell-02 {
+                        order: 2;
+                    }
+                }
+            }
         }
     }
 }

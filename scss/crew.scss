@@ -20,14 +20,11 @@ html {
     @include tools.background(url("../assets/crew/background-crew-desktop.jpg"));
     main {
         .crew-interact {
-            //justify-content: space-between;
             h5 {
                 padding-bottom: $h5-padding-bottom;
             }
             .crew-interact-fb-middle-container {
-                //box-sizing: initial;
                 height: 100%;
-                //max-height: $fb-middle-container-h;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
@@ -103,6 +100,7 @@ html {
                         .crew-interact-fb-middle-container {
                             height: $tab-gc-01-h;
                             width: $tab-gc-01-w;
+                            justify-content: space-between;
                             text-align: center;
                             &>* {
                                 max-width: $tab-gc-01-w;
@@ -122,13 +120,10 @@ html {
                         }
                     }
                     .grid-cell-02 {
-                        //height: $tab-gc-02-img-h;
                         height: 100%;
                         max-width: $tab-gc-02-img-w;
                         padding-top: $tab-gc-02-padding-top;
                         overflow-y: hidden;
-                        .crew-img {
-                        }
                     }
                 }
             }

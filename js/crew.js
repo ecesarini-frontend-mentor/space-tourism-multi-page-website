@@ -19,8 +19,9 @@ class PageClassCrew extends classTools.PageClass {
             jsonTransform,
             subnavUpdateStuff
             ) 
+            this.eventsListener();
         }
-
+    
     eventsListener() {
         super.eventsListener();
         window.addEventListener('load', this.eventsLoadCrew);

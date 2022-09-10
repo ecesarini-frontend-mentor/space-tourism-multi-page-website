@@ -259,7 +259,7 @@ header .navbar-content-element span {
     display: none;
   }
   body main.mq-tab {
-    height: calc(100% - 10.67vh);
+    height: calc(100% - 9.4vh);
     padding: 2.8vh 0 0 0;
   }
   body main.mq-tab .grid-content.grid-to-fb-content {
@@ -388,6 +388,8 @@ html {
   }
   html body .body-text {
     font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.3px;
   }
   html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-show.grid-cell-01 .destination-img {
     height: 29.3vmax;
