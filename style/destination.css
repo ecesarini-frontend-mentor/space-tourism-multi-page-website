@@ -42,7 +42,7 @@ body .subhead2 {
 
 main {
   width: 100%;
-  height: 84.89vh;
+  height: 84.96vh;
   padding-top: 8.44vh;
 }
 
@@ -132,7 +132,7 @@ p {
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
   width: 100%;
-  height: 15.11vh;
+  height: 15.04vh;
   display: flex;
   padding-top: 4.44vh;
   justify-content: space-between;
@@ -208,38 +208,36 @@ header .navbar-content-element span {
 }
 
 /* Main content */
-.grid-content {
+main .main-h5 {
+  height: 3.78vh;
   width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  padding-left: 11.56vw;
+}
+main .main-h5 .h5-span-number {
+  font-weight: 700;
+  opacity: 0.25;
+}
+main .content {
+  width: 100%;
+  display: flex;
   color: inherit;
 }
-.grid-content .subnavbar {
+main .content .fb-cell-01, main .content .fb-cell-02 {
+  height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
-
-.grid-cell-01 {
-  grid-column: 1/2;
+main .content .fb-cell-01 {
   width: 100%;
   padding-left: 11.46vw;
   align-items: baseline;
 }
-.grid-cell-01 .h5-span-number {
-  font-weight: 700;
-  opacity: 0.25;
-}
-
-.grid-cell-02 {
-  grid-column: 2/3;
+main .content .fb-cell-02 {
   justify-self: center;
 }
-
-.grid-cell-01, .grid-cell-02 {
-  height: 100%;
+main .content .fb-cell-02 .subnavbar {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1200px) {
@@ -262,28 +260,28 @@ header .navbar-content-element span {
     height: calc(100% - 9.4vh);
     padding: 2.8vh 0 0 0;
   }
-  body main.mq-tab .grid-content.grid-to-fb-content {
+  body main.mq-tab .content.content-to-fb {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  body main.mq-tab .grid-content.grid-to-fb-content * {
+  body main.mq-tab .content.content-to-fb * {
     padding: 0;
   }
-  body main.mq-tab .grid-content.grid-to-fb-content > section {
+  body main.mq-tab .content.content-to-fb > section {
     width: 100%;
     height: initial;
     align-items: center;
   }
-  body main.mq-tab .grid-content.grid-to-fb-content > section .body-text {
+  body main.mq-tab .content.content-to-fb > section .body-text {
     text-align: center;
   }
-  body main.mq-tab .grid-content.grid-to-fb-content .mq-subnavbar.subnavbar {
+  body main.mq-tab .content.content-to-fb .mq-subnavbar.subnavbar {
     width: 100%;
   }
-  body main.mq-tab .grid-content.grid-to-fb-content .grid-cell-01 .gc-01-h5 {
+  body main.mq-tab .content.content-to-fb .fb-cell-01 .content-h5 {
     width: 100%;
     padding-left: 5vw;
     margin-bottom: 5.9vh;
@@ -313,28 +311,38 @@ html {
     width: 100%;
   }
 }
-.grid-content > section {
-  height: 100%;
+main .content {
+  height: 59.5vh;
 }
-.grid-content .destination-show .destination-img {
-  padding: 10.7vh 0 0 4.41vw;
+main .content .fb-cell-01.destination-show {
+  height: 100%;
+  max-width: 46.9vw;
+  align-self: center;
+}
+main .content .fb-cell-01.destination-show .destination-img {
   max-width: 30.9vw;
   width: 100%;
+  margin: auto 0 0 auto;
 }
-.grid-content .destination-show .destination-img-animation {
+main .content .fb-cell-01.destination-show .destination-img-animation {
   animation-name: destination-img-animation;
   animation-duration: 0.5s;
 }
-.grid-content .destination-interact {
+main .content .fb-cell-02.destination-interact {
+  height: 100%;
   width: 30.9vw;
+  margin: 0 11.3vw 0 auto;
+  padding-top: 7.1vh;
 }
-.grid-content .destination-interact .destination-interact-child-01 {
-  height: 52.4vh;
+main .content .fb-cell-02.destination-interact .destination-interact-child-01 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.grid-content .destination-interact .destination-interact-child-01 .destination-navbar ul {
+main .content .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar {
+  justify-content: flex-start;
+}
+main .content .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar ul {
   width: 64%;
   height: 100%;
   min-height: 31px;
@@ -342,25 +350,25 @@ html {
   justify-content: space-between;
   color: hsl(231deg, 79%, 90%);
 }
-.grid-content .destination-interact .destination-interact-child-01 .destination-navbar ul .subnavbar-destination-element {
+main .content .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar ul .subnavbar-destination-element {
   cursor: pointer;
 }
-.grid-content .destination-interact .destination-interact-child-01 .destination-navbar ul .subnavbar-destination-element.snde-current {
+main .content .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar ul .subnavbar-destination-element.snde-current {
   color: hsl(0deg, 0%, 100%);
   border-bottom: 3px solid hsl(0deg, 0%, 100%);
 }
-.grid-content .destination-interact .destination-interact-child-01 .destination-navbar ul .subnavbar-destination-element:hover {
+main .content .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar ul .subnavbar-destination-element:hover {
   color: rgba(255, 255, 255, 0.5);
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
-.grid-content .destination-interact .destination-interact-child-02 .destination-interact-subgrid {
+main .content .fb-cell-02.destination-interact .destination-interact-child-02 .destination-interact-subgrid {
   width: 100%;
   height: 9.9vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
-.grid-content .destination-interact .destination-interact-child-02 .destination-interact-subgrid div {
+main .content .fb-cell-02.destination-interact .destination-interact-child-02 .destination-interact-subgrid div {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -391,35 +399,35 @@ html {
     line-height: 28px;
     letter-spacing: 0.3px;
   }
-  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-show.grid-cell-01 .destination-img {
+  html body main.mq-tab .content.content-to-fb.content-destination .destination-show.fb-cell-01 .destination-img {
     height: 29.3vmax;
     max-width: 29.3vmax;
     width: 29.3vmax;
   }
-  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 {
+  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 {
     height: 100%;
     width: 74.6vw;
     padding: 5.2vh 0 6.1vh 0;
   }
-  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 .destination-interact-child {
+  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child {
     width: 100%;
     align-items: center;
   }
-  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 .destination-interact-child-01 {
+  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-01 {
     height: 100%;
   }
-  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 .destination-interact-child-01 .destination-navbar ul {
+  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-01 .destination-navbar ul {
     width: 37.2vw;
   }
-  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 .destination-interact-child-02 {
+  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-02 {
     height: 8.8vh;
   }
-  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 .destination-interact-child-02 .destination-interact-subgrid .dis-subgrid-fb {
+  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-02 .destination-interact-subgrid .dis-subgrid-fb {
     padding: 0;
     justify-content: flex-end;
     align-items: center;
   }
-  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-destination .destination-interact.grid-cell-02 .destination-interact-child-02 .destination-interact-subgrid .dis-subgrid-fb span:nth-child(1) {
+  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-02 .destination-interact-subgrid .dis-subgrid-fb span:nth-child(1) {
     margin-bottom: 1.2vh;
   }
 }

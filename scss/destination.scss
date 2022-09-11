@@ -1,12 +1,21 @@
 @use 'tools';
 @use 'common';
 
-$grid-cell-01-h: 64vh;
+
+//$grid-cell-01-h: 64vh;
 $grid-cell-02-h: 52.4vh;
-$grid-cell-img-padding-top: 10.7vh;
-$grid-cell-img-padding-left: 4.41vw;
-$grid-cell-content-padding-top-from-h5: 7.11vh;
+//$grid-cell-img-padding-top: 10.7vh;
+//$grid-cell-img-padding-left: 4.41vw;
+//$grid-cell-content-padding-top-from-h5: 7.11vh;
 $grid-cell-02-subgrid-h: 9.9vh;
+
+
+$fb-cell-01-padding-left: 16vw;
+$dest-image-dim: 30.9vw; 
+$fb-cell-02-h: 52.4vh;
+$fb-cell-02-w: 30.9vw;
+$fb-cell-02-padding-top: 7.1vh;
+$fb-cell-02-margin-right: 11.3vw;
 
 html {
     @include tools.background(url("../assets/destination/background-destination-desktop.jpg"));
@@ -19,62 +28,72 @@ html {
     75%  {width: 75%;}
     100% {width: 100%;}    
 }
-
-.grid-content {
-    &>section {
-        height: 100%;
-    }
-    .destination-show {
-        .destination-img {
-            padding: $grid-cell-img-padding-top 0 0 $grid-cell-img-padding-left;
-            max-width: 30.9vw;
-            width: 100%;
+main {
+    .content {
+        height: calc($fb-cell-02-h + $fb-cell-02-padding-top);
+        .fb-cell-01.destination-show {
+            height: 100%;
+            max-width: calc($fb-cell-01-padding-left + $dest-image-dim);
+            align-self: center;
+            .destination-img {
+                //padding: $grid-cell-img-padding-top 0 0 $grid-cell-img-padding-left;
+                //padding: $grid-cell-img-padding-top 0 0 $grid-cell-img-padding-left;
+                max-width: 30.9vw;
+                width: 100%;
+                margin: auto 0 0 auto;
+            }
+            .destination-img-animation {
+                animation-name: destination-img-animation;
+                animation-duration: 0.5s;
+            }
         }
-        .destination-img-animation {
-            animation-name: destination-img-animation;
-            animation-duration: 0.5s;
-        }
-    }
-    .destination-interact {
-        width: 30.9vw;
-        .destination-interact-child-01 {
-            height: $grid-cell-02-h;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            .destination-navbar ul {
-                width: 64%;
-                height: 100%;
-                min-height: 31px;
+        .fb-cell-02.destination-interact {
+            height: 100%;
+            width: 30.9vw;
+            margin: 0 $fb-cell-02-margin-right 0 auto;
+            padding-top: $fb-cell-02-padding-top;
+            //padding-right: $fb-cell-02-padding-right;
+            .destination-interact-child-01 {
+                //height: $grid-cell-02-h;
                 display: flex;
-                justify-content: space-between;
-                color: tools.$color-body-text;
-                .subnavbar-destination-element {
-                    cursor: pointer;
-                    &.snde-current {
-                        color: tools.$color-content;
-                        border-bottom: 3px solid tools.$color-content;
-                    }
-                    &:hover {
-                        color: tools.$color-navbar-hover;
-                        border-bottom: 2px solid tools.$color-navbar-hover;
+                flex-direction: column;
+                justify-content: space-evenly;
+                .destination-navbar {
+                    justify-content: flex-start;
+                    ul {
+                        width: 64%;
+                        height: 100%;
+                        min-height: 31px;
+                        display: flex;
+                        justify-content: space-between;
+                        color: tools.$color-body-text;
+                        .subnavbar-destination-element {
+                            cursor: pointer;
+                            &.snde-current {
+                                color: tools.$color-content;
+                                border-bottom: 3px solid tools.$color-content;
+                            }
+                            &:hover {
+                                color: tools.$color-navbar-hover;
+                                border-bottom: 2px solid tools.$color-navbar-hover;
+                            }
+                        }
                     }
                 }
             }
-        }
-        .destination-interact-child-02 {
-            .destination-interact-subgrid {
-                width: 100%;
-                //min-height: 18.85%;
-                height: $grid-cell-02-subgrid-h;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                border-top: 1px solid tools.$color-navbar-hover;
-                div {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    padding: 5.93% 0 0 0;
+            .destination-interact-child-02 {
+                .destination-interact-subgrid {
+                    width: 100%;
+                    height: $grid-cell-02-subgrid-h;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    border-top: 1px solid tools.$color-navbar-hover;
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        padding: 5.93% 0 0 0;
+                    }
                 }
             }
         }
@@ -96,15 +115,15 @@ html {
         body {
             @include tools.font-styler($max-vw: tools.$tablet-w);
             main.mq-tab {
-                .grid-content.grid-to-fb-content.grid-content-destination {
-                    .destination-show.grid-cell-01 {
+                .content.content-to-fb.content-destination {
+                    .destination-show.fb-cell-01 {
                         .destination-img {
                             height: $tab-gc-01-img-dim;
                             max-width: $tab-gc-01-img-dim;
                             width: $tab-gc-01-img-dim;
                         }
                     }
-                    .destination-interact.grid-cell-02 {
+                    .destination-interact.fb-cell-02 {
                         height: 100%;
                         width: $tab-gc-02-w;
                         padding: $tab-gc-02-padding-top 0 $tab-gc-02-padding-bottom 0;

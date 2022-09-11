@@ -9,73 +9,43 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="./css/destination.css">
+  <link rel="stylesheet" href="./style/destination.css">
   
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 <body>
-  <header>
-    <a href="./index.html">
-      <img alt="Logo. Back home." src="./assets/shared/logo.svg">
-    </a>
-    <hr>
-    <nav class="nav-index navtext">
-      <ul>
-        <li class="navbar-content-element">
-          <a href="./index.html">
-            <span>00<br></span> 
-            <span>Home</span>
-          </a>
-        </li>
-        <li class="navbar-content-element">
-          <a href="./destination.html">
-            <span>01</span> 
-            <span>Destination</span>           
-          </a>
-        </li>
-        <li class="navbar-content-element">
-          <a href="./crew.html">
-            <span>02</span> 
-            <span>Crew</span>           
-          </a>
-        </li>
-        <li class="navbar-content-element">
-          <a href="./technology.html">
-            <span>03</span> 
-            <span>Technology</span>           
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
   
-  <main>
-    <div class="destination grid-content">
+  <main class="mq-tab mq-mobile">
+    <div class="grid-content grid-to-fb-content grid-content-destination destination">
       <section class="destination-show grid-cell-01">
-        <h5>
+        <h5 class="gc-01-h5">
           <span class="h5-span-number">01</span> Pick your destination
         </h5>
-        <img class="destination-img destination-img-animation" src="assets/destination/image-moon.png" alt="Destination background">
+        <img class="img-page destination-img destination-img-animation" src="assets/destination/image-moon.png" alt="Destination background">
       </section>
       <section class="destination-interact grid-cell-02">
-        <nav class="subnavbar mq-subnavbar destination-navbar navtext">
-          <ul>
-            <li class='subnavbar-destination-element snde-01 snde-current'>Moon</li>
-            <li class='subnavbar-destination-element snde-02'>Mars</li>
-            <li class='subnavbar-destination-element snde-03'>Europa</li>
-            <li class='subnavbar-destination-element snde-04'>Titan</li>
-          </ul>
-        </nav>
-        <h2 class="mq-h2 destination-title">Moon</h2>
-        <p class="body-text destination-description">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
-        <div class="destination-interact-subgrid subgrid">
-          <div class="dis-fb-01">
-            <span class="subhead2">Avg. distance</span>
-            <span class="subhead1 destination-distance">384,400 km</span>
-          </div>
-          <div class="dis-fb-02">
-            <span class="subhead2">Est. travel time</span>
-            <span class="subhead1 destination-travel">3 days</span>
+        <div class="destination-interact-child destination-interact-child-01">
+          <nav class="subnavbar mq-subnavbar destination-navbar navtext">
+            <ul>
+              <li class='subnavbar-destination-element snde-01 snde-current'>Moon</li>
+              <li class='subnavbar-destination-element snde-02'>Mars</li>
+              <li class='subnavbar-destination-element snde-03'>Europa</li>
+              <li class='subnavbar-destination-element snde-04'>Titan</li>
+            </ul>
+          </nav>
+          <h2 class="mq-h2 destination-title">Moon</h2>
+          <p class="body-text destination-description">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
+        </div>
+        <div class="destination-interact-child destination-interact-child-02">
+          <div class="destination-interact-subgrid subgrid">
+            <div class="dis-subgrid-fb">
+              <span class="subhead2">Avg. distance</span>
+              <span class="subhead1 destination-distance">384,400 km</span>
+            </div>
+            <div class="dis-subgrid-fb">
+              <span class="subhead2">Est. travel time</span>
+              <span class="subhead1 destination-travel">3 days</span>
+            </div>
           </div>
         </div>
       </section>
