@@ -36,7 +36,7 @@ class PageClassCrew extends classTools.PageClass {
 
     subnavAppend() {
         if(this.mqWidthMatch) {
-            document.querySelector('.crew-interact-fb-middle-container').append(document.querySelector('.subnavbar'));
+        //    document.querySelector('.crew-interact-fb-middle-container').append(document.querySelector('.subnavbar'));
         }
     }
 }

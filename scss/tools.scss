@@ -17,8 +17,11 @@ $nav-padding-top: 4.44vh;
 $nav-w: 57.64vw;
 $nav-h: calc($nav-padding-top + 10.6vh);
 
+//$body-from-top-to-h5: calc(212px * 100 / $desktop-h);
+$body-from-top-to-h5: 23.6vh;
 $content-h5-h: 3.78vh;
 $content-h5-padding-left: 11.56vw;
+$content-from-top-h: calc(100vh - ($body-from-top-to-h5 + $content-h5-h));
 
 $content-padding-top: 8.44vh;
 

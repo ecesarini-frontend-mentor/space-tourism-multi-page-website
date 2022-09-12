@@ -310,33 +310,37 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
 }
-html main .crew-interact h5 {
-  padding-bottom: 17.1vh;
+html main .content.content-to-fb {
+  height: 72.62vh;
 }
-html main .crew-interact .crew-interact-fb-middle-container {
+html main .content.content-to-fb .fb-cell-01.crew-interact {
+  padding-bottom: 10.4vh;
+}
+html main .content.content-to-fb .fb-cell-01.crew-interact .crew-interact-fb-middle-container {
   height: 100%;
+  padding-top: 17.1vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
 }
-html main .crew-interact .crew-interact-fb-middle-container .crew-role, html main .crew-interact .crew-interact-fb-middle-container .crew-description {
+html main .content.content-to-fb .fb-cell-01.crew-interact .crew-interact-fb-middle-container .crew-role, html main .content.content-to-fb .fb-cell-01.crew-interact .crew-interact-fb-middle-container .crew-description {
   max-width: 30.4vw;
 }
-html main .crew-interact .crew-interact-fb-middle-container .crew-name {
+html main .content.content-to-fb .fb-cell-01.crew-interact .crew-interact-fb-middle-container .crew-name {
+  margin: 1.7vh 0 3.8vh 0;
   min-width: 42.6vw;
 }
-html main .crew-interact .crew-navbar {
-  padding: 13.3vh 0 10.44vh 0;
+html main .content.content-to-fb .fb-cell-01.crew-interact .crew-navbar {
+  height: 1.7vh;
 }
-html main .crew-interact .crew-navbar ul {
+html main .content.content-to-fb .fb-cell-01.crew-interact .crew-navbar ul {
   min-width: 132px;
   width: 132px;
-  height: 100%;
+  height: 1.7vh;
   min-height: 15px;
   display: flex;
   justify-content: space-between;
 }
-html main .crew-interact .crew-navbar ul .subnavbar-crew-element {
+html main .content.content-to-fb .fb-cell-01.crew-interact .crew-navbar ul .subnavbar-crew-element {
   cursor: pointer;
   min-width: 15px;
   min-height: 15px;
@@ -345,10 +349,10 @@ html main .crew-interact .crew-navbar ul .subnavbar-crew-element {
   opacity: 17.44%;
   border-radius: 50%;
 }
-html main .crew-interact .crew-navbar ul .subnavbar-crew-element.nce-current {
+html main .content.content-to-fb .fb-cell-01.crew-interact .crew-navbar ul .subnavbar-crew-element.nce-current {
   opacity: unset;
 }
-html main .crew-interact .crew-navbar ul .subnavbar-crew-element:hover {
+html main .content.content-to-fb .fb-cell-01.crew-interact .crew-navbar ul .subnavbar-crew-element:hover {
   opacity: 50.01%;
 }
 html main .crew-show {
