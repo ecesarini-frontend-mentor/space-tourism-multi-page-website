@@ -13,6 +13,8 @@ $subnvbar-ul-h: 1.7vh;
 $fb-cell-01-padding-bottom: 10.4vh;
 $cifmc-padding-top: 17.1vh;  
 $crew-name-margin: 1.7vh 0 3.8vh 0;
+$img-w: 39.4vw;
+$img-h: 79.1vh;
 
 @keyframes crew-img-animation {
     0%   {width: 0%;}
@@ -28,15 +30,13 @@ html {
         .content.content-to-fb {
             height: tools.$content-from-top-h;
             .fb-cell-01.crew-interact {
-                //padding-top: $fb-cell-01-padding-top;
+                width: unset;
                 padding-bottom: $fb-cell-01-padding-bottom;
                 .crew-interact-fb-middle-container {
                     height: 100%;// - $cifmc-padding-top);
-                    //padding-top: $fb-middle-container-paddding-top;
                     padding-top: $cifmc-padding-top;
                     display: flex;
                     flex-direction: column;
-                    //justify-content: space-evenly;
                     .crew-role, .crew-description {
                         max-width: $description-max-w;
                     }
@@ -47,13 +47,9 @@ html {
                 }
                 .crew-navbar {
                     height: $subnvbar-ul-h;
-                    //min-height: calc($subnvbar-ul-h + $fb-cell-01-padding-bottom);
-                    //padding-bottom: $subnavbar-padding-bottom;
-                    //padding: $nav-padding-top 0 10.44vh 0;
                     ul {
                         min-width: 132px;
                         width: 132px;
-                        //height: 100%;
                         height: $subnvbar-ul-h;
                         min-height: 15px;
                         display: flex;
@@ -78,15 +74,15 @@ html {
             }
         }
         .crew-show {
-            height: 100%;
-            .crew-number {
-                font-weight: 700;
-                opacity: 0.25;        
-            }
+            //overflow-y: hidden;
+            //position: relative;
+            //bottom: 5vh;
+            max-width: $img-w;
+            //height: 100%;
             .crew-img {
-                /*max-width: 30.9vw;*/
                 width: 100%;
-                height: 100%;
+                position: relative;
+                bottom: 5vh;
             }
             .crew-img-animation {
                 animation-name: crew-img-animation;

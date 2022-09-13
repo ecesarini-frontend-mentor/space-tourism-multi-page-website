@@ -293,29 +293,31 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
 }
-
-.grid-content {
+html .content-tech {
   height: 65.3vh;
 }
-.grid-content .tech-content-subgrid {
+html .content-tech .fb-cell-01 {
+  width: unset;
+}
+html .content-tech .fb-cell-01 .tech-content-subgrid {
   padding-top: 15.22vh;
   display: grid;
   grid-template-columns: 5.56vw 32.64vw;
   column-gap: 5.56vw;
 }
-.grid-content .tech-content-subgrid > * {
+html .content-tech .fb-cell-01 .tech-content-subgrid > * {
   height: 33.67vh;
 }
-.grid-content .tech-content-subgrid nav {
+html .content-tech .fb-cell-01 .tech-content-subgrid nav {
   width: 100%;
 }
-.grid-content .tech-content-subgrid nav ul {
+html .content-tech .fb-cell-01 .tech-content-subgrid nav ul {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.grid-content .tech-content-subgrid nav ul li {
+html .content-tech .fb-cell-01 .tech-content-subgrid nav ul li {
   width: 80px;
   max-width: 80px;
   height: 80px;
@@ -327,28 +329,29 @@ html {
   border-radius: 50%;
   outline: 1px solid rgba(255, 255, 255, 0.5);
 }
-.grid-content .tech-content-subgrid nav ul li:hover {
+html .content-tech .fb-cell-01 .tech-content-subgrid nav ul li:hover {
   cursor: pointer;
   outline-color: rgb(255, 255, 255);
 }
-.grid-content .tech-content-subgrid nav ul .snte-current {
+html .content-tech .fb-cell-01 .tech-content-subgrid nav ul .snte-current {
   color: hsl(230deg, 35%, 7%);
   background-color: hsl(0deg, 0%, 100%);
 }
-.grid-content .tech-content-subgrid .tech-content-sg-descr {
+html .content-tech .fb-cell-01 .tech-content-subgrid .tech-content-sg-descr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.grid-content .tech-content-subgrid .tech-content-sg-descr .tech-term {
+html .content-tech .fb-cell-01 .tech-content-subgrid .tech-content-sg-descr .tech-term {
   text-transform: uppercase;
   font-size: 16px;
 }
-.grid-content .tech-show {
+html .content-tech .tech-show {
+  margin-left: auto;
   justify-content: flex-end;
   justify-self: flex-end;
 }
-.grid-content .tech-show img {
+html .content-tech .tech-show img {
   max-width: 35.8vw;
   max-height: 58.6vh;
   width: 100%;
