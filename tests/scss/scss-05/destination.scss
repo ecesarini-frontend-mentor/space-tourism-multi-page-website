@@ -114,42 +114,42 @@ main {
         @include tools.background(url("../assets/destination/background-destination-tablet.jpg"));
         body {
             @include tools.font-styler($max-vw: tools.$tablet-w);
-        }
-    }
-    main.mq-tab {
-        .content.content-to-fb.content-destination {
-            
-            .destination-show.fb-cell-01 {
-                .destination-img {
-                    margin: 0;
-                    height: $tab-fbc-01-img-dim;
-                    max-width: $tab-fbc-01-img-dim;
-                    width: $tab-fbc-01-img-dim;
-                }
-            }
-            .destination-interact.fb-cell-02 {
-                height: 100%;
-                width: $tab-fbc-02-w;
-                padding: $tab-fbc-02-padding-top 0 $tab-fbc-02-padding-bottom 0;
-                .destination-interact-child {
-                    width: 100%;
-                    align-items: center;
-                }
-                .destination-interact-child-01 {
-                    height: 100%;
-                    .destination-navbar ul {
-                        width: $tab-subnav-w;                            
+            main.mq-tab {
+                .content.content-to-fb.content-destination {
+                    
+                    .destination-show.fb-cell-01 {
+                        .destination-img {
+                            margin: 0;
+                            height: $tab-fbc-01-img-dim;
+                            max-width: $tab-fbc-01-img-dim;
+                            width: $tab-fbc-01-img-dim;
+                        }
                     }
-                }
-                .destination-interact-child-02 {
-                    height: $tab-subgrid-h;
-                    .destination-interact-subgrid {
-                        .dis-subgrid-fb {
-                            padding: 0;
-                            justify-content: flex-end;
+                    .destination-interact.fb-cell-02 {
+                        height: 100%;
+                        width: $tab-fbc-02-w;
+                        padding: $tab-fbc-02-padding-top 0 $tab-fbc-02-padding-bottom 0;
+                        .destination-interact-child {
+                            width: 100%;
                             align-items: center;
-                            span:nth-child(1) {
-                                margin-bottom: $tab-subgrid-span-margin-bottom;
+                        }
+                        .destination-interact-child-01 {
+                            height: 100%;
+                            .destination-navbar ul {
+                                width: $tab-subnav-w;                            
+                            }
+                        }
+                        .destination-interact-child-02 {
+                            height: $tab-subgrid-h;
+                            .destination-interact-subgrid {
+                                .dis-subgrid-fb {
+                                    padding: 0;
+                                    justify-content: flex-end;
+                                    align-items: center;
+                                    span:nth-child(1) {
+                                        margin-bottom: $tab-subgrid-span-margin-bottom;
+                                    }
+                                }
                             }
                         }
                     }

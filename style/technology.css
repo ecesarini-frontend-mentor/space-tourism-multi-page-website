@@ -131,6 +131,7 @@ p {
 
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
+  position: fixed;
   width: 100%;
   height: 15.04vh;
   display: flex;
@@ -208,6 +209,10 @@ header .navbar-content-element span {
 }
 
 /* Main content */
+main {
+  position: relative;
+  top: 15.04vh;
+}
 main .main-h5 {
   height: 3.78vh;
   width: 100%;
@@ -257,10 +262,15 @@ main .content .fb-cell-02 .subnavbar {
     display: none;
   }
   body main.mq-tab {
+    top: 9.4vh;
     height: calc(100% - 9.4vh);
     padding: 2.8vh 0 0 0;
   }
+  body main.mq-tab .main-h5 {
+    height: initial;
+  }
   body main.mq-tab .content.content-to-fb {
+    margin-top: 5.86vh;
     width: 100%;
     height: 100%;
     display: flex;
@@ -280,11 +290,6 @@ main .content .fb-cell-02 .subnavbar {
   }
   body main.mq-tab .content.content-to-fb .mq-subnavbar.subnavbar {
     width: 100%;
-  }
-  body main.mq-tab .content.content-to-fb .fb-cell-01 .content-h5 {
-    width: 100%;
-    padding-left: 5vw;
-    margin-bottom: 5.9vh;
   }
 }
 html {
@@ -359,12 +364,12 @@ html .content-tech .tech-show img {
 }
 
 @media screen and (max-width: 768px) {
-  /*$tab-gc-01-h: 22.7vh;
-  $tab-gc-01-w: 59.6vw;
-  $tab-gc-01-subnav-h: 1vh;
-  $tab-gc-02-padding-top: 3.9vh;
-  $tab-gc-02-img-w: 59.4vw;
-  $tab-gc-02-img-h: 55vh;*/
+  /*$tab-fbc-01-h: 22.7vh;
+  $tab-fbc-01-w: 59.6vw;
+  $tab-fbc-01-subnav-h: 1vh;
+  $tab-fbc-02-padding-top: 3.9vh;
+  $tab-fbc-02-img-w: 59.4vw;
+  $tab-fbc-02-img-h: 55vh;*/
   html {
     background: url("../assets/technology/background-technology-tablet.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
     -webkit-background-size: cover;
@@ -388,10 +393,10 @@ html .content-tech .tech-show img {
     line-height: 28px;
     letter-spacing: 0.3px;
   }
-  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-crew .grid-cell-01 {
+  html body main.mq-tab .content.content-to-fb.content-tech .fb-cell-01 {
     order: 3;
   }
-  html body main.mq-tab .grid-content.grid-to-fb-content.grid-content-crew .grid-cell-02 {
+  html body main.mq-tab .content.content-to-fb.content-tech .fb-cell-02 {
     order: 2;
   }
 }

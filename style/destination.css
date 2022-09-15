@@ -131,6 +131,7 @@ p {
 
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
+  position: fixed;
   width: 100%;
   height: 15.04vh;
   display: flex;
@@ -208,6 +209,10 @@ header .navbar-content-element span {
 }
 
 /* Main content */
+main {
+  position: relative;
+  top: 15.04vh;
+}
 main .main-h5 {
   height: 3.78vh;
   width: 100%;
@@ -257,10 +262,15 @@ main .content .fb-cell-02 .subnavbar {
     display: none;
   }
   body main.mq-tab {
+    top: 9.4vh;
     height: calc(100% - 9.4vh);
     padding: 2.8vh 0 0 0;
   }
+  body main.mq-tab .main-h5 {
+    height: initial;
+  }
   body main.mq-tab .content.content-to-fb {
+    margin-top: 5.86vh;
     width: 100%;
     height: 100%;
     display: flex;
@@ -280,11 +290,6 @@ main .content .fb-cell-02 .subnavbar {
   }
   body main.mq-tab .content.content-to-fb .mq-subnavbar.subnavbar {
     width: 100%;
-  }
-  body main.mq-tab .content.content-to-fb .fb-cell-01 .content-h5 {
-    width: 100%;
-    padding-left: 5vw;
-    margin-bottom: 5.9vh;
   }
 }
 html {
@@ -405,35 +410,36 @@ main .content .fb-cell-02.destination-interact .destination-interact-child-02 .d
     line-height: 28px;
     letter-spacing: 0.3px;
   }
-  html body main.mq-tab .content.content-to-fb.content-destination .destination-show.fb-cell-01 .destination-img {
+  main.mq-tab .content.content-to-fb.content-destination .destination-show.fb-cell-01 .destination-img {
+    margin: 0;
     height: 29.3vmax;
     max-width: 29.3vmax;
     width: 29.3vmax;
   }
-  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 {
+  main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 {
     height: 100%;
     width: 74.6vw;
     padding: 5.2vh 0 6.1vh 0;
   }
-  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child {
+  main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child {
     width: 100%;
     align-items: center;
   }
-  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-01 {
+  main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-01 {
     height: 100%;
   }
-  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-01 .destination-navbar ul {
+  main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-01 .destination-navbar ul {
     width: 37.2vw;
   }
-  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-02 {
+  main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-02 {
     height: 8.8vh;
   }
-  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-02 .destination-interact-subgrid .dis-subgrid-fb {
+  main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-02 .destination-interact-subgrid .dis-subgrid-fb {
     padding: 0;
     justify-content: flex-end;
     align-items: center;
   }
-  html body main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-02 .destination-interact-subgrid .dis-subgrid-fb span:nth-child(1) {
+  main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-02 .destination-interact-subgrid .dis-subgrid-fb span:nth-child(1) {
     margin-bottom: 1.2vh;
   }
 }
