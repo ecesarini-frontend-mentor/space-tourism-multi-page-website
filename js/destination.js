@@ -4,6 +4,7 @@ import * as classTools from "./lib/classtools.js";
 
 
 (() => {
+    //common.clipPather('main');
     main.initPage('destination');
     const jFetch = main.jFetch,
         subnavMatchProp = 'destinations',

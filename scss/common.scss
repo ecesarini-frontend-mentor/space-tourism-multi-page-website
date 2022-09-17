@@ -84,11 +84,9 @@ p {
 
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
-    position: sticky;
-    //position: fixed;
-    z-index: 100;
+    position: fixed;
+    top: 0;
     //background: inherit;
-    //top: 0;
     width: 100%;
     height: tools.$nav-h;
     display: flex;
@@ -167,7 +165,7 @@ header {
 
 /* Main content */
 main {
-    overflow-y: auto;
+    //overflow-y: auto;
     .main-h5 {
         height: tools.$content-h5-h;
         width: 100%;
@@ -224,8 +222,16 @@ main {
             }
         }
         main.mq-tab {
-            height: calc(100% - tools.$tab-navbar-h);
-            //padding: tools.$tab-content-padding;
+            position: relative;
+            //top: calc(tools.$tab-navbar-h + 40px);
+            top: calc(tools.$tab-navbar-h + tools.$tab-content-padding-top);
+            //margin-top: tools.$tab-content-margin-top;
+            //top: tools.$tab-content-padding-top;
+            //top: calc(90px);
+            overflow-y: scroll;
+            //height: calc(100% - tools.$tab-navbar-h);
+            //padding-top: tools.$tab-content-padding-top;
+            padding-top: 0;
             .main-h5 {
                 height: initial;
             }

@@ -95,3 +95,12 @@ export function subnavUpdateStuffObj(arr) {
         return o;
     }
 }
+
+/*export function clipPather(elem) {
+    window.addEventListener("scroll", () => {
+        const elementToHide = document.querySelector(elem),
+            windowScrollTop = elementToHide.scrollTop;
+      
+        elementToHide.style.clipPath = `inset(${windowScrollTop}px 0 0 0)`;
+      });
+}*/

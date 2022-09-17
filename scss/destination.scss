@@ -27,7 +27,8 @@ html {
 }
 main {
     .content {
-        height: calc($fb-cell-02-h + $fb-cell-02-padding-top);
+        //height: calc($fb-cell-02-h + $fb-cell-02-padding-top);
+        height: 150vh !important;
         .fb-cell-01.destination-show {
             height: 100%;
             max-width: calc($fb-cell-01-padding-left + $dest-image-dim);
