@@ -55,7 +55,8 @@ export class PageClass {
         const jsonTgObj = this.jData[ind]['images'],
             jsonTgInd = Object.keys(jsonTgObj)[this.subnavImgIndex];
 
-        return src = jsonTgObj[jsonTgInd];
+        src = jsonTgObj[jsonTgInd];
+        return src;
     }
 
     subnavUpdater(target) {

@@ -84,9 +84,6 @@ p {
 
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
-    position: fixed;
-    top: 0;
-    //background: inherit;
     width: 100%;
     height: tools.$nav-h;
     display: flex;
@@ -130,7 +127,6 @@ header {
         }
     }
     .navbar-content-element {
-        box-sizing: border-box;
         height: 100%;
         &.navbar-current-page {
             border-bottom: 3px solid tools.$color-content;
@@ -177,7 +173,7 @@ main {
     }
     .content {
         width: 100%;
-        height: calc(100vh - tools.$tab-navbar-h - tools.$tab-content-margin-top);
+        height: calc(100vh - tools.$tab-navbar-h - tools.$tab-content-padding-top);
         //height: 100%;
         display: flex;
         color: inherit;
@@ -212,6 +208,8 @@ main {
 @media screen and (max-width: tools.$tablet-w) {
     body {
         header {
+            position: fixed;
+            top: 0;
             height: tools.$tab-navbar-h;
             padding-top: unset;
             hr {display: none;}
@@ -223,31 +221,28 @@ main {
         }
         main.mq-tab {
             position: relative;
-            //top: calc(tools.$tab-navbar-h + 40px);
-            top: calc(tools.$tab-navbar-h + tools.$tab-content-padding-top);
-            //margin-top: tools.$tab-content-margin-top;
-            //top: tools.$tab-content-padding-top;
-            //top: calc(90px);
-            overflow-y: scroll;
-            //height: calc(100% - tools.$tab-navbar-h);
-            //padding-top: tools.$tab-content-padding-top;
+            top: calc(tools.$tab-navbar-h);
+            overflow-y: auto;
             padding-top: 0;
+            height: calc(100vh - tools.$tab-navbar-h);
             .main-h5 {
+                padding-top: tools.$tab-h5-padding-top ;
                 height: initial;
             }
             .content.content-to-fb {
                 * {
                     padding: 0;
                 }
-                //margin-top: tools.$tab-content-margin-top;
-                margin: 0;
                 padding: 0; 
                 width: 100%;
-                height: 100%;
+                height: initial;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 &>section {
+                    &.fb-cell-01 {
+                        padding-top: tools.$tab-content-padding-top;
+                    }
                     width: 100%;
                     height: initial;
                     align-items: center;
@@ -255,6 +250,7 @@ main {
                         text-align: center;
                     }
                 }
+
                 .mq-subnavbar.subnavbar {
                     width: 100%;
                 }

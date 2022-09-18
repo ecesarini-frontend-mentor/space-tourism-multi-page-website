@@ -132,8 +132,6 @@ p {
 
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
-  position: fixed;
-  top: 0;
   width: 100%;
   height: 15.04vh;
   display: flex;
@@ -178,7 +176,6 @@ header .nav-index ul {
   align-items: center;
 }
 header .navbar-content-element {
-  box-sizing: border-box;
   height: 100%;
 }
 header .navbar-content-element.navbar-current-page {
@@ -251,6 +248,8 @@ main .content .fb-cell-02 .subnavbar {
 }
 @media screen and (max-width: 768px) {
   body header {
+    position: fixed;
+    top: 0;
     height: 9.4vh;
     padding-top: unset;
   }
@@ -262,18 +261,19 @@ main .content .fb-cell-02 .subnavbar {
   }
   body main.mq-tab {
     position: relative;
-    top: 13.3vh;
-    overflow-y: scroll;
+    top: 9.4vh;
+    overflow-y: auto;
     padding-top: 0;
+    height: 90.6vh;
   }
   body main.mq-tab .main-h5 {
+    padding-top: 3.9vh;
     height: initial;
   }
   body main.mq-tab .content.content-to-fb {
-    margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    height: initial;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -285,6 +285,9 @@ main .content .fb-cell-02 .subnavbar {
     width: 100%;
     height: initial;
     align-items: center;
+  }
+  body main.mq-tab .content.content-to-fb > section.fb-cell-01 {
+    padding-top: 5.86vh;
   }
   body main.mq-tab .content.content-to-fb > section .body-text {
     text-align: center;
@@ -325,7 +328,6 @@ html main .content.content-to-fb .fb-cell-01.crew-interact {
 }
 html main .content.content-to-fb .fb-cell-01.crew-interact .crew-interact-fb-middle-container {
   height: 100%;
-  padding-top: 17.1vh;
   display: flex;
   flex-direction: column;
 }
@@ -400,7 +402,7 @@ html main .crew-show .crew-img-animation {
     letter-spacing: 0.3px;
   }
   html body main.mq-tab .content.content-to-fb.content-crew .fb-cell-01 .crew-interact-fb-middle-container {
-    height: 22.7vh;
+    height: 22.65vh;
     width: 59.6vw;
     justify-content: space-between;
     text-align: center;

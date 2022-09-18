@@ -14,10 +14,6 @@ $fb-cell-02-margin-right: 11.3vw;
 $fb-cell-02-padding-top: 7.1vh;
 $fb-cell-02-child-01-margin-bottom: 6vh;
 
-html {
-    @include tools.background(url("../assets/destination/background-destination-desktop.jpg"));
-}
-
 @keyframes destination-img-animation {
     0%   {width: 0%;}
     25%  {width: 25%;}
@@ -25,75 +21,76 @@ html {
     75%  {width: 75%;}
     100% {width: 100%;}    
 }
-main {
-    .content {
-        //height: calc($fb-cell-02-h + $fb-cell-02-padding-top);
-        height: 150vh !important;
-        .fb-cell-01.destination-show {
-            height: 100%;
-            max-width: calc($fb-cell-01-padding-left + $dest-image-dim);
-            align-self: center;
-            .destination-img {
-                max-width: 30.9vw;
-                width: 100%;
-                margin: auto 0 0 auto;
+
+html {
+    @include tools.background(url("../assets/destination/background-destination-desktop.jpg"));
+    main {
+        .content.content-to-fb {
+            height: calc($fb-cell-02-h + $fb-cell-02-padding-top);
+            .fb-cell-01.destination-show {
+                height: 100%;
+                max-width: calc($fb-cell-01-padding-left + $dest-image-dim);
+                align-self: center;
+                .destination-img {
+                    max-width: 30.9vw;
+                    width: 100%;
+                    margin: auto 0 0 auto;
+                }
+                .destination-img-animation {
+                    animation-name: destination-img-animation;
+                    animation-duration: 0.5s;
+                }
             }
-            .destination-img-animation {
-                animation-name: destination-img-animation;
-                animation-duration: 0.5s;
-            }
-        }
-        .fb-cell-02.destination-interact {
-            height: 100%;
-            width: 30.9vw;
-            margin: 0 $fb-cell-02-margin-right 0 auto;
-            padding-top: $fb-cell-02-padding-top;
-            .destination-interact-child-01 {
-                //height: $fb-cell-02-h;
-                margin-bottom: $fb-cell-02-child-01-margin-bottom;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                flex: 2;
-                .destination-navbar {
-                    justify-content: flex-start;
-                    ul {
-                        width: 64%;
-                        height: 100%;
-                        min-height: 31px;
-                        display: flex;
-                        justify-content: space-between;
-                        color: tools.$color-body-text;
-                        .subnavbar-destination-element {
-                            cursor: pointer;
-                            &.snde-current {
-                                color: tools.$color-content;
-                                border-bottom: 3px solid tools.$color-content;
-                            }
-                            &:hover {
-                                color: tools.$color-navbar-hover;
-                                border-bottom: 2px solid tools.$color-navbar-hover;
+            .fb-cell-02.destination-interact {
+                height: 100%;
+                width: 30.9vw;
+                margin: 0 $fb-cell-02-margin-right 0 auto;
+                padding-top: $fb-cell-02-padding-top;
+                .destination-interact-child-01 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    flex: 2;
+                    .destination-navbar {
+                        justify-content: flex-start;
+                        ul {
+                            width: 64%;
+                            height: 100%;
+                            min-height: 31px;
+                            display: flex;
+                            justify-content: space-between;
+                            color: tools.$color-body-text;
+                            .subnavbar-destination-element {
+                                cursor: pointer;
+                                &.snde-current {
+                                    color: tools.$color-content;
+                                    border-bottom: 3px solid tools.$color-content;
+                                }
+                                &:hover {
+                                    color: tools.$color-navbar-hover;
+                                    border-bottom: 2px solid tools.$color-navbar-hover;
+                                }
                             }
                         }
                     }
+                    .destination-description {
+                        line-height: 32px;
+                        letter-spacing: 0.1px;
+                    }
                 }
-                .destination-description {
-                    line-height: 32px;
-                    letter-spacing: 0.1px;
-                }
-            }
-            .destination-interact-child-02 {
-                .destination-interact-subgrid {
-                    width: 100%;
-                    height: $fb-cell-02-subgrid-h;
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    border-top: 1px solid tools.$color-navbar-hover;
-                    div {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        padding: 5.93% 0 0 0;
+                .destination-interact-child-02 {
+                    .destination-interact-subgrid {
+                        width: 100%;
+                        height: $fb-cell-02-subgrid-h;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        border-top: 1px solid tools.$color-navbar-hover;
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            padding: 5.93% 0 0 0;
+                        }
                     }
                 }
             }
@@ -106,11 +103,14 @@ main {
 @media screen and (max-width: tools.$tablet-w) {
     $tab-fbc-01-img-dim: 29.3vmax; 
     $tab-fbc-02-w: 74.6vw;
-    $tab-fbc-02-padding-top: 5.2vh;
-    $tab-fbc-02-padding-bottom: 6.1vh; 
+    $tab-fbc-02-child-01-padding: 5.17vh 0 4.79vh 0;
+    //$tab-fbc-02-padding-top: 5.2vh;
+    //$tab-fbc-02-padding-top: 5.17vh;
+    //$tab-fbc-02-padding-bottom: 6.1vh; 
     $tab-subnav-w: 37.2vw;
     $tab-subgrid-h: 8.8vh;
     $tab-subgrid-span-margin-bottom: 1.2vh;
+    
     html {
         @include tools.background(url("../assets/destination/background-destination-tablet.jpg"));
         body {
@@ -119,6 +119,9 @@ main {
     }
     main.mq-tab {
         .content.content-to-fb.content-destination { 
+            &>section { 
+                padding: 0;
+            }
             .destination-show.fb-cell-01 {
                 .destination-img {
                     margin: 0;
@@ -130,18 +133,22 @@ main {
             .destination-interact.fb-cell-02 {
                 height: 100%;
                 width: $tab-fbc-02-w;
-                padding: $tab-fbc-02-padding-top 0 $tab-fbc-02-padding-bottom 0;
                 .destination-interact-child {
                     width: 100%;
                     align-items: center;
                 }
                 .destination-interact-child-01 {
+                    padding: $tab-fbc-02-child-01-padding;
                     height: 100%;
-                    .destination-navbar ul {
-                        width: $tab-subnav-w;                            
+                    .destination-navbar {
+                        width: initial;
+                        ul {
+                            width: $tab-subnav-w;                            
+                        }
                     }
                 }
                 .destination-interact-child-02 {
+
                     height: $tab-subgrid-h;
                     .destination-interact-subgrid {
                         .dis-subgrid-fb {

@@ -59,8 +59,10 @@ html {
             main.mq-tab.main-home {
                 padding: $main-padding;
                 .content-to-fb.content-home {
+                    height: 100%;
                     padding: unset;
                     .ch-01 {
+                        padding-top: initial;
                         height: $tab-content-gch01-h;
                         width: $tab-content-gch01-w;
                     }

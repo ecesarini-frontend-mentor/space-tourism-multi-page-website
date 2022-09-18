@@ -132,8 +132,6 @@ p {
 
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
-  position: fixed;
-  top: 0;
   width: 100%;
   height: 15.04vh;
   display: flex;
@@ -178,7 +176,6 @@ header .nav-index ul {
   align-items: center;
 }
 header .navbar-content-element {
-  box-sizing: border-box;
   height: 100%;
 }
 header .navbar-content-element.navbar-current-page {
@@ -251,6 +248,8 @@ main .content .fb-cell-02 .subnavbar {
 }
 @media screen and (max-width: 768px) {
   body header {
+    position: fixed;
+    top: 0;
     height: 9.4vh;
     padding-top: unset;
   }
@@ -262,18 +261,19 @@ main .content .fb-cell-02 .subnavbar {
   }
   body main.mq-tab {
     position: relative;
-    top: 13.3vh;
-    overflow-y: scroll;
+    top: 9.4vh;
+    overflow-y: auto;
     padding-top: 0;
+    height: 90.6vh;
   }
   body main.mq-tab .main-h5 {
+    padding-top: 3.9vh;
     height: initial;
   }
   body main.mq-tab .content.content-to-fb {
-    margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    height: initial;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -286,6 +286,9 @@ main .content .fb-cell-02 .subnavbar {
     height: initial;
     align-items: center;
   }
+  body main.mq-tab .content.content-to-fb > section.fb-cell-01 {
+    padding-top: 5.86vh;
+  }
   body main.mq-tab .content.content-to-fb > section .body-text {
     text-align: center;
   }
@@ -293,13 +296,6 @@ main .content .fb-cell-02 .subnavbar {
     width: 100%;
   }
 }
-html {
-  background: url("../assets/destination/background-destination-desktop.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-}
-
 @keyframes destination-img-animation {
   0% {
     width: 0%;
@@ -317,40 +313,45 @@ html {
     width: 100%;
   }
 }
-main .content {
-  height: 150vh !important;
+html {
+  background: url("../assets/destination/background-destination-desktop.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
-main .content .fb-cell-01.destination-show {
+html main .content.content-to-fb {
+  height: 59.5vh;
+}
+html main .content.content-to-fb .fb-cell-01.destination-show {
   height: 100%;
   max-width: 46.9vw;
   align-self: center;
 }
-main .content .fb-cell-01.destination-show .destination-img {
+html main .content.content-to-fb .fb-cell-01.destination-show .destination-img {
   max-width: 30.9vw;
   width: 100%;
   margin: auto 0 0 auto;
 }
-main .content .fb-cell-01.destination-show .destination-img-animation {
+html main .content.content-to-fb .fb-cell-01.destination-show .destination-img-animation {
   animation-name: destination-img-animation;
   animation-duration: 0.5s;
 }
-main .content .fb-cell-02.destination-interact {
+html main .content.content-to-fb .fb-cell-02.destination-interact {
   height: 100%;
   width: 30.9vw;
   margin: 0 11.3vw 0 auto;
   padding-top: 7.1vh;
 }
-main .content .fb-cell-02.destination-interact .destination-interact-child-01 {
-  margin-bottom: 6vh;
+html main .content.content-to-fb .fb-cell-02.destination-interact .destination-interact-child-01 {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   flex: 2;
 }
-main .content .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar {
+html main .content.content-to-fb .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar {
   justify-content: flex-start;
 }
-main .content .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar ul {
+html main .content.content-to-fb .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar ul {
   width: 64%;
   height: 100%;
   min-height: 31px;
@@ -358,29 +359,29 @@ main .content .fb-cell-02.destination-interact .destination-interact-child-01 .d
   justify-content: space-between;
   color: hsl(231deg, 79%, 90%);
 }
-main .content .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar ul .subnavbar-destination-element {
+html main .content.content-to-fb .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar ul .subnavbar-destination-element {
   cursor: pointer;
 }
-main .content .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar ul .subnavbar-destination-element.snde-current {
+html main .content.content-to-fb .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar ul .subnavbar-destination-element.snde-current {
   color: hsl(0deg, 0%, 100%);
   border-bottom: 3px solid hsl(0deg, 0%, 100%);
 }
-main .content .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar ul .subnavbar-destination-element:hover {
+html main .content.content-to-fb .fb-cell-02.destination-interact .destination-interact-child-01 .destination-navbar ul .subnavbar-destination-element:hover {
   color: rgba(255, 255, 255, 0.5);
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
-main .content .fb-cell-02.destination-interact .destination-interact-child-01 .destination-description {
+html main .content.content-to-fb .fb-cell-02.destination-interact .destination-interact-child-01 .destination-description {
   line-height: 32px;
   letter-spacing: 0.1px;
 }
-main .content .fb-cell-02.destination-interact .destination-interact-child-02 .destination-interact-subgrid {
+html main .content.content-to-fb .fb-cell-02.destination-interact .destination-interact-child-02 .destination-interact-subgrid {
   width: 100%;
   height: 9.9vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
-main .content .fb-cell-02.destination-interact .destination-interact-child-02 .destination-interact-subgrid div {
+html main .content.content-to-fb .fb-cell-02.destination-interact .destination-interact-child-02 .destination-interact-subgrid div {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -411,6 +412,9 @@ main .content .fb-cell-02.destination-interact .destination-interact-child-02 .d
     line-height: 28px;
     letter-spacing: 0.3px;
   }
+  main.mq-tab .content.content-to-fb.content-destination > section {
+    padding: 0;
+  }
   main.mq-tab .content.content-to-fb.content-destination .destination-show.fb-cell-01 .destination-img {
     margin: 0;
     height: 29.3vmax;
@@ -420,14 +424,17 @@ main .content .fb-cell-02.destination-interact .destination-interact-child-02 .d
   main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 {
     height: 100%;
     width: 74.6vw;
-    padding: 5.2vh 0 6.1vh 0;
   }
   main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child {
     width: 100%;
     align-items: center;
   }
   main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-01 {
+    padding: 5.17vh 0 4.79vh 0;
     height: 100%;
+  }
+  main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-01 .destination-navbar {
+    width: initial;
   }
   main.mq-tab .content.content-to-fb.content-destination .destination-interact.fb-cell-02 .destination-interact-child-01 .destination-navbar ul {
     width: 37.2vw;

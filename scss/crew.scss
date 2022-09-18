@@ -34,7 +34,7 @@ html {
                 padding-bottom: $fb-cell-01-padding-bottom;
                 .crew-interact-fb-middle-container {
                     height: 100%;// - $cifmc-padding-top);
-                    padding-top: $cifmc-padding-top;
+                    //padding-top: $cifmc-padding-top;
                     display: flex;
                     flex-direction: column;
                     .crew-role, .crew-description {
@@ -95,7 +95,7 @@ html {
 // Media Query
 //Tab
 @media screen and (max-width: tools.$tablet-w) {
-    $tab-fbc-01-h: 22.7vh;
+    $tab-fbc-01-h: 22.65vh;
     $tab-fbc-01-w: 59.6vw;
     $tab-fbc-01-subnav-h: 1vh;
     $tab-fbc-02-padding-top: 3.9vh;
