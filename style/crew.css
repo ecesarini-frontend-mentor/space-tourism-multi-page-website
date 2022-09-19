@@ -401,31 +401,33 @@ html main .crew-show .crew-img-animation {
     line-height: 28px;
     letter-spacing: 0.3px;
   }
-  html body main.mq-tab .content.content-to-fb.content-crew .fb-cell-01 .crew-interact-fb-middle-container {
+  html body main.mq-tab .content.content-to-fb.content-crew .crew-interact.fb-cell-01 {
+    padding-bottom: 3.9vh;
+  }
+  html body main.mq-tab .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container {
     height: 22.65vh;
-    width: 59.6vw;
+    width: 59.64vw;
     justify-content: space-between;
     text-align: center;
   }
-  html body main.mq-tab .content.content-to-fb.content-crew .fb-cell-01 .crew-interact-fb-middle-container > * {
-    max-width: 59.6vw;
+  html body main.mq-tab .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container > * {
+    max-width: 59.64vw;
     width: 100%;
   }
-  html body main.mq-tab .content.content-to-fb.content-crew .fb-cell-01 .crew-interact-fb-middle-container .subnavbar ul {
+  html body main.mq-tab .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container .subnavbar.mq-subnavbar.crew-navbar ul {
     height: 1vh;
   }
-  html body main.mq-tab .content.content-to-fb.content-crew .fb-cell-01 .crew-interact-fb-middle-container .subnavbar ul > * {
+  html body main.mq-tab .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container .subnavbar.mq-subnavbar.crew-navbar ul > * {
     min-height: unset;
     min-width: unset;
   }
-  html body main.mq-tab .content.content-to-fb.content-crew .fb-cell-01 .crew-interact-fb-middle-container .subnavbar ul .subnavbar-crew-element {
+  html body main.mq-tab .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container .subnavbar.mq-subnavbar.crew-navbar ul .subnavbar-crew-element {
     height: 1vh;
     width: 1vh;
   }
   html body main.mq-tab .content.content-to-fb.content-crew .fb-cell-02 {
     height: 100%;
     max-width: 59.4vw;
-    padding-top: 3.9vh;
     overflow-y: hidden;
   }
 }

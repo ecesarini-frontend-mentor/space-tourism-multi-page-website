@@ -96,9 +96,10 @@ html {
 //Tab
 @media screen and (max-width: tools.$tablet-w) {
     $tab-fbc-01-h: 22.65vh;
-    $tab-fbc-01-w: 59.6vw;
+    $tab-fbc-01-w: 59.64vw;
     $tab-fbc-01-subnav-h: 1vh;
-    $tab-fbc-02-padding-top: 3.9vh;
+    //$tab-fbc-02-padding-top: 3.9vh;
+    $tab-fbc-01-padding-bottom: 3.9vh;
     $tab-fbc-02-img-w: 59.4vw;
     $tab-fbc-02-img-h: 55vh;
     html {
@@ -107,7 +108,8 @@ html {
             @include tools.font-styler($max-vw: tools.$tablet-w);
             main.mq-tab {
                 .content.content-to-fb.content-crew {
-                    .fb-cell-01 {
+                    .crew-interact.fb-cell-01 {
+                        padding-bottom: $tab-fbc-01-padding-bottom;
                         .crew-interact-fb-middle-container {
                             height: $tab-fbc-01-h;
                             width: $tab-fbc-01-w;
@@ -117,23 +119,26 @@ html {
                                 max-width: $tab-fbc-01-w;
                                 width: 100%;
                             }
-                            .subnavbar ul {
-                                height: $tab-fbc-01-subnav-h;                                
-                                &>* {
-                                    min-height: unset;
-                                    min-width:unset;
+                            .subnavbar.mq-subnavbar.crew-navbar {
+                                //width: initial;
+                                ul {
+                                    height: $tab-fbc-01-subnav-h;                                
+                                    &>* {
+                                        min-height: unset;
+                                        min-width:unset;
+                                    }
+                                    .subnavbar-crew-element {
+                                        height: $tab-fbc-01-subnav-h;
+                                        width: $tab-fbc-01-subnav-h;
+                                    }
                                 }
-                                .subnavbar-crew-element {
-                                    height: $tab-fbc-01-subnav-h;
-                                    width: $tab-fbc-01-subnav-h;
-                                }
-                            }
+                            }   
                         }
                     }
                     .fb-cell-02 {
                         height: 100%;
                         max-width: $tab-fbc-02-img-w;
-                        padding-top: $tab-fbc-02-padding-top;
+                        //padding-top: $tab-fbc-02-padding-top;
                         overflow-y: hidden;
                     }
                 }

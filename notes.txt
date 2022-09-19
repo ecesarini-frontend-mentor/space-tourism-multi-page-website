@@ -21,7 +21,43 @@
     
     - La classe estesa 'PageClassCrew' necessita di un'attivazione, infatti invocandola con new si ha riferimento a 'PageClass' che ha un suo 'init()' nel costruttore,
       occorre richiamare il controllo dell'azione inserendo nel suo costruttore un richiamo alla funzione che governa i task in questa classe ('evensListener').
-
+    - Nota su prototype super and ()=> functions:
+      Assegnando un metodo arrow ad una classe non viene aggiunto al prototype dell'istanza ma passato come proprieta' dell'istanza:
+      per questo non posso farci riferimento in una classe ereditata usando 'super.metodoParent()' ma 'this.metodoParent()'. 
+      Ad esempio in una istanza di 'js/lib/classTools:PageClass' mi trovo:
+      ```
+      [Prototype]]
+      : 
+      Object
+      constructor
+      : 
+      class PageClass
+      eventsListener
+      : 
+      eventsListener() { window.addEventListener('load', this.eventsLoad); this.subnavTg.forEach(n => {…}
+      init
+      : 
+      ƒ async init()
+      mqSubnavImgCheck
+      : 
+      ƒ mqSubnavImgCheck()
+      subnavGetImgSrc
+      : 
+      ƒ subnavGetImgSrc(ind)
+      subnavUpdater
+      : 
+      subnavUpdater(target) { this.mqSubnavImgCheck(); this.subnavInd = common.subnavMatcher(target, this.subnavUpdateStuff.tgClass); this.imgPage.src = this.subnavGetImgSrc(this.subnavInd); const elemJSON = this.jData[this.subnavInd]; this.subnavCurrent.classList.remove(this.subnavUpdateStuff.tgCurrentClass); target.classList.add(this.subnavUpdateStuff.tgCurrentClass); this.subnavCurrent = target; this.imgPage.classList.remove(this.subnavUpdateStuff.animationClass); window.requestAnimationFrame(() => {…}
+      [[Prototype]]
+      : 
+      Object
+      ```
+      Mancano i metodi arrow come 'eventsLoad, eventsChange, etc.'.
+      Vedi https://stackoverflow.com/questions/57561473/how-to-invoke-arrow-functions-on-a-superclass-with-super-in-subclass
+      /*- Nota sull'estensione delle classe 'js/lib/classtools.js:PageClass' da parte di 'js/crew.js:PageClassCrew': 
+      Non bisogna reimplementare il metodo 'crewInit()' perché richiami 'super.init()' del parent, in quanto già invoca il metodo 'eventsListener()' del genitore stesso.
+      'init.()' è già nel costruttore del parent e quindi viene invocato; piuttoso invocare nel costruttore della classe ereditata un trigger al metodo che gestisce i nuovi eventi ('crewEventsListener()').
+      */
+      - Promise between inherited classes: https://stackoverflow.com/questions/43431550/async-await-class-constructor
 
   - Dig into 404 error loading img reference in content element: it depends on "classtools.js.PageClass@"subnavUpdater": 
     need to make it 'async' and 'await' for this.imgTgSrc otherwise you'll get errors from server like:

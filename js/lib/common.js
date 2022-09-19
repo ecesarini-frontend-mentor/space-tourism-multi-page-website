@@ -11,7 +11,7 @@ export async function fectchJSON(jsonFile) {
 }
 
 export async function getJSONData(jsonFile) {
-    const jData = await fectchJSON(jsonFile);
+    let jData = await fectchJSON(jsonFile);
     return jData;
 }
 

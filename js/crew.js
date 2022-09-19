@@ -3,6 +3,7 @@ import * as main from "./lib/main.js";
 import * as classTools from "./lib/classtools.js";
 
 class PageClassCrew extends classTools.PageClass {
+    //crewJdata = undefined;
     constructor(
             jFetch,
             subnavMatchProp,
@@ -19,24 +20,32 @@ class PageClassCrew extends classTools.PageClass {
             jsonTransform,
             subnavUpdateStuff
             ) 
-            this.eventsListener();
+            this.crewEventsListener();
+            //this.crewInit();
         }
     
-    eventsListener() {
+    /*crewInit = async () => {
+        this.init();
+        this.crewEventsListener();
+    }*/
+
+    crewEventsListener() {
         super.eventsListener();
-        window.addEventListener('load', this.eventsLoadCrew);
-        this.mqWidthMatch.addEventListener('change', this.eventsChangeCrew);
+        window.addEventListener('load', this.crewEventsLoad);
+        this.mqWidthMatch.addEventListener('change', this.crewEventsChange);
     }
-    eventsLoadCrew = () => {
-        this.subnavAppend();
+    crewEventsLoad = () => {
+        this.eventsLoad();  // You can't use 'super' to invoke a parent arrow method (check: https://stackoverflow.com/questions/57561473/how-to-invoke-arrow-functions-on-a-superclass-with-super-in-subclass)
+        this.crewSubnavAppend();
     }
-    eventsChangeCrew = () => {
-        this.subnavAppend();
+    crewEventsChange = () => {
+        this.eventsChange();
+        this.crewSubnavAppend();
     }
 
-    subnavAppend() {
+    crewSubnavAppend() {
         if(this.mqWidthMatch) {
-            //document.querySelector('.crew-interact-fb-middle-container').append(document.querySelector('.subnavbar'));
+            document.querySelector('.crew-interact-fb-middle-container').append(document.querySelector('.subnavbar'));
         }
     }
 }
@@ -63,5 +72,8 @@ class PageClassCrew extends classTools.PageClass {
         jsonTransform,
         subnavUpdateStuff
     );
-//    console.log('debug');
+    //pcc.crewInit();
+    //console.log('debug');
+    //debugger;
 })();
+

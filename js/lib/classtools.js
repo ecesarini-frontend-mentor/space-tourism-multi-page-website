@@ -35,14 +35,14 @@ export class PageClass {
         this.subnavTg.forEach(n => n.addEventListener('click', this.eventsClick));
         this.mqWidthMatch.addEventListener('change', this.eventsChange);
     }
-    eventsLoad = (e) => {
+    eventsLoad = () => {
         this.mqSubnavImgCheck();
         this.imgPage.src = this.subnavGetImgSrc(this.subnavInd);
     }
     eventsClick = (e) => {
         this.subnavUpdater(e.currentTarget);
     }
-    eventsChange = (e) => {
+    eventsChange = () => {
         this.mqSubnavImgCheck();
         this.imgPage.src = this.subnavGetImgSrc(this.subnavInd);
     }
