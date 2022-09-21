@@ -408,11 +408,16 @@ html main .crew-show .crew-img-animation {
     height: 22.65vh;
     width: 59.64vw;
     justify-content: space-between;
+    align-items: center;
     text-align: center;
   }
   html body main.mq-tab .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container > * {
     max-width: 59.64vw;
     width: 100%;
+    margin: initial;
+  }
+  html body main.mq-tab .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container .subnavbar.mq-subnavbar.crew-navbar {
+    width: initial;
   }
   html body main.mq-tab .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container .subnavbar.mq-subnavbar.crew-navbar ul {
     height: 1vh;

@@ -31,18 +31,21 @@ export class PageClass {
     }
     
     eventsListener() {
-        window.addEventListener('load', this.eventsLoad);
+        window.addEventListener('load', this.eventsLoad.call(this));
         this.subnavTg.forEach(n => n.addEventListener('click', this.eventsClick));
-        this.mqWidthMatch.addEventListener('change', this.eventsChange);
+        this.mqWidthMatch.addEventListener('change', this.eventsChange.call(this));
     }
-    eventsLoad = () => {
+    //eventsLoad = () => {
+    eventsLoad() {
         this.mqSubnavImgCheck();
         this.imgPage.src = this.subnavGetImgSrc(this.subnavInd);
     }
     eventsClick = (e) => {
+    //eventsClick(e) {
         this.subnavUpdater(e.currentTarget);
     }
-    eventsChange = () => {
+    //eventsChange = () => {
+    eventsChange() {
         this.mqSubnavImgCheck();
         this.imgPage.src = this.subnavGetImgSrc(this.subnavInd);
     }

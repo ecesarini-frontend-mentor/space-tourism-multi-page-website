@@ -4,6 +4,7 @@ import * as classTools from "./lib/classtools.js";
 
 class PageClassCrew extends classTools.PageClass {
     //crewJdata = undefined;
+    //subnavbar
     constructor(
             jFetch,
             subnavMatchProp,
@@ -20,33 +21,44 @@ class PageClassCrew extends classTools.PageClass {
             jsonTransform,
             subnavUpdateStuff
             ) 
-            this.crewEventsListener();
-            //this.crewInit();
+            //this.crewEventsListener();
+            this.crewInit();
         }
     
-    /*crewInit = async () => {
-        this.init();
+    async crewInit() {
+        this.jData = await this.jFetch;  // this.jdata is an instance prop so you need to reinitialize it inside a new (although inherited) instance of PageClass
+        this.jData = await this.jData[this.subnavMatchProp];
         this.crewEventsListener();
-    }*/
+    }
 
     crewEventsListener() {
         super.eventsListener();
-        window.addEventListener('load', this.crewEventsLoad);
-        this.mqWidthMatch.addEventListener('change', this.crewEventsChange);
+        window.addEventListener('load', this.crewEventsLoad.call(this));
+        this.mqWidthMatch.addEventListener('change', this.crewEventsChange.call(this));
     }
-    crewEventsLoad = () => {
-        this.eventsLoad();  // You can't use 'super' to invoke a parent arrow method (check: https://stackoverflow.com/questions/57561473/how-to-invoke-arrow-functions-on-a-superclass-with-super-in-subclass)
-        this.crewSubnavAppend();
+    //crewEventsLoad = () => {
+    crewEventsLoad() {
+        //this.eventsLoad();  // You can't use 'super' to invoke a parent arrow method (check: https://stackoverflow.com/questions/57561473/how-to-invoke-arrow-functions-on-a-superclass-with-super-in-subclass)
+        super.eventsLoad();
+        this.crewSubnavMqSwitch();
     }
-    crewEventsChange = () => {
-        this.eventsChange();
-        this.crewSubnavAppend();
+    crewEventsChange(){
+        super.eventsChange();
+        this.crewSubnavMqSwitch();
     }
 
-    crewSubnavAppend() {
+    crewSubnavMqSwitch() {
+        const cifbmc = document.querySelector('.crew-interact-fb-middle-container'),
+            crewSubnav = document.querySelector('.subnavbar');
         if(this.mqWidthMatch) {
-            document.querySelector('.crew-interact-fb-middle-container').append(document.querySelector('.subnavbar'));
+            cifbmc.append(crewSubnav);
+        } else {
+            cifbmc.after(crewSubnav);
         }
+        /*if(this.mqWidthMatch) {
+            //document.querySelector('.crew-interact-fb-middle-container').append(document.querySelector('.subnavbar'));
+            document.querySelector('.crew-interact-fb-middle-container').append(this.subnavTg);
+        }*/
     }
 }
 

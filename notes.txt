@@ -58,6 +58,10 @@
       'init.()' è già nel costruttore del parent e quindi viene invocato; piuttoso invocare nel costruttore della classe ereditata un trigger al metodo che gestisce i nuovi eventi ('crewEventsListener()').
       */
       - Promise between inherited classes: https://stackoverflow.com/questions/43431550/async-await-class-constructor
+      - Promise about inherited obj (e.g. in crew.js) can be handled redefining "async init()" that depends on constructor. That is, "this.jData" prop could not be availabe if it's parsed inside parent Class. 
+      Because of it belongs to instance itself you shouldn't refer on in it by prototype but instance itself. So you can count on a new jFetch parsing in the new object instance.
+      - Switched to "event handling callback" using normal function instead of arrow (by binding'em with ".call(this)"). It lets you adopting "super.myParentMethod()" because methods belong to constructor's prototype,
+      while arrow methods belong to instance itself, imposing "this.methodINeed()" about. (check cose around '/js/crew.js@41').
 
   - Dig into 404 error loading img reference in content element: it depends on "classtools.js.PageClass@"subnavUpdater": 
     need to make it 'async' and 'await' for this.imgTgSrc otherwise you'll get errors from server like:

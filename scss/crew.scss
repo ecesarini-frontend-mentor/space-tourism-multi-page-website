@@ -114,13 +114,15 @@ html {
                             height: $tab-fbc-01-h;
                             width: $tab-fbc-01-w;
                             justify-content: space-between;
+                            align-items: center;
                             text-align: center;
                             &>* {
                                 max-width: $tab-fbc-01-w;
                                 width: 100%;
+                                margin: initial;
                             }
                             .subnavbar.mq-subnavbar.crew-navbar {
-                                //width: initial;
+                                width: initial;
                                 ul {
                                     height: $tab-fbc-01-subnav-h;                                
                                     &>* {
