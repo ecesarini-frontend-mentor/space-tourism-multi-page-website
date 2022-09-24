@@ -3,44 +3,54 @@ import * as main from "./lib/main.js";
 import * as classTools from "./lib/classtools.js";
 
 class PageClassCrew extends classTools.PageClass {
-    jData = undefined;
+    //crewJdata = undefined;
+    //subnavbar
     constructor(
+            jFetch,
+            subnavMatchProp,
             subnavTg, 
             subnavCurrent,
             jsonTransform,
             subnavUpdateStuff            
         ) { 
         super(
+            jFetch,
+            subnavMatchProp,
             subnavTg, 
             subnavCurrent,
             jsonTransform,
             subnavUpdateStuff
             ) 
+            //this.crewEventsListener();
+            this.crewInit();
         }
     
-    async crewInit(jData) {
-        this.jData = await jData; // this.jdata is an instance prop so you need to reinitialize it inside a new (although inherited) instance of PageClass
+    async crewInit() {
+        this.jData = await this.jFetch;  // this.jdata is an instance prop so you need to reinitialize it inside a new (although inherited) instance of PageClass
+        this.jData = await this.jData[this.subnavMatchProp];
         this.crewEventsListener();
     }
 
     crewEventsListener() {
         super.eventsListener();
-        window.addEventListener('load', this.crewEventsLoad);
-        this.mqWidth.addEventListener('change', this.crewEventsChange);
+        window.addEventListener('load', this.crewEventsLoad.call(this));
+        this.mqWidthMatch.addEventListener('change', this.crewEventsChange.call(this));
     }
-    crewEventsLoad = () => {
-        this.eventsLoad();
+    //crewEventsLoad = () => {
+    crewEventsLoad() {
+        //this.eventsLoad();  // You can't use 'super' to invoke a parent arrow method (check: https://stackoverflow.com/questions/57561473/how-to-invoke-arrow-functions-on-a-superclass-with-super-in-subclass)
+        super.eventsLoad();
         this.crewSubnavMqSwitch();
     }
-    crewEventsChange = () => {
-        this.eventsChange();
+    crewEventsChange(){
+        super.eventsChange();
         this.crewSubnavMqSwitch();
     }
 
     crewSubnavMqSwitch() {
         const cifbmc = document.querySelector('.crew-interact-fb-middle-container'),
             crewSubnav = document.querySelector('.subnavbar');
-        if(this.mqWidth.matches) {
+        if(this.mqWidthMatch) {
             cifbmc.append(crewSubnav);
         } else {
             cifbmc.after(crewSubnav);
@@ -54,7 +64,8 @@ class PageClassCrew extends classTools.PageClass {
 
 (() => {
     main.initPage('crew');
-    const jData = common.fectchJSON(main.jFile, 'crew'),
+    const jFetch = main.jFetch,
+        subnavMatchProp = 'crew',
         subnavTg = document.querySelectorAll('.subnavbar-crew-element'),
         subnavCurrent = document.querySelector('.snce-current'), 
         jsonTransform = [
@@ -64,12 +75,17 @@ class PageClassCrew extends classTools.PageClass {
         ],
         subnavUpdateStuff = common.subnavUpdateStuffObj(['snce', 'snce-current', 'crew-img-animation']);
 
-    const pageClassCrew = new PageClassCrew(
+    //new classTools.PageClass(
+    const pcc = new PageClassCrew(
+        jFetch,
+        subnavMatchProp,
         subnavTg,
         subnavCurrent,
         jsonTransform,
         subnavUpdateStuff
     );
-    pageClassCrew.crewInit(jData);
+    //pcc.crewInit();
+    //console.log('debug');
+    //debugger;
 })();
 

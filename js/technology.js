@@ -2,49 +2,9 @@ import * as common from "./lib/common.js";
 import * as main from "./lib/main.js";
 import * as classTools from "./lib/classtools.js";
 
-/*class PageClassTech extends classTools.PageClass {
-    constructor(
-            jFetch,
-            subnavMatchProp,
-            subnavTg, 
-            subnavCurrent,
-            jsonTransform,
-            subnavUpdateStuff            
-        ) { 
-        super(
-            jFetch,
-            subnavMatchProp,
-            subnavTg, 
-            subnavCurrent,
-            jsonTransform,
-            subnavUpdateStuff
-            ) 
-            this.eventsListener();
-        }
-    
-    eventsListener() {
-        super.eventsListener();
-        window.addEventListener('load', this.eventsLoadCrew);
-        this.mqWidthMatch.addEventListener('change', this.eventsChangeCrew);
-    }
-    eventsLoadTech = () => {
-        this.subnavAppend();
-    }
-    eventsChange = () => {
-        this.subnavAppend();
-    }
-
-    subnavAppend() {
-        if(this.mqWidthMatch) {
-            document.querySelector('.crew-interact-fb-middle-container').append(document.querySelector('.subnavbar'));
-        }
-    }
-}*/
-
 (() => {
     main.initPage('techonology');
-    const jFetch = main.jFetch,
-        subnavMatchProp = 'technology',
+    const jData = common.fectchJSON(main.jFile, 'technology'),
         subnavTg = document.querySelectorAll('.subnavbar-tech-element'),
         subnavCurrent = document.querySelector('.snte-current'),        
         jsonTransform = [
@@ -53,13 +13,12 @@ import * as classTools from "./lib/classtools.js";
         ],
         subnavUpdateStuff = common.subnavUpdateStuffObj(['snte', 'snte-current', 'tech-img-animation']);
     
-    let pct = new classTools.PageClass(
-        jFetch,
-        subnavMatchProp,
+    let pageClassTech = new classTools.PageClass(
         subnavTg,
         subnavCurrent,
         jsonTransform,
         subnavUpdateStuff
     );
+    pageClassTech.init(jData);
     //debugger;
 })();

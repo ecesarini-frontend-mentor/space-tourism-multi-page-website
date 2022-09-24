@@ -9,7 +9,7 @@ html {
     @include tools.background;
 }
 
-.content-home {
+.content.content-home {
     height: 100%;
     padding-bottom: $content-padding-bottom;
     &>section {

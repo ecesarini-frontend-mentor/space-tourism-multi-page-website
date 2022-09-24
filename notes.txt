@@ -63,6 +63,10 @@
       - Switched to "event handling callback" using normal function instead of arrow (by binding'em with ".call(this)"). It lets you adopting "super.myParentMethod()" because methods belong to constructor's prototype,
       while arrow methods belong to instance itself, imposing "this.methodINeed()" about. (check cose around '/js/crew.js@41').
 
+    - To handle asynchronous arguments inside a class look at this: https://stackoverflow.com/questions/72544385/handling-of-async-data-in-js-class
+    - Because of now you initialize object by pageClass.init() method in the instance itself, eventsLoad and evenetsChange function now depend on the instance, you must make'em a property of the instance instead of the prototype. 
+    So you need to declare these as arrow functions. The inherited class so, can access to parent function by this.method instead of super.method.
+
   - Dig into 404 error loading img reference in content element: it depends on "classtools.js.PageClass@"subnavUpdater": 
     need to make it 'async' and 'await' for this.imgTgSrc otherwise you'll get errors from server like:
     ```	subnavUpdater http://localhost:8080/js/lib/classtools.js:69:31 --> this.imgTg.src = /*await*/ this.subnavGetImgSrc(this.subnavInd);```

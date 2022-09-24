@@ -303,23 +303,23 @@ html {
   -o-background-size: cover;
 }
 
-.content-home {
+.content.content-home {
   height: 100%;
   padding-bottom: 14.56vh;
 }
-.content-home > section {
+.content.content-home > section {
   justify-content: flex-end;
 }
-.content-home .ch-01.fb-cell-01 {
+.content.content-home .ch-01.fb-cell-01 {
   width: 42.76vw;
 }
-.content-home .ch-01.fb-cell-01 h1 {
+.content.content-home .ch-01.fb-cell-01 h1 {
   padding: 24px 0;
 }
-.content-home .ch-02.fb-cell-02 {
+.content.content-home .ch-02.fb-cell-02 {
   margin: 0 11.5vw 0 auto;
 }
-.content-home .ch-02.fb-cell-02 button {
+.content.content-home .ch-02.fb-cell-02 button {
   font-family: inherit;
   text-transform: uppercase;
   width: 274px;
@@ -330,10 +330,10 @@ html {
   outline: 0px solid;
   transition: 0.3s ease-out;
 }
-.content-home .ch-02.fb-cell-02 button:hover {
+.content.content-home .ch-02.fb-cell-02 button:hover {
   outline: 88px solid rgba(255, 255, 255, 0.1036);
 }
-.content-home .ch-02.fb-cell-02 button span {
+.content.content-home .ch-02.fb-cell-02 button span {
   font-size: 32px;
   line-height: 37px;
   letter-spacing: 2px;

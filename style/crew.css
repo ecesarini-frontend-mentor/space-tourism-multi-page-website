@@ -323,11 +323,13 @@ html main .content.content-to-fb {
   height: 72.67vh;
 }
 html main .content.content-to-fb .fb-cell-01.crew-interact {
-  width: unset;
+  max-width: 54.1vw;
+  width: 100%;
   padding-bottom: 10.4vh;
 }
 html main .content.content-to-fb .fb-cell-01.crew-interact .crew-interact-fb-middle-container {
   height: 100%;
+  margin-top: 17.11vh;
   display: flex;
   flex-direction: column;
 }
@@ -336,7 +338,6 @@ html main .content.content-to-fb .fb-cell-01.crew-interact .crew-interact-fb-mid
 }
 html main .content.content-to-fb .fb-cell-01.crew-interact .crew-interact-fb-middle-container .crew-name {
   margin: 1.7vh 0 3.8vh 0;
-  min-width: 42.6vw;
 }
 html main .content.content-to-fb .fb-cell-01.crew-interact .crew-navbar {
   height: 1.7vh;
@@ -368,9 +369,8 @@ html main .crew-show {
   max-width: 39.4vw;
 }
 html main .crew-show .crew-img {
+  height: 100%;
   width: 100%;
-  position: relative;
-  bottom: 5vh;
 }
 html main .crew-show .crew-img-animation {
   animation-name: crew-img-animation;
@@ -407,6 +407,7 @@ html main .crew-show .crew-img-animation {
   html body main.mq-tab .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container {
     height: 22.65vh;
     width: 59.64vw;
+    margin: 0;
     justify-content: space-between;
     align-items: center;
     text-align: center;
@@ -432,8 +433,12 @@ html main .crew-show .crew-img-animation {
   }
   html body main.mq-tab .content.content-to-fb.content-crew .fb-cell-02 {
     height: 100%;
-    max-width: 59.4vw;
-    overflow-y: hidden;
+    width: 100%;
+    margin: auto;
+  }
+  html body main.mq-tab .content.content-to-fb.content-crew .fb-cell-02 img {
+    max-width: 592px;
+    width: 100%;
   }
 }
 

@@ -1,14 +1,28 @@
-export async function fectchJSON(jsonFile, ind) {
+export async function fectchJSON(jsonFile) {
     let jsonData = undefined;
     try {
-        jsonData = await fetch(jsonFile);
-        jsonData = await jsonData.json();
-        jsonData = ind? await jsonData[ind]: await jsonData; 
-            //.then(data => data);
+        jsonData = await fetch(jsonFile)
+            .then(resp => resp.json())
+            .then(data => data);
     } catch(error) {
-        console.log(error);
+        jsonData = console.log(error);
     }
     return jsonData;
+}
+
+export async function getJSONData(jsonFile) {
+    let jData = await fectchJSON(jsonFile);
+    return jData;
+}
+
+export async function initJSON(jsonFile, index) {    
+    const jsonData = await getJsonData(jsonFile);
+    return (arguments.length === 1)? jsonData: jsonData[index];
+}
+
+export function getJsonIndex(jsonFile, index) {
+    const data = jsonFile.then(r => r);
+    return data[index];
 }
 
 export function getHtmlRef(w) {

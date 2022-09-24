@@ -1,47 +1,57 @@
 import * as common from "./common.js";
 
 export class PageClass {
-    jData = undefined;
     imgPage = document.querySelector('.img-page');
     subnavInd = 0;
     subnavImgIndex = undefined;
-    mqWidth = window.matchMedia('(max-width: 768px)');
+    mqWidthMatch = window.matchMedia('(max-width: 768px)');
+    jData = undefined;
     constructor(
+            jFetch,
+            subnavMatchProp,
             subnavTg, 
             subnavCurrent,
             jsonTransform,
             subnavUpdateStuff            
         ) {
+            this.jFetch = jFetch;
+            this.subnavMatchProp = subnavMatchProp;
             this.subnavTg = subnavTg;
             this.subnavCurrent = subnavCurrent;
             this.jsonTransform = jsonTransform;
             this.subnavUpdateStuff = subnavUpdateStuff;
+
+            this.init();
     }
 
-    async init(jData) {
-        this.jData = await jData;
+    async init() {
+        this.jData = await this.jFetch;
+        this.jData = await this.jData[this.subnavMatchProp];
         this.eventsListener();
     }
     
     eventsListener() {
-        window.addEventListener('load', this.eventsLoad);
+        window.addEventListener('load', this.eventsLoad.call(this));
         this.subnavTg.forEach(n => n.addEventListener('click', this.eventsClick));
-        this.mqWidth.addEventListener('change', this.eventsChange);
+        this.mqWidthMatch.addEventListener('change', this.eventsChange.call(this));
     }
-    eventsLoad = () => {
+    //eventsLoad = () => {
+    eventsLoad() {
         this.mqSubnavImgCheck();
         this.imgPage.src = this.subnavGetImgSrc(this.subnavInd);
     }
     eventsClick = (e) => {
+    //eventsClick(e) {
         this.subnavUpdater(e.currentTarget);
     }
-    eventsChange = () => {
+    //eventsChange = () => {
+    eventsChange() {
         this.mqSubnavImgCheck();
         this.imgPage.src = this.subnavGetImgSrc(this.subnavInd);
     }
 
     mqSubnavImgCheck() {
-        this.subnavImgIndex = this.mqWidth.matches? 1: 0;
+        this.subnavImgIndex = this.mqWidthMatch.matches? 1: 0;
     }
     subnavGetImgSrc(ind) {
         let src = undefined;
