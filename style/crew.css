@@ -432,13 +432,10 @@ html main .crew-show .crew-img-animation {
     width: 1vh;
   }
   html body main.mq-tab .content.content-to-fb.content-crew .fb-cell-02 {
-    height: 100%;
+    max-width: 56.04vw;
+    height: 51.95vh;
     width: 100%;
     margin: auto;
-  }
-  html body main.mq-tab .content.content-to-fb.content-crew .fb-cell-02 img {
-    max-width: 592px;
-    width: 100%;
   }
 }
 

@@ -4,6 +4,7 @@ import * as classTools from "./lib/classtools.js";
 
 class PageClassCrew extends classTools.PageClass {
     jData = undefined;
+    //crewMqWidth = window.matchMedia('(max-width: 768px)');
     constructor(
             subnavTg, 
             subnavCurrent,
@@ -24,16 +25,19 @@ class PageClassCrew extends classTools.PageClass {
     }
 
     crewEventsListener() {
+        const crewMqWidthBind = this.crewEventsChange.bind(this);
         super.eventsListener();
-        window.addEventListener('load', this.crewEventsLoad);
-        this.mqWidth.addEventListener('change', this.crewEventsChange);
+        window.addEventListener('load', this.crewEventsLoad.call(this));
+        this.mqWidth.addEventListener('change', crewMqWidthBind);
     }
-    crewEventsLoad = () => {
-        this.eventsLoad();
+    //crewEventsLoad = () => {
+    crewEventsLoad() {
+        super.eventsLoad();
         this.crewSubnavMqSwitch();
     }
-    crewEventsChange = () => {
-        this.eventsChange();
+    //crewEventsChange = () => {
+    crewEventsChange() {
+        super.eventsChange();
         this.crewSubnavMqSwitch();
     }
 

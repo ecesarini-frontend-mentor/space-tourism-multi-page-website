@@ -98,6 +98,8 @@ html {
     $tab-fbc-01-subnav-h: 1vh;
     //$tab-fbc-02-padding-top: 3.9vh;
     $tab-fbc-01-padding-bottom: 3.9vh;
+    $tab-fbc-02-h: 51.95vh;
+    $tab-fbc-02-mw: 56.04vw;
     $tab-fbc-02-img-w: 59.4vw;
     $tab-fbc-02-img-h: 55vh;
     html {
@@ -137,15 +139,18 @@ html {
                         }
                     }
                     .fb-cell-02 {
-                        height: 100%;
+                        //margin: 0;
+                        //height: 100%;
+                        max-width: $tab-fbc-02-mw;
+                        height: $tab-fbc-02-h;
                         //max-width: $tab-fbc-02-img-w;
                         width: 100%;
                         margin: auto;
                         //padding-top: $tab-fbc-02-padding-top;
                         //overflow-y: hidden;
                         img {
-                            max-width: 592px;
-                            width: 100%;
+                            //max-width: 592px;
+                            //width: 100%;
                         }
                     }
                 }

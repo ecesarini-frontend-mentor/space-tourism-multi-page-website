@@ -24,18 +24,21 @@ export class PageClass {
     }
     
     eventsListener() {
-        window.addEventListener('load', this.eventsLoad);
+        const mqWidthBind = this.eventsChange.bind(this);
+        window.addEventListener('load', this.eventsLoad.call(this));
         this.subnavTg.forEach(n => n.addEventListener('click', this.eventsClick));
-        this.mqWidth.addEventListener('change', this.eventsChange);
+        this.mqWidth.addEventListener('change', mqWidthBind);
     }
-    eventsLoad = () => {
+    //eventsLoad = () => {
+    eventsLoad() {
         this.mqSubnavImgCheck();
         this.imgPage.src = this.subnavGetImgSrc(this.subnavInd);
     }
     eventsClick = (e) => {
         this.subnavUpdater(e.currentTarget);
     }
-    eventsChange = () => {
+    //eventsChange = () => {
+    eventsChange() {
         this.mqSubnavImgCheck();
         this.imgPage.src = this.subnavGetImgSrc(this.subnavInd);
     }
