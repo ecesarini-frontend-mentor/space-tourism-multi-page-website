@@ -90,23 +90,53 @@ html {
 // Media Query
 //Tab
 @media screen and (max-width: tools.$tablet-w) {
-    /*$tab-fbc-01-h: 22.7vh;
-    $tab-fbc-01-w: 59.6vw;
-    $tab-fbc-01-subnav-h: 1vh;
-    $tab-fbc-02-padding-top: 3.9vh;
-    $tab-fbc-02-img-w: 59.4vw;
-    $tab-fbc-02-img-h: 55vh;*/
+    $tab-fbc-01-ul-h: 5.86vh;
+    $tab-fbc-01-ul-w: 27.34vw;
+    $tab-fbc-01-li-font-size: 24px;
+    $tab-fbc-02-img-h: 30.27vh;
+    $tab-fbc-01-padding-top: 5.47vh;
+    $tab-fbc-02-navbar-padding-bottom: 4.30vh;
     html {
         @include tools.background(url("../assets/technology/background-technology-tablet.jpg"));
         body {
             @include tools.font-styler($max-vw: tools.$tablet-w);
             main.mq-tab {
                 .content.content-to-fb.content-tech {
-                    .fb-cell-01 {
-                        order: 3;
+                    //height: 100%;
+                    flex-direction: column-reverse;
+                    .tech-show.fb-cell-02 {
+                        .tech-img{
+                            max-height: initial;
+                            height: $tab-fbc-02-img-h;
+                            max-width: 100%;
+                            width: 100%;
+                        }
                     }
-                    .fb-cell-02 {
-                        order: 2;
+                    .tech-interact.fb-cell-01 {
+                        .tech-content-subgrid {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            .tech-navbar {
+                                height: $tab-fbc-01-ul-h;
+                                width: $tab-fbc-01-ul-w;
+                                padding-top: $tab-fbc-01-padding-top;
+                                ul {
+                                    height: 100%;
+                                    width: 100%;                                    
+                                    flex-direction: row;
+                                    li {
+                                        height: $tab-fbc-01-ul-h;
+                                        width: $tab-fbc-01-ul-h;
+                                        font-size: $tab-fbc-01-li-font-size;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-around;                                        
+                                    }                                    
+                                }
+                            }
+                        }
                     }
                 }
             }

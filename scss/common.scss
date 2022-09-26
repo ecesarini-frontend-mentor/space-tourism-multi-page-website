@@ -1,6 +1,10 @@
 @use 'tools';
 
-* { box-sizing: border-box; }
+* { 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box; 
+}
 
 body {
     @include tools.font-styler;
@@ -173,7 +177,7 @@ main {
     }
     .content {
         width: 100%;
-        height: calc(100vh - tools.$tab-navbar-h - tools.$tab-content-padding-top);
+        //height: calc(100vh - tools.$tab-navbar-h - tools.$tab-main-h5-padding-bottom);
         //height: 100%;
         display: flex;
         color: inherit;
@@ -226,7 +230,7 @@ main {
             padding-top: 0;
             height: calc(100vh - tools.$tab-navbar-h);
             .main-h5 {
-                padding-top: tools.$tab-h5-padding-top ;
+                padding: tools.$tab-h5-padding-top 0 tools.$tab-main-h5-padding-bottom tools.$content-h5-padding-left;
                 height: initial;
             }
             .content.content-to-fb {
@@ -240,9 +244,9 @@ main {
                 flex-direction: column;
                 align-items: center;
                 &>section {
-                    &.fb-cell-01 {
+                    /*&.fb-cell-01 {
                         padding-top: tools.$tab-content-padding-top;
-                    }
+                    }*/
                     width: 100%;
                     height: initial;
                     align-items: center;

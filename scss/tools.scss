@@ -37,7 +37,7 @@ $font-barlowCondensed: 'Barlow Condensed', sans-serif;
 $tab-fbc-01-w: 58.6vw;
 $tab-fbc-01-h: 32.6vh;
 $tab-main-h5-padding-left: 5vw;
-$tab-content-padding-top: 5.86vh;
+$tab-main-h5-padding-bottom: 5.86vh;
 $tab-navbar-h: 9.4vh;
 //$tab-content-padding: 3.9vh 0 0 0;
 //$tab-content-padding-top: 3.9vh;
@@ -80,6 +80,6 @@ $tab-h5-padding-top: 3.9vh;
             font-size: 16px;
             line-height: 28px;
             letter-spacing: 0.3px;
-        }
+        }        
     }
 } 

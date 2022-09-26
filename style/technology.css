@@ -1,5 +1,7 @@
 /* Mq variables */
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -219,7 +221,6 @@ main .main-h5 .h5-span-number {
 }
 main .content {
   width: 100%;
-  height: 84.74vh;
   display: flex;
   color: inherit;
 }
@@ -267,7 +268,7 @@ main .content .fb-cell-02 .subnavbar {
     height: 90.6vh;
   }
   body main.mq-tab .main-h5 {
-    padding-top: 3.9vh;
+    padding: 3.9vh 0 5.86vh 11.56vw;
     height: initial;
   }
   body main.mq-tab .content.content-to-fb {
@@ -282,12 +283,12 @@ main .content .fb-cell-02 .subnavbar {
     padding: 0;
   }
   body main.mq-tab .content.content-to-fb > section {
+    /*&.fb-cell-01 {
+        padding-top: tools.$tab-content-padding-top;
+    }*/
     width: 100%;
     height: initial;
     align-items: center;
-  }
-  body main.mq-tab .content.content-to-fb > section.fb-cell-01 {
-    padding-top: 5.86vh;
   }
   body main.mq-tab .content.content-to-fb > section .body-text {
     text-align: center;
@@ -368,12 +369,6 @@ html .content-tech .tech-show img {
 }
 
 @media screen and (max-width: 768px) {
-  /*$tab-fbc-01-h: 22.7vh;
-  $tab-fbc-01-w: 59.6vw;
-  $tab-fbc-01-subnav-h: 1vh;
-  $tab-fbc-02-padding-top: 3.9vh;
-  $tab-fbc-02-img-w: 59.4vw;
-  $tab-fbc-02-img-h: 55vh;*/
   html {
     background: url("../assets/technology/background-technology-tablet.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
     -webkit-background-size: cover;
@@ -397,11 +392,38 @@ html .content-tech .tech-show img {
     line-height: 28px;
     letter-spacing: 0.3px;
   }
-  html body main.mq-tab .content.content-to-fb.content-tech .fb-cell-01 {
-    order: 3;
+  html body main.mq-tab .content.content-to-fb.content-tech {
+    flex-direction: column-reverse;
   }
-  html body main.mq-tab .content.content-to-fb.content-tech .fb-cell-02 {
-    order: 2;
+  html body main.mq-tab .content.content-to-fb.content-tech .tech-show.fb-cell-02 .tech-img {
+    max-height: initial;
+    height: 30.27vh;
+    max-width: 100%;
+    width: 100%;
+  }
+  html body main.mq-tab .content.content-to-fb.content-tech .tech-interact.fb-cell-01 .tech-content-subgrid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  html body main.mq-tab .content.content-to-fb.content-tech .tech-interact.fb-cell-01 .tech-content-subgrid .tech-navbar {
+    height: 5.86vh;
+    width: 27.34vw;
+    padding-top: 5.47vh;
+  }
+  html body main.mq-tab .content.content-to-fb.content-tech .tech-interact.fb-cell-01 .tech-content-subgrid .tech-navbar ul {
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+  }
+  html body main.mq-tab .content.content-to-fb.content-tech .tech-interact.fb-cell-01 .tech-content-subgrid .tech-navbar ul li {
+    height: 5.86vh;
+    width: 5.86vh;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 }
 

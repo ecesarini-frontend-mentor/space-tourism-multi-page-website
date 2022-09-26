@@ -1,5 +1,7 @@
 /* Mq variables */
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -219,7 +221,6 @@ main .main-h5 .h5-span-number {
 }
 main .content {
   width: 100%;
-  height: 84.74vh;
   display: flex;
   color: inherit;
 }
@@ -267,7 +268,7 @@ main .content .fb-cell-02 .subnavbar {
     height: 90.6vh;
   }
   body main.mq-tab .main-h5 {
-    padding-top: 3.9vh;
+    padding: 3.9vh 0 5.86vh 11.56vw;
     height: initial;
   }
   body main.mq-tab .content.content-to-fb {
@@ -282,12 +283,12 @@ main .content .fb-cell-02 .subnavbar {
     padding: 0;
   }
   body main.mq-tab .content.content-to-fb > section {
+    /*&.fb-cell-01 {
+        padding-top: tools.$tab-content-padding-top;
+    }*/
     width: 100%;
     height: initial;
     align-items: center;
-  }
-  body main.mq-tab .content.content-to-fb > section.fb-cell-01 {
-    padding-top: 5.86vh;
   }
   body main.mq-tab .content.content-to-fb > section .body-text {
     text-align: center;
