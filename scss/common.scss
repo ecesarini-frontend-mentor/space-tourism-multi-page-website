@@ -21,6 +21,7 @@ main {
 }
 a {
     text-decoration: none;
+    color: unset;
 }
 ul {
     list-style: none;
@@ -87,6 +88,25 @@ p {
 }
 
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
+.mobile-navbar {
+    display: none;
+    height: 100%;
+    min-width: 200px;
+    width: 55%;
+    .mobile-navbar-close-btn {
+        display: none;
+    }
+    .mobile-navbar-hamburger {
+        display: none; 
+        border: 1px solid tools.$color-body-text;
+        border-radius: 2px;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
 header {
     width: 100%;
     height: tools.$nav-h;

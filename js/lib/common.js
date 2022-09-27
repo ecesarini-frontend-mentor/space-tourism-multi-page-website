@@ -82,11 +82,47 @@ export function subnavUpdateStuffObj(arr) {
     }
 }
 
-/*export function clipPather(elem) {
-    window.addEventListener("scroll", () => {
-        const elementToHide = document.querySelector(elem),
-            windowScrollTop = elementToHide.scrollTop;
-      
-        elementToHide.style.clipPath = `inset(${windowScrollTop}px 0 0 0)`;
-      });
-}*/
+// Mobile navbar
+export function createMobileNavbar() {
+    const mobileNavbar = document.createElement('div'),
+        mobileNavCloseBtn = document.createElement('button'),
+        mobileNavCloseImg = document.createElement('img'),
+        mobileNavHamburgerBtn = document.createElement('button'),
+        mobileHamburgerImg = document.createElement('img');
+    
+    mobileNavbar.classList.add('mobile-navbar');
+    mobileNavCloseBtn.classList.add('mobile-navbar-close-btn');
+    mobileNavCloseImg.src = '../../assets/shared/icon-close.svg';
+    mobileNavHamburgerBtn.classList.add('mobile-navbar-hamburger');
+    mobileHamburgerImg.src = '../../assets/shared/icon-hamburger.svg';
+    
+    mobileNavCloseBtn.append(mobileNavCloseImg);
+    mobileNavHamburgerBtn.append(mobileHamburgerImg);
+    document.header.append(mobileNavHamburgerBtn);
+    document.body.prepend(mobileNavbar);
+}
+
+export function swapMobileVp(maxVw, tgNavbar) {
+    const matchMqW = window.matchMedia(maxVw),
+        mobileNavbar = document.querySelector('.mobile-navbar'),
+        mobileNavbarClose = document.querySelector('.mobile-navbar-close-btn'),
+        mobileNavbarHamburger = document.querySelector('.mobile-navbar-hamburger');
+
+    window.addEventListener('load', mwChanged);
+    matchMqW.addEventListener('change', mwChanged);
+    mobileNavbarHamburger.addEventListener('click', navClicked);
+
+    const mwChanged = () => {
+        if(matchMqW.matches) {
+            mobileNavbar.append(tgNavbar);
+            [mobileNavbarClose, mobileNavbarHamburger]
+                .forEach(mob => mob.style.display = '');                
+        }
+    }
+    const navClicked = () => {
+        if(matchMqW.matches) {
+            mobileNavbar.style.display = '';
+        }
+    }
+
+}

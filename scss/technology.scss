@@ -90,9 +90,13 @@ html {
 // Media Query
 //Tab
 @media screen and (max-width: tools.$tablet-w) {
+    $tab-fbc-01-subnav-margin-top: 5.47vh;
+    $tab-fbc-01-subnav-padding-bottom: 4.30vh;
     $tab-fbc-01-ul-h: 5.86vh;
     $tab-fbc-01-ul-w: 27.34vw;
     $tab-fbc-01-li-font-size: 24px;
+    $tab-fbc-01-content-h: 23.14vh;
+    $tab-fbc-01-content-w: 59.64vw;
     $tab-fbc-02-img-h: 30.27vh;
     $tab-fbc-01-padding-top: 5.47vh;
     $tab-fbc-02-navbar-padding-bottom: 4.30vh;
@@ -113,15 +117,17 @@ html {
                         }
                     }
                     .tech-interact.fb-cell-01 {
+                        height: calc($tab-fbc-01-subnav-margin-top + $tab-fbc-01-subnav-padding-bottom + $tab-fbc-01-ul-h + $tab-fbc-01-content-h);
                         .tech-content-subgrid {
+                            height: 100%;
                             width: 100%;
                             display: flex;
                             flex-direction: column;
                             align-items: center;
                             .tech-navbar {
-                                height: $tab-fbc-01-ul-h;
+                                height: initial;
                                 width: $tab-fbc-01-ul-w;
-                                padding-top: $tab-fbc-01-padding-top;
+                                padding: $tab-fbc-01-padding-top 0 $tab-fbc-01-subnav-padding-bottom;
                                 ul {
                                     height: 100%;
                                     width: 100%;                                    
@@ -135,6 +141,11 @@ html {
                                         justify-content: space-around;                                        
                                     }                                    
                                 }
+                            }
+                            .tech-content-sg-descr {
+                                height: $tab-fbc-01-content-h;
+                                width: $tab-fbc-01-content-w;
+                                align-items: center;
                             }
                         }
                     }

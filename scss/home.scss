@@ -74,5 +74,11 @@ html {
             }
         }
     }
-    
+}
+@media screen and (max-width: tools.$mobile-w) {
+
+    html {
+        @include tools.background(url("../assets/home/background-home-mobile.jpg"));
+        
+    }
 }
