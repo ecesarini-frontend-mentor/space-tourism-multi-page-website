@@ -141,16 +141,8 @@ p {
   width: 55%;
 }
 .mobile-navbar .mobile-navbar-close-btn {
-  display: none;
-}
-.mobile-navbar .mobile-navbar-hamburger {
-  display: none;
-  border: 1px solid hsl(231deg, 79%, 90%);
-  border-radius: 2px;
-}
-.mobile-navbar .mobile-navbar-hamburger img {
-  height: 100%;
-  width: 100%;
+  height: 21px;
+  width: 24px;
 }
 
 header {
@@ -161,7 +153,17 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-header img {
+header .mobile-navbar-hamburger {
+  height: 21px;
+  width: 24px;
+  display: none;
+  cursor: pointer;
+}
+header .mobile-navbar-hamburger img {
+  height: 100%;
+  width: 100%;
+}
+header > img {
   margin-left: 3.75vw;
   width: 48px;
   height: 48px;
@@ -314,6 +316,27 @@ main .content .fb-cell-02 .subnavbar {
     text-align: center;
   }
   body main.mq-tab .content.content-to-fb .mq-subnavbar.subnavbar {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 375px) {
+  body .mobile-navbar {
+    display: none;
+  }
+  body header {
+    padding: 0 24px;
+  }
+  body header hr, body header .nav-index {
+    display: none;
+  }
+  body header .mobile-navbar-hamburger {
+    height: 21px;
+    width: 24px;
+    display: block;
+    cursor: pointer;
+  }
+  body header .mobile-navbar-hamburger img {
+    height: 100%;
     width: 100%;
   }
 }

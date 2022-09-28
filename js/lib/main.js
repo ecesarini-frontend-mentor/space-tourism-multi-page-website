@@ -4,7 +4,7 @@ import * as common from "./common.js";
 export const jFile = '../data.json';
 export let jData = undefined;
 export const htmlPageTarget = common.getHtmlRef(window);
-
+const mobileMw = '(max-width: 375px)';
 
 
 export async function getJdata(ind) {
@@ -21,4 +21,7 @@ export function initPage(tg) {
         if(item === tg) mainNav.querySelector(`li:nth-child(${ind+1})`).classList.toggle('navbar-current-page');
     });
     body.prepend(mainNav);
+    common.createMobileNavbar();
+    common.swapMobileVp(mobileMw);
+
 }

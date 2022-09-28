@@ -84,45 +84,58 @@ export function subnavUpdateStuffObj(arr) {
 
 // Mobile navbar
 export function createMobileNavbar() {
-    const mobileNavbar = document.createElement('div'),
+    const docHeader = document.querySelector('header'),
+        mobileNavbar = document.createElement('div'),
         mobileNavCloseBtn = document.createElement('button'),
         mobileNavCloseImg = document.createElement('img'),
-        mobileNavHamburgerBtn = document.createElement('button'),
-        mobileHamburgerImg = document.createElement('img');
+        navHamburgerBtn = document.createElement('button'),
+        navHamburgerImg = document.createElement('img');
     
     mobileNavbar.classList.add('mobile-navbar');
     mobileNavCloseBtn.classList.add('mobile-navbar-close-btn');
     mobileNavCloseImg.src = '../../assets/shared/icon-close.svg';
-    mobileNavHamburgerBtn.classList.add('mobile-navbar-hamburger');
-    mobileHamburgerImg.src = '../../assets/shared/icon-hamburger.svg';
+    navHamburgerBtn.classList.add('mobile-navbar-hamburger');
+    navHamburgerImg.src = '../../assets/shared/icon-hamburger.svg';
     
     mobileNavCloseBtn.append(mobileNavCloseImg);
-    mobileNavHamburgerBtn.append(mobileHamburgerImg);
-    document.header.append(mobileNavHamburgerBtn);
-    document.body.prepend(mobileNavbar);
+    mobileNavbar.append(mobileNavCloseBtn)
+    navHamburgerBtn.append(navHamburgerImg);
+    docHeader.append(navHamburgerBtn);
+    docHeader.after(mobileNavbar);
 }
 
-export function swapMobileVp(maxVw, tgNavbar) {
+
+export function swapMobileVp(maxVw) {
     const matchMqW = window.matchMedia(maxVw),
+        mainNavbar = document.querySelector('.nav-index'),
         mobileNavbar = document.querySelector('.mobile-navbar'),
         mobileNavbarClose = document.querySelector('.mobile-navbar-close-btn'),
-        mobileNavbarHamburger = document.querySelector('.mobile-navbar-hamburger');
-
-    window.addEventListener('load', mwChanged);
-    matchMqW.addEventListener('change', mwChanged);
-    mobileNavbarHamburger.addEventListener('click', navClicked);
-
+        header = document.querySelector('header'),
+        navbarHamburger = document.querySelector('.mobile-navbar-hamburger'),
+        navbarHr = document.querySelector('header>hr');
+    
     const mwChanged = () => {
         if(matchMqW.matches) {
-            mobileNavbar.append(tgNavbar);
-            [mobileNavbarClose, mobileNavbarHamburger]
-                .forEach(mob => mob.style.display = '');                
+            mobileNavbar.append(mainNavbar);
+            //navbarHamburger.style.display = 'block';
+            //navbarHr.style.display = 'none';
+        } else {
+            header.append(mainNavbar);
+            //navbarHamburger.style = '';
+            //navbarHr.style = '';
         }
     }
-    const navClicked = () => {
-        if(matchMqW.matches) {
-            mobileNavbar.style.display = '';
-        }
+    const navOpen = () => {
+            mobileNavbar.style.display = 'flex';
     }
+    const navClose = () => {
+        mobileNavbar.style = '';
+    }
+
+    //window.addEventListener('load', mwChanged);
+    matchMqW.addEventListener('change', mwChanged);
+    navbarHamburger.addEventListener('click', navOpen);
+    mobileNavbarClose.addEventListener('click', navClose);
+
 
 }

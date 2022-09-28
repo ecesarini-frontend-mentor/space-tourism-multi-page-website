@@ -39,9 +39,10 @@ $tab-fbc-01-h: 32.6vh;
 $tab-main-h5-padding-left: 5vw;
 $tab-main-h5-padding-bottom: 5.86vh;
 $tab-navbar-h: 9.4vh;
-//$tab-content-padding: 3.9vh 0 0 0;
-//$tab-content-padding-top: 3.9vh;
 $tab-h5-padding-top: 3.9vh;
+
+// Mobile
+$mobile-header-padding-lr: 24px;
 
 // Mixin
 
@@ -52,12 +53,6 @@ $tab-h5-padding-top: 3.9vh;
     -o-background-size: cover;
 }
 
-//@mixin img-page($img) {
-//    background: $img no-repeat center center / cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
-//    -webkit-background-size: cover;
-//    -moz-background-size: cover;
-//    -o-background-size: cover;
-//}
 
 @mixin font-styler($max-vw: $desktop-w) {
     @if $max-vw >= $desktop-w {
