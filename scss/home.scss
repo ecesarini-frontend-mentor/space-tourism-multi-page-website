@@ -55,7 +55,6 @@ html {
     html {
         @include tools.background(url("../assets/home/background-home-tablet.jpg"));
         body {
-            @include tools.font-styler($max-vw: tools.$tablet-w);
             main.mq-tab.main-home {
                 padding: $main-padding;
                 .content-to-fb.content-home {
@@ -76,9 +75,20 @@ html {
     }
 }
 @media screen and (max-width: tools.$mobile-w) {
-
+    $mobile-content-h: 276px;
+    $mobile-content-w: 87.2vw;
     html {
         @include tools.background(url("../assets/home/background-home-mobile.jpg"));
-        
+        body {
+            main.mq-tab.main-home {
+                .content-to-fb.content-home {
+                    margin: 0 auto;
+                    width: $mobile-content-w;
+                    .ch-01.fb-cell-01 {
+                        min-height: $mobile-content-h;
+                    }
+                }
+            }
+        }
     }
 }

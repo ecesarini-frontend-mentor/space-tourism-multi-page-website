@@ -105,7 +105,6 @@ html {
     html {
         @include tools.background(url("../assets/crew/background-crew-tablet.jpg"));
         body {
-            @include tools.font-styler($max-vw: tools.$tablet-w);
             main.mq-tab {
                 .content.content-to-fb.content-crew {
                     .crew-interact.fb-cell-01 {

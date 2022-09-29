@@ -121,18 +121,21 @@ export function swapMobileVp(maxVw) {
             //navbarHr.style.display = 'none';
         } else {
             header.append(mainNavbar);
+            mobileNavbar.style = '';
             //navbarHamburger.style = '';
             //navbarHr.style = '';
         }
     }
     const navOpen = () => {
-            mobileNavbar.style.display = 'flex';
+            mobileNavbar.style.display = 'block'; 
+            navbarHamburger.style.display = 'none';
     }
-    const navClose = () => {
+    const navClose = () => { 
+        navbarHamburger.style = '';       
         mobileNavbar.style = '';
     }
 
-    //window.addEventListener('load', mwChanged);
+    window.addEventListener('load', mwChanged);
     matchMqW.addEventListener('change', mwChanged);
     navbarHamburger.addEventListener('click', navOpen);
     mobileNavbarClose.addEventListener('click', navClose);

@@ -113,9 +113,6 @@ html {
     
     html {
         @include tools.background(url("../assets/destination/background-destination-tablet.jpg"));
-        body {
-            @include tools.font-styler($max-vw: tools.$tablet-w);
-        }
     }
     main.mq-tab {
         .content.content-to-fb.content-destination { 

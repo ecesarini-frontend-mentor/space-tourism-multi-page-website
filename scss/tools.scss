@@ -43,7 +43,10 @@ $tab-h5-padding-top: 3.9vh;
 
 // Mobile
 $mobile-header-padding-lr: 24px;
-
+$mobile-navbar-w: 67.73vw;
+$mobile-navbar-padding: 33.95px; 
+$mobile-close-btn-dim: 19.09px 26.95px 0 32px;
+$mobile-navindex-height: calc(19px * 4 + 32px * 3);
 // Mixin
 
 @mixin background($img: url("../assets/home/background-home-desktop.jpg")) {
@@ -66,9 +69,9 @@ $mobile-header-padding-lr: 24px;
         .body-text {font-size: 18px;}
         .subhead1 {font-size: 28px;}
         .subhead2 {font-size: 14px;}
-    } @else if $max-vw < $desktop-w and $max-vw >= $mobile-w {
-        h3 { font-size: 40px; }
-        h4 { font-size: 24px; }
+    } @else if $max-vw < $desktop-w and $max-vw > $mobile-w {
+        h3 {font-size: 40px;}
+        h4 {font-size: 24px;}
         h5, .h5-span-number {font-size: 20px;}
         span {font-size: 14px;}
         .body-text {
@@ -76,5 +79,39 @@ $mobile-header-padding-lr: 24px;
             line-height: 28px;
             letter-spacing: 0.3px;
         }        
+    } @else if $max-vw <= $mobile-w {
+        h1 {
+            font-size: 80px;
+            line-height: 100px;
+        }
+        h2 {
+            font-size: 56px;
+            line-height: 64px;
+        }
+        h3 {
+            font-size: 24px;
+            line-height: 28px;
+        }
+        h4 {
+            font-size: 16px;
+            line-height: 18px;
+        }
+        h5 {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        .body-text {
+            font-size: 15px;
+            line-height: 25px;
+        }
+        .mobile-navbar {
+            line-height: 19px;
+            letter-spacing: 2.7px;
+            font-size: 16px;
+            font-weight: 400;
+            ul>li span:first-child {
+                font-weight: 700;
+            }
+        }
     }
 } 
