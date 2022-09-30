@@ -341,6 +341,11 @@ main .content .fb-cell-02 .subnavbar {
 @media screen and (max-width: 375px) {
   body {
     z-index: 0;
+    position: relative;
+    padding: 0 24px;
+  }
+  body * {
+    overflow: hidden;
   }
   body h1 {
     font-size: 80px;
@@ -379,7 +384,10 @@ main .content .fb-cell-02 .subnavbar {
     display: none;
   }
   body header {
-    padding: 0 24px;
+    width: calc(100vw - 48px);
+    min-height: 64px;
+    height: 64px;
+    overflow: hidden;
   }
   body header hr, body header .nav-index {
     display: none;
@@ -395,6 +403,7 @@ main .content .fb-cell-02 .subnavbar {
     width: 100%;
   }
   body .mobile-navbar .mobile-navbar-close-btn {
+    margin-left: auto;
     display: block;
     height: 19.09px 26.95px 0 32px;
     width: 19.09px 26.95px 0 32px;
@@ -414,6 +423,11 @@ main .content .fb-cell-02 .subnavbar {
   }
   body .mobile-navbar .nav-index ul li span {
     margin-right: 12px;
+  }
+  body main.mq-tab {
+    position: relative;
+    top: 88px;
+    overflow: scroll;
   }
 }
 @keyframes destination-img-animation {

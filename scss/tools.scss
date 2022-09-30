@@ -42,11 +42,15 @@ $tab-navbar-h: 9.4vh;
 $tab-h5-padding-top: 3.9vh;
 
 // Mobile
-$mobile-header-padding-lr: 24px;
+$mobile-body-padding-lr: 24px;
+$mobile-header-h: calc(40px + 24px);
 $mobile-navbar-w: 67.73vw;
 $mobile-navbar-padding: 33.95px; 
 $mobile-close-btn-dim: 19.09px 26.95px 0 32px;
 $mobile-navindex-height: calc(19px * 4 + 32px * 3);
+$mobile-main-top-gap-from-header: calc($mobile-header-h + 24px);
+$mobile-main-padding-lr: 6.4vw;
+
 // Mixin
 
 @mixin background($img: url("../assets/home/background-home-desktop.jpg")) {

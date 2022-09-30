@@ -76,3 +76,4 @@
     - If you let subnavGetImgSrc to be async you get problems anyway (check: \\Desktop\space-history-PageClass-promise-async-problem.jpg); 
     'this.subnavInd' is resolved by 'common.subnavMatcher' lib function.
 
+- Check why position 'fixed' makes header's hamburger-button disappear while 'sticky' doesn't, in mobile-design. https://www.dariocapozzi.it/position-sticky-css-guida-ed-esempi-pratici/

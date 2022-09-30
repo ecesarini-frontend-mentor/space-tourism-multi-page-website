@@ -275,6 +275,8 @@ main {
         }
     }
 }
+
+
 .mobile-navbar {
     display: none;
     position: fixed;
@@ -289,13 +291,22 @@ main {
 }
 @media screen and (max-width: tools.$mobile-w) {
     body {
+        * {
+            overflow: hidden;
+        }
         @include tools.font-styler($max-vw: tools.$mobile-w);
         z-index: 0;
+        position: relative;
+        padding: 0 tools.$mobile-body-padding-lr;
         .mobile-navbar {
             display: none;
         }
         header {
-            padding: 0 tools.$mobile-header-padding-lr;
+            width: calc(100vw - 2 * tools.$mobile-body-padding-lr);
+            min-height: tools.$mobile-header-h;
+            height: tools.$mobile-header-h;
+            overflow: hidden;
+            //padding: 0 tools.$mobile-header-padding-lr;
             hr, .nav-index {
                 display: none;
             }
@@ -312,6 +323,7 @@ main {
         }
         .mobile-navbar {
             .mobile-navbar-close-btn {
+                margin-left: auto;
                 display: block;
                 height: tools.$mobile-close-btn-dim;
                 width: tools.$mobile-close-btn-dim;
@@ -336,8 +348,12 @@ main {
                 }
             }
         }
-    main {
-
-    }
+        main.mq-tab {
+            //height: 100%;
+            position: relative;
+            top: tools.$mobile-main-top-gap-from-header;
+            overflow: scroll;
+            //padding: 0 tools.$mobile-main-padding-lr 0 tools.$mobile-main-padding-lr;
+        }
     }
 }
