@@ -77,3 +77,5 @@
     'this.subnavInd' is resolved by 'common.subnavMatcher' lib function.
 
 - Check why position 'fixed' makes header's hamburger-button disappear while 'sticky' doesn't, in mobile-design. https://www.dariocapozzi.it/position-sticky-css-guida-ed-esempi-pratici/
+
+- If you height of the 'body' element to 100% it doesn't fix a unit measure, so the child element won't respond about something like (height: calc(100% - 24px))  https://stackoverflow.com/questions/13239549/relative-parent-absolute-positioning-vertically-by-percentage 

@@ -290,70 +290,91 @@ main {
     backdrop-filter: blur(40.7742px);
 }
 @media screen and (max-width: tools.$mobile-w) {
-    body {
-        * {
-            overflow: hidden;
-        }
-        @include tools.font-styler($max-vw: tools.$mobile-w);
-        z-index: 0;
-        position: relative;
-        padding: 0 tools.$mobile-body-padding-lr;
-        .mobile-navbar {
-            display: none;
-        }
-        header {
-            width: calc(100vw - 2 * tools.$mobile-body-padding-lr);
-            min-height: tools.$mobile-header-h;
-            height: tools.$mobile-header-h;
-            overflow: hidden;
-            //padding: 0 tools.$mobile-header-padding-lr;
-            hr, .nav-index {
+    html {
+        font-size: 1px;
+        body {
+            * {
+                overflow: visible;
+            }
+            @include tools.font-styler($max-vw: tools.$mobile-w);
+            position: relative;
+            min-height: tools.$mobile-body-min-h;
+            height: 100vh;
+            z-index: 0;
+            padding: 0 tools.$mobile-body-padding-lr;
+            .mobile-navbar {
                 display: none;
             }
-            .mobile-navbar-hamburger {
-                height: 21px;
-                width: 24px;
-                display: block;
-                cursor: pointer;
-                img {
+            header {
+                width: calc(100vw - 2 * tools.$mobile-body-padding-lr);
+                min-height: tools.$mobile-header-h;
+                height: tools.$mobile-header-h;
+                //overflow: hidden;
+                //padding: 0 tools.$mobile-header-padding-lr;
+                hr, .nav-index {
+                    display: none;
+                }
+                .mobile-navbar-hamburger {
+                    height: 21px;
+                    width: 24px;
+                    display: block;
+                    cursor: pointer;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+            .mobile-navbar {
+                .mobile-navbar-close-btn {
+                    margin-left: auto;
+                    display: block;
+                    height: tools.$mobile-close-btn-dim;
+                    width: tools.$mobile-close-btn-dim;
+                    cursor: pointer;
+                    background-color: transparent;
+                }
+                .nav-index {
+                    margin-top: 9.74vh;
+                    height: tools.$mobile-navindex-height;
+                    color: tools.$color-content;
+                    ul {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        li {
+                            //font-size: ;
+                            span {
+                                margin-right: 12px;
+                            }
+                        }                    
+                    }
+                }
+            }
+            
+            main.mq-tab {
+                position: relative;
+                top: 88px;
+                //height: calc(100% - tools.$mobile-header-h);
+                //height: 100%;
+                //height: calc(100% - 64rem);
+                padding: 0;
+                //top: tools.$mobile-main-top-gap-from-header;
+                //overflow-y: hidden;
+                overflow-y: auto;                
+                .content.content-to-fb {
+                    position: relative;
+                    //top: 0px;
+                    top: 124px; // debugging
                     height: 100%;
                     width: 100%;
+                    margin: 0;
+                    padding: tools.$mobile-content-padding-top 0 0 0;
+                    //overflow-y: auto;                
                 }
+                //padding: 0 tools.$mobile-main-padding-lr 0 tools.$mobile-main-padding-lr;
             }
-        }
-        .mobile-navbar {
-            .mobile-navbar-close-btn {
-                margin-left: auto;
-                display: block;
-                height: tools.$mobile-close-btn-dim;
-                width: tools.$mobile-close-btn-dim;
-                cursor: pointer;
-                background-color: transparent;
-            }
-            .nav-index {
-                margin-top: 9.74vh;
-                height: tools.$mobile-navindex-height;
-                color: tools.$color-content;
-                ul {
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-evenly;
-                    li {
-                        //font-size: ;
-                        span {
-                            margin-right: 12px;
-                        }
-                    }                    
-                }
-            }
-        }
-        main.mq-tab {
-            //height: 100%;
-            position: relative;
-            top: tools.$mobile-main-top-gap-from-header;
-            overflow: scroll;
-            //padding: 0 tools.$mobile-main-padding-lr 0 tools.$mobile-main-padding-lr;
         }
     }
 }

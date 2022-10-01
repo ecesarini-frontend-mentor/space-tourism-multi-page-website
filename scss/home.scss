@@ -77,17 +77,22 @@ html {
 @media screen and (max-width: tools.$mobile-w) {
     $mobile-content-h: 276px;
     $mobile-content-w: 87.2vw;
+    $mobile-content-padding-top: 48px;
     html {
         @include tools.background(url("../assets/home/background-home-mobile.jpg"));
         body {
             main.mq-tab.main-home {
-                .content-to-fb.content-home {
+                padding-top: $mobile-content-padding-top;
+                //padding: 0 !important; --> it breaks positioning
+                /*.content-to-fb.content-home {
+                    height: 100%;
                     margin: 0 auto;
-                    width: $mobile-content-w;
+                    //width: $mobile-content-w;
                     .ch-01.fb-cell-01 {
                         min-height: $mobile-content-h;
+                        width: 100%;
                     }
-                }
+                }*/
             }
         }
     }
