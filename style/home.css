@@ -339,10 +339,8 @@ main .content .fb-cell-02 .subnavbar {
 }
 
 @media screen and (max-width: 375px) {
-  html {
+  body {
     font-size: 1px;
-  }
-  html body {
     position: relative;
     min-height: 667px;
     height: 100vh;
@@ -350,61 +348,61 @@ main .content .fb-cell-02 .subnavbar {
     padding: 0 24px;
     overflow-y: clip;
   }
-  html body h1 {
+  body h1 {
     font-size: 80px;
     line-height: 100px;
   }
-  html body h2 {
+  body h2 {
     font-size: 56px;
     line-height: 64px;
   }
-  html body h3 {
+  body h3 {
     font-size: 24px;
     line-height: 28px;
   }
-  html body h4 {
+  body h4 {
     font-size: 16px;
     line-height: 18px;
   }
-  html body h5 {
+  body h5 {
     font-size: 16px;
     line-height: 19px;
   }
-  html body .body-text {
+  body .body-text {
     font-size: 15px;
     line-height: 25px;
   }
-  html body .mobile-navbar {
+  body .mobile-navbar {
     line-height: 19px;
     letter-spacing: 2.7px;
     font-size: 16px;
     font-weight: 400;
   }
-  html body .mobile-navbar ul > li span:first-child {
+  body .mobile-navbar ul > li span:first-child {
     font-weight: 700;
   }
-  html body .mobile-navbar {
+  body .mobile-navbar {
     display: none;
   }
-  html body header {
+  body header {
     width: calc(100vw - 48px);
     min-height: 64px;
     height: 64px;
   }
-  html body header hr, html body header .nav-index {
+  body header hr, body header .nav-index {
     display: none;
   }
-  html body header .mobile-navbar-hamburger {
+  body header .mobile-navbar-hamburger {
     height: 21px;
     width: 24px;
     display: block;
     cursor: pointer;
   }
-  html body header .mobile-navbar-hamburger img {
+  body header .mobile-navbar-hamburger img {
     height: 100%;
     width: 100%;
   }
-  html body .mobile-navbar .mobile-navbar-close-btn {
+  body .mobile-navbar .mobile-navbar-close-btn {
     margin-left: auto;
     display: block;
     height: 19.09px 26.95px 0 32px;
@@ -412,27 +410,27 @@ main .content .fb-cell-02 .subnavbar {
     cursor: pointer;
     background-color: transparent;
   }
-  html body .mobile-navbar .nav-index {
+  body .mobile-navbar .nav-index {
     margin-top: 9.74vh;
     height: 172px;
     color: hsl(0deg, 0%, 100%);
   }
-  html body .mobile-navbar .nav-index ul {
+  body .mobile-navbar .nav-index ul {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
   }
-  html body .mobile-navbar .nav-index ul li span {
+  body .mobile-navbar .nav-index ul li span {
     margin-right: 12px;
   }
-  html body main.main-mobile.mq-mobile {
+  body main.main-mobile.mq-mobile {
     position: relative;
     height: 100%;
     padding: 0;
     overflow-y: auto;
   }
-  html body main.main-mobile.mq-mobile .content.content-to-fb {
+  body main.main-mobile.mq-mobile .content.content-to-fb {
     position: relative;
     top: 24px;
     height: 100%;
@@ -440,7 +438,7 @@ main .content .fb-cell-02 .subnavbar {
     margin: 0;
     justify-content: initial;
   }
-  html body main.main-mobile.mq-mobile .content.content-to-fb .fb-cell.fb-cell-01, html body main.main-mobile.mq-mobile .content.content-to-fb .fb-cell.fb-cell-02 {
+  body main.main-mobile.mq-mobile .content.content-to-fb .fb-cell.fb-cell-01, body main.main-mobile.mq-mobile .content.content-to-fb .fb-cell.fb-cell-02 {
     width: 100%;
   }
 }
@@ -488,37 +486,37 @@ html {
 }
 
 @media screen and (max-width: 768px) {
-  html {
+  body {
     background: url("../assets/home/background-home-tablet.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
   }
-  html body main.mq-tab.main-home {
+  body main.mq-tab.main-home {
     padding: 10.4vh 0 8.8vh 0;
   }
-  html body main.mq-tab.main-home .content-to-fb.content-home {
+  body main.mq-tab.main-home .content-to-fb.content-home {
     height: 100%;
     padding: unset;
   }
-  html body main.mq-tab.main-home .content-to-fb.content-home .ch-01 {
+  body main.mq-tab.main-home .content-to-fb.content-home .ch-01 {
     padding-top: initial;
     height: 37.11vh;
     width: 58.6vw;
   }
-  html body main.mq-tab.main-home .content-to-fb.content-home .ch-02 {
+  body main.mq-tab.main-home .content-to-fb.content-home .ch-02 {
     width: 100%;
     height: 100%;
   }
 }
 @media screen and (max-width: 375px) {
-  html {
+  body {
     background: url("../assets/home/background-home-mobile.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
   }
-  html body main.main-mobile.mq-mobile.main-home {
+  body main.main-mobile.mq-mobile.main-home {
     top: 48px;
     /*.content-to-fb.content-home {
         height: 100%;
@@ -530,14 +528,14 @@ html {
         }
     }*/
   }
-  html body main.main-mobile.mq-mobile.main-home .ch-02.fb-cell-02 {
+  body main.main-mobile.mq-mobile.main-home .ch-02.fb-cell-02 {
     margin: 0;
   }
-  html body main.main-mobile.mq-mobile.main-home .ch-02.fb-cell-02 .btn-explore {
+  body main.main-mobile.mq-mobile.main-home .ch-02.fb-cell-02 .btn-explore {
     height: 40vw;
     width: 40vw;
   }
-  html body main.main-mobile.mq-mobile.main-home .ch-02.fb-cell-02 .btn-explore span {
+  body main.main-mobile.mq-mobile.main-home .ch-02.fb-cell-02 .btn-explore span {
     font-size: 20px;
     line-height: 23px;
     letter-spacing: 1.25px;

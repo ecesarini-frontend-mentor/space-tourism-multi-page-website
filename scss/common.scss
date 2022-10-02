@@ -290,9 +290,9 @@ main {
     backdrop-filter: blur(40.7742px);
 }
 @media screen and (max-width: tools.$mobile-w) {
-    html {
-        font-size: 1px;
+    //html {
         body {
+            font-size: 1px;
             @include tools.font-styler($max-vw: tools.$mobile-w);
             position: relative;
             min-height: tools.$mobile-body-min-h;
@@ -371,5 +371,5 @@ main {
                 }
             }
         }
-    }
+    //}
 }

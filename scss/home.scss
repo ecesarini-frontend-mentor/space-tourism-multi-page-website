@@ -52,9 +52,9 @@ html {
     $tab-content-gch01-h: 37.11vh;
     $tab-content-gch01-w: 58.6vw;
 
-    html {
-        @include tools.background(url("../assets/home/background-home-tablet.jpg"));
+    //html {
         body {
+        @include tools.background(url("../assets/home/background-home-tablet.jpg"));
             main.mq-tab.main-home {
                 padding: $main-padding;
                 .content-to-fb.content-home {
@@ -72,7 +72,7 @@ html {
                 }
             }
         }
-    }
+    //}
 }
 @media screen and (max-width: tools.$mobile-w) {
     $mobile-content-h: 276px;
@@ -80,9 +80,9 @@ html {
     $mobile-content-home-padding-top: 48px;
     $mobile-content-padding-top: 48px;
     $mobile-content-button-dim: 40vw;
-    html {
-        @include tools.background(url("../assets/home/background-home-mobile.jpg"));
+    //html {
         body {
+        @include tools.background(url("../assets/home/background-home-mobile.jpg"));
             main.main-mobile.mq-mobile.main-home {
                 top: $mobile-content-padding-top;
                 //padding-top: $mobile-content-padding-top;
@@ -110,5 +110,5 @@ html {
                 }*/
             }
         }
-    }
+    //}
 }
