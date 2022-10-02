@@ -348,9 +348,7 @@ main .content .fb-cell-02 .subnavbar {
     height: 100vh;
     z-index: 0;
     padding: 0 24px;
-  }
-  html body * {
-    overflow: visible;
+    overflow-y: clip;
   }
   html body h1 {
     font-size: 80px;
@@ -428,19 +426,22 @@ main .content .fb-cell-02 .subnavbar {
   html body .mobile-navbar .nav-index ul li span {
     margin-right: 12px;
   }
-  html body main.mq-tab {
+  html body main.main-mobile.mq-mobile {
     position: relative;
-    top: 88px;
+    height: 100%;
     padding: 0;
     overflow-y: auto;
   }
-  html body main.mq-tab .content.content-to-fb {
+  html body main.main-mobile.mq-mobile .content.content-to-fb {
     position: relative;
-    top: 124px;
+    top: 24px;
     height: 100%;
     width: 100%;
     margin: 0;
-    padding: 24px 0 0 0;
+    justify-content: initial;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb .fb-cell.fb-cell-01, html body main.main-mobile.mq-mobile .content.content-to-fb .fb-cell.fb-cell-02 {
+    width: 100%;
   }
 }
 html {
@@ -517,8 +518,8 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
   }
-  html body main.mq-tab.main-home {
-    padding-top: 48px;
+  html body main.main-mobile.mq-mobile.main-home {
+    top: 48px;
     /*.content-to-fb.content-home {
         height: 100%;
         margin: 0 auto;
@@ -528,6 +529,18 @@ html {
             width: 100%;
         }
     }*/
+  }
+  html body main.main-mobile.mq-mobile.main-home .ch-02.fb-cell-02 {
+    margin: 0;
+  }
+  html body main.main-mobile.mq-mobile.main-home .ch-02.fb-cell-02 .btn-explore {
+    height: 40vw;
+    width: 40vw;
+  }
+  html body main.main-mobile.mq-mobile.main-home .ch-02.fb-cell-02 .btn-explore span {
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 1.25px;
   }
 }
 

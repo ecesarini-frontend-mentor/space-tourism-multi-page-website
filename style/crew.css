@@ -348,9 +348,7 @@ main .content .fb-cell-02 .subnavbar {
     height: 100vh;
     z-index: 0;
     padding: 0 24px;
-  }
-  html body * {
-    overflow: visible;
+    overflow-y: clip;
   }
   html body h1 {
     font-size: 80px;
@@ -428,19 +426,22 @@ main .content .fb-cell-02 .subnavbar {
   html body .mobile-navbar .nav-index ul li span {
     margin-right: 12px;
   }
-  html body main.mq-tab {
+  html body main.main-mobile.mq-mobile {
     position: relative;
-    top: 88px;
+    height: 100%;
     padding: 0;
     overflow-y: auto;
   }
-  html body main.mq-tab .content.content-to-fb {
+  html body main.main-mobile.mq-mobile .content.content-to-fb {
     position: relative;
-    top: 124px;
+    top: 24px;
     height: 100%;
     width: 100%;
     margin: 0;
-    padding: 24px 0 0 0;
+    justify-content: initial;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb .fb-cell.fb-cell-01, html body main.main-mobile.mq-mobile .content.content-to-fb .fb-cell.fb-cell-02 {
+    width: 100%;
   }
 }
 @keyframes crew-img-animation {

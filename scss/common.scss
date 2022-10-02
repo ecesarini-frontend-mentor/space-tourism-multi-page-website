@@ -293,15 +293,13 @@ main {
     html {
         font-size: 1px;
         body {
-            * {
-                overflow: visible;
-            }
             @include tools.font-styler($max-vw: tools.$mobile-w);
             position: relative;
             min-height: tools.$mobile-body-min-h;
             height: 100vh;
             z-index: 0;
             padding: 0 tools.$mobile-body-padding-lr;
+            overflow-y: clip;
             .mobile-navbar {
                 display: none;
             }
@@ -353,27 +351,24 @@ main {
                 }
             }
             
-            main.mq-tab {
+            main.main-mobile.mq-mobile {
                 position: relative;
-                top: 88px;
-                //height: calc(100% - tools.$mobile-header-h);
-                //height: 100%;
-                //height: calc(100% - 64rem);
+                //top: 88px;
+                height: 100%;
                 padding: 0;
-                //top: tools.$mobile-main-top-gap-from-header;
-                //overflow-y: hidden;
                 overflow-y: auto;                
                 .content.content-to-fb {
                     position: relative;
-                    //top: 0px;
-                    top: 124px; // debugging
+                    top: tools.$mobile-content-padding-top;
                     height: 100%;
                     width: 100%;
                     margin: 0;
-                    padding: tools.$mobile-content-padding-top 0 0 0;
-                    //overflow-y: auto;                
+                    //padding: tools.$mobile-content-padding-top 0 0 0;
+                    justify-content: initial;
+                    .fb-cell.fb-cell-01, .fb-cell.fb-cell-02 {
+                        width: 100%;
+                    }
                 }
-                //padding: 0 tools.$mobile-main-padding-lr 0 tools.$mobile-main-padding-lr;
             }
         }
     }
