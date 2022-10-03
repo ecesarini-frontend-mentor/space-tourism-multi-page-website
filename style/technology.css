@@ -340,13 +340,10 @@ main .content .fb-cell-02 .subnavbar {
 
 @media screen and (max-width: 375px) {
   body {
-    font-size: 1px;
-    position: relative;
-    min-height: 667px;
     height: 100vh;
     z-index: 0;
     padding: 0 24px;
-    overflow-y: clip;
+    overflow-y: hidden;
   }
   body h1 {
     font-size: 80px;
@@ -426,19 +423,20 @@ main .content .fb-cell-02 .subnavbar {
   }
   body main.main-mobile.mq-mobile {
     position: relative;
+    top: 88px;
+    bottom: 0;
     height: 100%;
     padding: 0;
     overflow-y: auto;
   }
   body main.main-mobile.mq-mobile .content.content-to-fb {
-    position: relative;
-    top: 24px;
-    height: 100%;
     width: 100%;
     margin: 0;
-    justify-content: initial;
+    justify-content: flex-start;
   }
   body main.main-mobile.mq-mobile .content.content-to-fb .fb-cell.fb-cell-01, body main.main-mobile.mq-mobile .content.content-to-fb .fb-cell.fb-cell-02 {
+    margin: 0;
+    height: initial;
     width: 100%;
   }
 }

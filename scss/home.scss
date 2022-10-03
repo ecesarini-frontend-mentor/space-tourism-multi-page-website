@@ -52,42 +52,46 @@ html {
     $tab-content-gch01-h: 37.11vh;
     $tab-content-gch01-w: 58.6vw;
 
-    //html {
-        body {
-        @include tools.background(url("../assets/home/background-home-tablet.jpg"));
-            main.mq-tab.main-home {
-                padding: $main-padding;
-                .content-to-fb.content-home {
+    body {
+    @include tools.background(url("../assets/home/background-home-tablet.jpg"));
+        main.mq-tab.main-home {
+            padding: $main-padding;
+            .content-to-fb.content-home {
+                height: 100%;
+                padding: unset;
+                .ch-01 {
+                    padding-top: initial;
+                    height: $tab-content-gch01-h;
+                    width: $tab-content-gch01-w;
+                }
+                .ch-02 {
+                    width: 100%;
                     height: 100%;
-                    padding: unset;
-                    .ch-01 {
-                        padding-top: initial;
-                        height: $tab-content-gch01-h;
-                        width: $tab-content-gch01-w;
-                    }
-                    .ch-02 {
-                        width: 100%;
-                        height: 100%;
-                    }
                 }
             }
         }
-    //}
+    }
 }
 @media screen and (max-width: tools.$mobile-w) {
     $mobile-content-h: 276px;
     $mobile-content-w: 87.2vw;
+    $mobile-main-position-top: 112px;
     $mobile-content-home-padding-top: 48px;
     $mobile-content-padding-top: 48px;
     $mobile-content-button-dim: 40vw;
-    //html {
-        body {
-        @include tools.background(url("../assets/home/background-home-mobile.jpg"));
-            main.main-mobile.mq-mobile.main-home {
-                top: $mobile-content-padding-top;
-                //padding-top: $mobile-content-padding-top;
+    $mobile-fb-cell-02-margin-top: 81px;
+    body {
+    @include tools.background(url("../assets/home/background-home-mobile.jpg"));
+        main.main-mobile.mq-mobile.main-home {
+            //height: 100%;
+            top: $mobile-main-position-top;
+            padding: 0;
+            .content.content-to-fb.content-home {
+                //height: 800px;
+                height: 555px;
+                //&>* {height: unset !important; overflow-y: unset !important;}
                 .ch-02.fb-cell-02 {
-                    margin: 0;
+                    margin-top: $mobile-fb-cell-02-margin-top;
                     .btn-explore {
                         height: $mobile-content-button-dim;                        
                         width: $mobile-content-button-dim;
@@ -98,17 +102,7 @@ html {
                         }
                     }
                 }
-                //padding: 0 !important; --> it breaks positioning
-                /*.content-to-fb.content-home {
-                    height: 100%;
-                    margin: 0 auto;
-                    //width: $mobile-content-w;
-                    .ch-01.fb-cell-01 {
-                        min-height: $mobile-content-h;
-                        width: 100%;
-                    }
-                }*/
             }
         }
-    //}
+    }
 }

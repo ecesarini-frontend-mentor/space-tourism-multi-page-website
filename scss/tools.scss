@@ -49,7 +49,8 @@ $mobile-navbar-w: 67.73vw;
 $mobile-navbar-padding: 33.95px; 
 $mobile-close-btn-dim: 19.09px 26.95px 0 32px;
 $mobile-navindex-height: calc(19px * 4 + 32px * 3);
-$mobile-main-top-gap-from-header: calc($mobile-header-h + 24px);
+//$mobile-main-top-gap-from-header: calc($mobile-header-h + 24px);
+$mobile-main-position-top: 88px;
 $mobile-main-padding-lr: 6.4vw;
 $mobile-content-padding-top: 24px;
 
