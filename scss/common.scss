@@ -290,14 +290,14 @@ main {
     backdrop-filter: blur(40.7742px);
 }
 @media screen and (max-width: tools.$mobile-w) {
-    //html {height: 100vh; min-height: 100vh;}
+    //html, body {min-height: 667px; height: 100%;}
     body {
         //font-size: 1px;
         @include tools.font-styler($max-vw: tools.$mobile-w);
         //position: relative;
-        //min-height: tools.$mobile-body-min-h;
-        height: initial;
-        //height: 100%;
+        min-height: tools.$mobile-body-min-h;
+        //height: initial;
+        height: 100vh;
         z-index: 0;
         padding: 0 tools.$mobile-body-padding-lr;
         //overflow-y: clip;
@@ -355,25 +355,19 @@ main {
         main.main-mobile.mq-mobile {
             position: relative;
             top: tools.$mobile-main-position-top;
+            height: calc(100% - tools.$mobile-main-position-top);
             bottom: 0;
-            height: 100%;
-            //min-height: 555px;
-            min-height: 800px;
-            //min-height: calc(276px + 279px);
-            //height: 100vh;
             padding: 0;
             overflow-y: auto;                
             .content.content-to-fb {
-                //position: relative;
-                //height: 800px;
                 height: 100%;
                 width: 100%;
                 margin: 0;
-                //padding: tools.$mobile-content-padding-top 0 0 0;
                 justify-content: flex-start;
                 .fb-cell.fb-cell-01, .fb-cell.fb-cell-02 {
                     margin: 0;
-                    height: initial;
+                    //height: initial;
+                    height: 100%;
                     width: 100%;
                 }
             }
