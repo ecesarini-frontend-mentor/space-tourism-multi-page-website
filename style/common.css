@@ -311,9 +311,6 @@ main .content .fb-cell-02 .subnavbar {
     padding: 0;
   }
   body main.mq-tab .content.content-to-fb > section {
-    /*&.fb-cell-01 {
-        padding-top: tools.$tab-content-padding-top;
-    }*/
     width: 100%;
     height: initial;
     align-items: center;
@@ -425,13 +422,17 @@ main .content .fb-cell-02 .subnavbar {
   body main.main-mobile.mq-mobile {
     position: relative;
     top: 88px;
-    height: calc(100% - 88px);
     bottom: 0;
     padding: 0;
     overflow-y: auto;
   }
+  body main.main-mobile.mq-mobile .main-h5 {
+    margin-bottom: 32px;
+    padding: 0;
+    text-align: center;
+  }
   body main.main-mobile.mq-mobile .content.content-to-fb {
-    height: 100%;
+    height: calc(100% - 88px - 55px);
     width: 100%;
     margin: 0;
     justify-content: flex-start;

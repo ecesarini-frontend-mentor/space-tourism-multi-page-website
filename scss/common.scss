@@ -257,9 +257,6 @@ main {
                 flex-direction: column;
                 align-items: center;
                 &>section {
-                    /*&.fb-cell-01 {
-                        padding-top: tools.$tab-content-padding-top;
-                    }*/
                     width: 100%;
                     height: initial;
                     align-items: center;
@@ -290,17 +287,12 @@ main {
     backdrop-filter: blur(40.7742px);
 }
 @media screen and (max-width: tools.$mobile-w) {
-    //html, body {min-height: 667px; height: 100%;}
     body {
-        //font-size: 1px;
         @include tools.font-styler($max-vw: tools.$mobile-w);
-        //position: relative;
         min-height: tools.$mobile-body-min-h;
-        //height: initial;
         height: 100vh;
         z-index: 0;
         padding: 0 tools.$mobile-body-padding-lr;
-        //overflow-y: clip;
         overflow-y: hidden;
         .mobile-navbar {
             display: none;
@@ -309,8 +301,6 @@ main {
             width: calc(100vw - 2 * tools.$mobile-body-padding-lr);
             min-height: tools.$mobile-header-h;
             height: tools.$mobile-header-h;
-            //overflow: hidden;
-            //padding: 0 tools.$mobile-header-padding-lr;
             hr, .nav-index {
                 display: none;
             }
@@ -355,18 +345,23 @@ main {
         main.main-mobile.mq-mobile {
             position: relative;
             top: tools.$mobile-main-position-top;
-            height: calc(100% - tools.$mobile-main-position-top);
+            //height: calc(100vh - tools.$mobile-main-position-top);
             bottom: 0;
             padding: 0;
-            overflow-y: auto;                
+            overflow-y: auto;
+            .main-h5 {
+                margin-bottom: tools.$mobile-main-h5-margin-bottom;
+                padding: 0;
+                text-align: center;
+            }
             .content.content-to-fb {
-                height: 100%;
+                height: calc(100% - tools.$mobile-main-position-top - tools.$mobile-main-h5-total-h);
+                //height: 100%;
                 width: 100%;
                 margin: 0;
                 justify-content: flex-start;
                 .fb-cell.fb-cell-01, .fb-cell.fb-cell-02 {
                     margin: 0;
-                    //height: initial;
                     height: 100%;
                     width: 100%;
                 }

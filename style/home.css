@@ -311,9 +311,6 @@ main .content .fb-cell-02 .subnavbar {
     padding: 0;
   }
   body main.mq-tab .content.content-to-fb > section {
-    /*&.fb-cell-01 {
-        padding-top: tools.$tab-content-padding-top;
-    }*/
     width: 100%;
     height: initial;
     align-items: center;
@@ -425,13 +422,17 @@ main .content .fb-cell-02 .subnavbar {
   body main.main-mobile.mq-mobile {
     position: relative;
     top: 88px;
-    height: calc(100% - 88px);
     bottom: 0;
     padding: 0;
     overflow-y: auto;
   }
+  body main.main-mobile.mq-mobile .main-h5 {
+    margin-bottom: 32px;
+    padding: 0;
+    text-align: center;
+  }
   body main.main-mobile.mq-mobile .content.content-to-fb {
-    height: 100%;
+    height: calc(100% - 88px - 55px);
     width: 100%;
     margin: 0;
     justify-content: flex-start;
@@ -486,52 +487,53 @@ html {
 }
 
 @media screen and (max-width: 768px) {
-  body {
+  html {
     background: url("../assets/home/background-home-tablet.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
   }
-  body main.mq-tab.main-home {
+  html body main.mq-tab.main-home {
     padding: 10.4vh 0 8.8vh 0;
   }
-  body main.mq-tab.main-home .content-to-fb.content-home {
+  html body main.mq-tab.main-home .content-to-fb.content-home {
     height: 100%;
     padding: unset;
   }
-  body main.mq-tab.main-home .content-to-fb.content-home .ch-01 {
+  html body main.mq-tab.main-home .content-to-fb.content-home .ch-01 {
     padding-top: initial;
     height: 37.11vh;
     width: 58.6vw;
   }
-  body main.mq-tab.main-home .content-to-fb.content-home .ch-02 {
+  html body main.mq-tab.main-home .content-to-fb.content-home .ch-02 {
     width: 100%;
     height: 100%;
   }
 }
 @media screen and (max-width: 375px) {
-  body {
+  html {
     background: url("../assets/home/background-home-mobile.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
   }
-  body main.main-mobile.mq-mobile.main-home {
+  html body main.main-mobile.mq-mobile.main-home {
     top: 112px;
-    height: calc(100% - 112px);
+    height: calc(100vh - 112px);
     padding: 0;
   }
-  body main.main-mobile.mq-mobile.main-home .content.content-to-fb.content-home {
+  html body main.main-mobile.mq-mobile.main-home .content.content-to-fb.content-home {
     height: 507px;
   }
-  body main.main-mobile.mq-mobile.main-home .content.content-to-fb.content-home .ch-02.fb-cell-02 {
+  html body main.main-mobile.mq-mobile.main-home .content.content-to-fb.content-home .ch-02.fb-cell-02 {
     margin-top: 81px;
+    padding-bottom: 48px;
   }
-  body main.main-mobile.mq-mobile.main-home .content.content-to-fb.content-home .ch-02.fb-cell-02 .btn-explore {
+  html body main.main-mobile.mq-mobile.main-home .content.content-to-fb.content-home .ch-02.fb-cell-02 .btn-explore {
     height: 40vw;
     width: 40vw;
   }
-  body main.main-mobile.mq-mobile.main-home .content.content-to-fb.content-home .ch-02.fb-cell-02 .btn-explore span {
+  html body main.main-mobile.mq-mobile.main-home .content.content-to-fb.content-home .ch-02.fb-cell-02 .btn-explore span {
     font-size: 20px;
     line-height: 23px;
     letter-spacing: 1.25px;

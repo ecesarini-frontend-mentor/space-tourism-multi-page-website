@@ -161,5 +161,55 @@ html {
             }
         }
     }
-    
+}
+
+@media screen and (max-width: tools.$mobile-w) {
+    $body-min-h: 850px;
+    $fb-cell-01-img-dim: 170px;
+    $fb-cell-02-h: 296px;
+    $fb-cell-02-child-02-h: 296px;
+    $fb-cell-02-child-01-subnavbar-w: 63.33vw;
+    $fb-cell-02-child-01-subnavbar-padding: 26px 0 20px 0;
+    html {
+        @include tools.background(url('../assets/destination/background-destination-mobile.jpg'));
+        body {            
+            main.main-mobile.mq-mobile {
+                .content.content-to-fb.content-destination {
+                    .fb-cell-01.destination-show {
+                        height: initial;
+                        .destination-img {
+                            //max-width: $fb-cell-01-img-dim;
+                            height: $fb-cell-01-img-dim;
+                            width: $fb-cell-01-img-dim;
+                        }
+                    }
+                    .fb-cell-02.destination-interact {
+                        height: $fb-cell-02-h;
+                        .destination-interact-child-01 {
+                            padding: 0;
+                            .subnavbar.destination-navbar {
+                                width: 100%;
+                                padding: $fb-cell-02-child-01-subnavbar-padding;
+                                ul {
+                                    margin: 0 auto;
+                                    width: $fb-cell-02-child-01-subnavbar-w;
+                                }
+                            }
+                            .destination-description {
+                                line-height: 25px;
+                                letter-spacing: unset;
+                            }
+                        }
+                        .destination-interact-child-02 {
+                            height: $fb-cell-02-child-02-h;
+                            .destination-interact-subgrid {
+                                display: flex;
+                                flex-direction: column;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
