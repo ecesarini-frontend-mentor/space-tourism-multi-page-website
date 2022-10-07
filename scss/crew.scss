@@ -148,3 +148,50 @@ html {
         }
     }
 }
+
+@media screen and (max-width: tools.$mobile-w) {
+    $crew-show-h: 223px;
+    $crew-show-margin-bottom: 32px;
+    $crew-show-img-h: 222px;
+    $crew-show-img-w: 177.12px;
+    $crew-interact-h: 212px;
+    html {
+        @include tools.background(url('../assets/crew/background-crew-tablet.jpg'));
+        body {
+            main.main-mobile.mq-mobile {
+                .content.content-to-fb.content-crew {
+                    flex-direction: column-reverse;
+                    .fb-cell { max-width: unset; }
+                    .crew-show.fb-cell-02 {
+                        height: $crew-show-h;
+                        //max-width: unset;
+                        margin-bottom: $crew-show-margin-bottom;
+                        border-bottom: 1px solid rgba(56, 59, 75, 1);
+                        img {
+                            height: $crew-show-img-h;
+                            width: $crew-show-img-w;
+                        }
+                    }
+                    .crew-interact.fb-cell-01 {
+                        &, * { 
+                            max-width: unset;
+                            width: 100%;
+                            padding: 0; 
+                        }
+                        height: $crew-interact-h;
+                        .crew-interact-fb-middle-container {
+                            @for $i from 1 to 3 {
+                                &:nth-child(#{$i}) {
+                                    order: calc(#{$i} + 1);
+                                    @debug "#{&}:nth-child(#{$i}), #{$i}";
+                                }
+                            }
+                            //@include tools.crew-mobile-cifmc-shifter(&);
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

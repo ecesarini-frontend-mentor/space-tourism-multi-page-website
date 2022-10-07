@@ -345,7 +345,6 @@ main {
         main.main-mobile.mq-mobile {
             position: relative;
             top: tools.$mobile-main-position-top;
-            //height: calc(100vh - tools.$mobile-main-position-top);
             bottom: 0;
             padding: 0;
             overflow-y: auto;
@@ -355,8 +354,7 @@ main {
                 text-align: center;
             }
             .content.content-to-fb {
-                height: calc(100% - tools.$mobile-main-position-top - tools.$mobile-main-h5-total-h);
-                //height: 100%;
+                //height: calc(100% - tools.$mobile-main-position-top - tools.$mobile-main-h5-total-h);
                 width: 100%;
                 margin: 0;
                 justify-content: flex-start;

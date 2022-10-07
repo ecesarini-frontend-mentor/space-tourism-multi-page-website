@@ -164,12 +164,16 @@ html {
 }
 
 @media screen and (max-width: tools.$mobile-w) {
-    $body-min-h: 850px;
+    //$body-min-h: 850px;
     $fb-cell-01-img-dim: 170px;
     $fb-cell-02-h: 296px;
-    $fb-cell-02-child-02-h: 296px;
+    //$fb-cell-02-child-02-h: 296px;
     $fb-cell-02-child-01-subnavbar-w: 63.33vw;
     $fb-cell-02-child-01-subnavbar-padding: 26px 0 20px 0;
+    $destination-interact-subgrid-vertical-gap: 32px;
+    $destination-interact-subgrid-padding-bottom: 58px;
+    $dis-subgrid-h: 61px;
+    $destination-interact-subgrid-h: calc(2 * ($destination-interact-subgrid-vertical-gap + $dis-subgrid-h) + $destination-interact-subgrid-padding-bottom);
     html {
         @include tools.background(url('../assets/destination/background-destination-mobile.jpg'));
         body {            
@@ -178,8 +182,8 @@ html {
                     .fb-cell-01.destination-show {
                         height: initial;
                         .destination-img {
-                            //max-width: $fb-cell-01-img-dim;
                             height: $fb-cell-01-img-dim;
+                            max-width: unset;                            
                             width: $fb-cell-01-img-dim;
                         }
                     }
@@ -201,10 +205,18 @@ html {
                             }
                         }
                         .destination-interact-child-02 {
-                            height: $fb-cell-02-child-02-h;
+                            //height: $fb-cell-02-child-02-h;
+                            height: 100%;
                             .destination-interact-subgrid {
+                                height: $destination-interact-subgrid-h;
+                                margin-top: $destination-interact-subgrid-vertical-gap;
+                                padding: $destination-interact-subgrid-vertical-gap 0 $destination-interact-subgrid-padding-bottom 0;
                                 display: flex;
                                 flex-direction: column;
+                                justify-content: space-between;
+                                .dis-subgrid-fb {
+                                    height: $dis-subgrid-h;
+                                }
                             }
                         }
                     }

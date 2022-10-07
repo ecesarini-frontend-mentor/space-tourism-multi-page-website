@@ -432,7 +432,6 @@ main .content .fb-cell-02 .subnavbar {
     text-align: center;
   }
   body main.main-mobile.mq-mobile .content.content-to-fb {
-    height: calc(100% - 88px - 55px);
     width: 100%;
     margin: 0;
     justify-content: flex-start;
@@ -566,6 +565,46 @@ html main .crew-show .crew-img-animation {
     height: 51.95vh;
     width: 100%;
     margin: auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  html {
+    background: url("../assets/crew/background-crew-tablet.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew {
+    flex-direction: column-reverse;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .fb-cell {
+    max-width: unset;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-show.fb-cell-02 {
+    height: 223px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgb(56, 59, 75);
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-show.fb-cell-02 img {
+    height: 222px;
+    width: 177.12px;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 {
+    height: 212px;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01, html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 * {
+    max-width: unset;
+    width: 100%;
+    padding: 0;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container {
+    height: 100%;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container:nth-child(1) {
+    order: calc(1 + 1);
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container:nth-child(2) {
+    order: calc(2 + 1);
   }
 }
 

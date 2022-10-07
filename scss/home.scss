@@ -88,13 +88,10 @@ html {
         body {
             main.main-mobile.mq-mobile.main-home {
                 top: $mobile-main-position-top;
-                height: calc(100vh - $mobile-main-position-top);// - $mobile-main-padding-botttom);
+                height: calc(100vh - $mobile-main-position-top);
                 padding: 0;
                 .content.content-to-fb.content-home {
                     height: $mobile-main-h;
-                    //height: 800px;
-                    //height: 555px;
-                    //&>* {height: unset !important; overflow-y: unset !important;}
                     .ch-02.fb-cell-02 {
                         margin-top: $mobile-fb-cell-02-margin-top;
                         padding-bottom: $mobile-fb-cell-02-padding-bottom;

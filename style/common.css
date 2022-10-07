@@ -432,7 +432,6 @@ main .content .fb-cell-02 .subnavbar {
     text-align: center;
   }
   body main.main-mobile.mq-mobile .content.content-to-fb {
-    height: calc(100% - 88px - 55px);
     width: 100%;
     margin: 0;
     justify-content: flex-start;

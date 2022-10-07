@@ -432,7 +432,6 @@ main .content .fb-cell-02 .subnavbar {
     text-align: center;
   }
   body main.main-mobile.mq-mobile .content.content-to-fb {
-    height: calc(100% - 88px - 55px);
     width: 100%;
     margin: 0;
     justify-content: flex-start;
@@ -593,6 +592,7 @@ html main .content.content-to-fb .fb-cell-02.destination-interact .destination-i
   }
   html body main.main-mobile.mq-mobile .content.content-to-fb.content-destination .fb-cell-01.destination-show .destination-img {
     height: 170px;
+    max-width: unset;
     width: 170px;
   }
   html body main.main-mobile.mq-mobile .content.content-to-fb.content-destination .fb-cell-02.destination-interact {
@@ -614,11 +614,18 @@ html main .content.content-to-fb .fb-cell-02.destination-interact .destination-i
     letter-spacing: unset;
   }
   html body main.main-mobile.mq-mobile .content.content-to-fb.content-destination .fb-cell-02.destination-interact .destination-interact-child-02 {
-    height: 296px;
+    height: 100%;
   }
   html body main.main-mobile.mq-mobile .content.content-to-fb.content-destination .fb-cell-02.destination-interact .destination-interact-child-02 .destination-interact-subgrid {
+    height: 244px;
+    margin-top: 32px;
+    padding: 32px 0 58px 0;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-destination .fb-cell-02.destination-interact .destination-interact-child-02 .destination-interact-subgrid .dis-subgrid-fb {
+    height: 61px;
   }
 }
 

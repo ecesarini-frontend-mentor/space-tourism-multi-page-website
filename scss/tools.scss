@@ -124,3 +124,12 @@ $mobile-content-padding-top: 24px;
         }
     }
 } 
+
+@mixin crew-mobile-cifmc-shifter($elem) {
+    @for $i from 1 to 3 {
+        #{$elem}:nth-child(#{$i}) {
+            order: calc(#{$i} + 1);
+        }
+        @debug #{$elem};
+    } 
+}
