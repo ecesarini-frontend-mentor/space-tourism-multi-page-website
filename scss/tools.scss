@@ -51,6 +51,7 @@ $mobile-close-btn-dim: 19.09px 26.95px 0 32px;
 $mobile-navindex-height: calc(19px * 4 + 32px * 3);
 //$mobile-main-top-gap-from-header: calc($mobile-header-h + 24px);
 $mobile-main-position-top: 88px;
+$mobile-main-h: calc(100vh - $mobile-main-position-top);
 $mobile-main-padding-lr: 6.4vw;
 $mobile-main-h5-total-h: 55px;
 $mobile-main-h5-margin-bottom: 32px;
@@ -105,7 +106,7 @@ $mobile-content-padding-top: 24px;
             font-size: 16px;
             line-height: 18px;
         }
-        h5 {
+        h5, .h5-span-number {
             font-size: 16px;
             line-height: 19px;
         }
@@ -125,11 +126,10 @@ $mobile-content-padding-top: 24px;
     }
 } 
 
-@mixin crew-mobile-cifmc-shifter($elem) {
-    @for $i from 1 to 3 {
-        #{$elem}:nth-child(#{$i}) {
+@mixin crew-mobile-cifmc-shifter() { //mixins uses the context of the invocation, so & refers to ".crew-interact-fb-middle-container"
+    @for $i from 1 through 3 {  //"through" takes into account the 2nd boundary, while "to" does not
+        &>:nth-child(#{$i}) { 
             order: calc(#{$i} + 1);
         }
-        @debug #{$elem};
     } 
 }

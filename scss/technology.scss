@@ -153,3 +153,27 @@ html {
         }
     }
 }
+
+// Mobile
+@media screen and (max-widt: tools.$mobile-w) {
+    $tech-show-h: 170px;
+    $tech-show-w: 375px;
+    html {
+        @include tools.background(url('../assets/technology/background-technology-mobile.jpg'));
+        body {
+            main.main-mobile.mq-mobile {
+                .content.content-to-fb.content-tech {
+                    .tech-show.fb-cell-02 {
+                        padding: 0;
+                        height: $tech-show-h;
+                        width: $tech-show-w;
+                        .tech-img {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

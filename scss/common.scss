@@ -189,8 +189,6 @@ main {
     }
     .content {
         width: 100%;
-        //height: calc(100vh - tools.$tab-navbar-h - tools.$tab-main-h5-padding-bottom);
-        //height: 100%;
         display: flex;
         color: inherit;
         .fb-cell-01, .fb-cell-02 {
@@ -343,6 +341,7 @@ main {
         }
         
         main.main-mobile.mq-mobile {
+            height: tools.$mobile-main-h;
             position: relative;
             top: tools.$mobile-main-position-top;
             bottom: 0;
@@ -354,7 +353,6 @@ main {
                 text-align: center;
             }
             .content.content-to-fb {
-                //height: calc(100% - tools.$mobile-main-position-top - tools.$mobile-main-h5-total-h);
                 width: 100%;
                 margin: 0;
                 justify-content: flex-start;

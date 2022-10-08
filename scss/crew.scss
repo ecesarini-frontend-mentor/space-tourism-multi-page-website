@@ -57,6 +57,7 @@ html {
                         min-height: 15px;
                         display: flex;
                         justify-content: space-between;
+                        align-items: center;
                         .subnavbar-crew-element {
                             cursor: pointer;
                             min-width: 15px;
@@ -91,12 +92,12 @@ html {
 }
 
 // Media Query
-//Tab
+// Tab
 @media screen and (max-width: tools.$tablet-w) {
     $tab-fbc-01-h: 22.65vh;
     $tab-fbc-01-w: 59.64vw;
     $tab-fbc-01-subnav-h: 1vh;
-    //$tab-fbc-02-padding-top: 3.9vh;
+    $tab-fbc-01-subnav-li-dim: 10px;
     $tab-fbc-01-padding-bottom: 3.9vh;
     $tab-fbc-02-h: 51.95vh;
     $tab-fbc-02-mw: 56.04vw;
@@ -130,8 +131,8 @@ html {
                                         min-width:unset;
                                     }
                                     .subnavbar-crew-element {
-                                        height: $tab-fbc-01-subnav-h;
-                                        width: $tab-fbc-01-subnav-h;
+                                        height: $tab-fbc-01-subnav-li-dim;
+                                        width: $tab-fbc-01-subnav-li-dim;
                                     }
                                 }
                             }   
@@ -149,12 +150,15 @@ html {
     }
 }
 
+// Mobile
 @media screen and (max-width: tools.$mobile-w) {
     $crew-show-h: 223px;
     $crew-show-margin-bottom: 32px;
     $crew-show-img-h: 222px;
     $crew-show-img-w: 177.12px;
     $crew-interact-h: 212px;
+    $crew-interact-margin-bottom: 103px;
+    $crew-navbar-w: 88px;
     html {
         @include tools.background(url('../assets/crew/background-crew-tablet.jpg'));
         body {
@@ -164,7 +168,6 @@ html {
                     .fb-cell { max-width: unset; }
                     .crew-show.fb-cell-02 {
                         height: $crew-show-h;
-                        //max-width: unset;
                         margin-bottom: $crew-show-margin-bottom;
                         border-bottom: 1px solid rgba(56, 59, 75, 1);
                         img {
@@ -179,15 +182,17 @@ html {
                             padding: 0; 
                         }
                         height: $crew-interact-h;
+                        margin-bottom: $crew-interact-margin-bottom;
                         .crew-interact-fb-middle-container {
-                            @for $i from 1 to 3 {
-                                &:nth-child(#{$i}) {
-                                    order: calc(#{$i} + 1);
-                                    @debug "#{&}:nth-child(#{$i}), #{$i}";
+                            @include tools.crew-mobile-cifmc-shifter();
+                            height: 100%;
+                            .crew-navbar {
+                                height: unset;
+                                ul {
+                                    min-width: unset;
+                                    width: $crew-navbar-w;
                                 }
                             }
-                            //@include tools.crew-mobile-cifmc-shifter(&);
-                            height: 100%;
                         }
                     }
                 }

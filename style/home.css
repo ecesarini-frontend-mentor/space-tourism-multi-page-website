@@ -359,7 +359,7 @@ main .content .fb-cell-02 .subnavbar {
     font-size: 16px;
     line-height: 18px;
   }
-  body h5 {
+  body h5, body .h5-span-number {
     font-size: 16px;
     line-height: 19px;
   }
@@ -420,6 +420,7 @@ main .content .fb-cell-02 .subnavbar {
     margin-right: 12px;
   }
   body main.main-mobile.mq-mobile {
+    height: calc(100vh - 88px);
     position: relative;
     top: 88px;
     bottom: 0;

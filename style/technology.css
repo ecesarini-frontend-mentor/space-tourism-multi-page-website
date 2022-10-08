@@ -359,7 +359,7 @@ main .content .fb-cell-02 .subnavbar {
     font-size: 16px;
     line-height: 18px;
   }
-  body h5 {
+  body h5, body .h5-span-number {
     font-size: 16px;
     line-height: 19px;
   }
@@ -420,6 +420,7 @@ main .content .fb-cell-02 .subnavbar {
     margin-right: 12px;
   }
   body main.main-mobile.mq-mobile {
+    height: calc(100vh - 88px);
     position: relative;
     top: 88px;
     bottom: 0;
@@ -561,6 +562,23 @@ html .content-tech .tech-show img {
     height: 23.14vh;
     width: 59.64vw;
     align-items: center;
+  }
+}
+@media screen and (max-widt: 375px) {
+  html {
+    background: url("../assets/technology/background-technology-mobile.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .tech-show.fb-cell-02 {
+    padding: 0;
+    height: 170px;
+    width: 375px;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .tech-show.fb-cell-02 .tech-img {
+    height: 100%;
+    width: 100%;
   }
 }
 

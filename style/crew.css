@@ -359,7 +359,7 @@ main .content .fb-cell-02 .subnavbar {
     font-size: 16px;
     line-height: 18px;
   }
-  body h5 {
+  body h5, body .h5-span-number {
     font-size: 16px;
     line-height: 19px;
   }
@@ -420,6 +420,7 @@ main .content .fb-cell-02 .subnavbar {
     margin-right: 12px;
   }
   body main.main-mobile.mq-mobile {
+    height: calc(100vh - 88px);
     position: relative;
     top: 88px;
     bottom: 0;
@@ -495,6 +496,7 @@ html main .content.content-to-fb .fb-cell-01.crew-interact .crew-navbar ul {
   min-height: 15px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 html main .content.content-to-fb .fb-cell-01.crew-interact .crew-navbar ul .subnavbar-crew-element {
   cursor: pointer;
@@ -557,8 +559,8 @@ html main .crew-show .crew-img-animation {
     min-width: unset;
   }
   html body main.mq-tab .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container .subnavbar.mq-subnavbar.crew-navbar ul .subnavbar-crew-element {
-    height: 1vh;
-    width: 1vh;
+    height: 10px;
+    width: 10px;
   }
   html body main.mq-tab .content.content-to-fb.content-crew .fb-cell-02 {
     max-width: 56.04vw;
@@ -591,6 +593,7 @@ html main .crew-show .crew-img-animation {
   }
   html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 {
     height: 212px;
+    margin-bottom: 103px;
   }
   html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01, html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 * {
     max-width: unset;
@@ -600,11 +603,21 @@ html main .crew-show .crew-img-animation {
   html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container {
     height: 100%;
   }
-  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container:nth-child(1) {
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container > :nth-child(1) {
     order: calc(1 + 1);
   }
-  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container:nth-child(2) {
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container > :nth-child(2) {
     order: calc(2 + 1);
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container > :nth-child(3) {
+    order: calc(3 + 1);
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container .crew-navbar {
+    height: unset;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-crew .crew-interact.fb-cell-01 .crew-interact-fb-middle-container .crew-navbar ul {
+    min-width: unset;
+    width: 88px;
   }
 }
 
