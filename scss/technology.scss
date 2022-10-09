@@ -155,24 +155,45 @@ html {
 }
 
 // Mobile
-@media screen and (max-widt: tools.$mobile-w) {
+@media screen and (max-width: tools.$mobile-w) {
     $tech-show-h: 170px;
     $tech-show-w: 375px;
+    $tech-main-padding: tools.$mobile-body-padding-lr;
+    $tech-navbar-h: 40px;
+    $tech-navbar-padding-top: 34px; 
+    $tech-navbar-padding-bottom: 26px;
+    $tech-content-sg-descr-h: 220px;
+    $fb-cell-01-h: calc($tech-navbar-padding-top + $tech-navbar-padding-bottom + $tech-navbar-h + $tech-content-sg-descr-h);
     html {
         @include tools.background(url('../assets/technology/background-technology-mobile.jpg'));
         body {
             main.main-mobile.mq-mobile {
+                margin: 0 (-$tech-main-padding);
+                width: auto;
                 .content.content-to-fb.content-tech {
+                    .fb-cell { max-width: unset; }
                     .tech-show.fb-cell-02 {
-                        padding: 0;
                         height: $tech-show-h;
-                        width: $tech-show-w;
+                        width: 100vw;
                         .tech-img {
                             height: 100%;
                             width: 100%;
                         }
+                    }                
+                    .tech-interact.fb-cell-01 {
+                        height: $fb-cell-01-h;
+                        padding: 0 $tech-main-padding;
+                        .tech-content-subgrid {
+                            nav {
+                                height: $tech-navbar-h;
+                                padding: $tech-navbar-padding-top 0 $tech-navbar-padding-bottom 0;
+                            }
+                        }
+                        .tech-content-sg-descr {
+                            height: $tech-content-sg-descr-h;
+                        }
                     }
-                }
+                }   
             }
         }
     }

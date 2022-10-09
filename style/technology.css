@@ -564,21 +564,38 @@ html .content-tech .tech-show img {
     align-items: center;
   }
 }
-@media screen and (max-widt: 375px) {
+@media screen and (max-width: 375px) {
   html {
     background: url("../assets/technology/background-technology-mobile.jpg") no-repeat center center/cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
   }
+  html body main.main-mobile.mq-mobile {
+    margin: 0 -24px;
+    width: auto;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .fb-cell {
+    max-width: unset;
+  }
   html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .tech-show.fb-cell-02 {
-    padding: 0;
     height: 170px;
-    width: 375px;
+    width: 100vw;
   }
   html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .tech-show.fb-cell-02 .tech-img {
     height: 100%;
     width: 100%;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .tech-interact.fb-cell-01 {
+    height: 320px;
+    padding: 0 24px;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .tech-interact.fb-cell-01 .tech-content-subgrid nav {
+    height: 40px;
+    padding: 34px 0 26px 0;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .tech-interact.fb-cell-01 .tech-content-sg-descr {
+    height: 220px;
   }
 }
 
