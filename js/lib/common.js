@@ -127,12 +127,16 @@ export function swapMobileVp(maxVw) {
         }
     }
     const navOpen = () => {
-            mobileNavbar.style.display = 'block'; 
-            navbarHamburger.style.display = 'none';
+        mobileNavbar.style.display = 'block'; 
+        mobileNavbar.classList.toggle('mobile-navbar-transition-in');
+        mobileNavbar.classList.remove('mobile-navbar-transition-out');
+        navbarHamburger.style.display = 'none';
     }
     const navClose = () => { 
-        navbarHamburger.style = '';       
         mobileNavbar.style = '';
+        mobileNavbar.classList.remove('mobile-navbar-transition-in');
+        mobileNavbar.classList.toggle('mobile-navbar-transition-out');
+        navbarHamburger.style = '';       
     }
 
     window.addEventListener('load', mwChanged);

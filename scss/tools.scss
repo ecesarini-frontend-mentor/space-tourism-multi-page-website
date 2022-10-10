@@ -126,6 +126,18 @@ $mobile-content-padding-top: 24px;
     }
 } 
 
+//@mixin navbar-anim($dir: 'normal', $prop) {
+//    $k-tag: 0% 50% 100%;
+//    $kf: 0;
+//    @if($dir: 'reverse') {
+//        $k-tag: reverse(#{$k-tag});
+//    }
+//    @debug #{$dir} #{$k-tag};
+//    //@each $i in $k-tag {
+//    //    #{$prop}: $k-tag;
+//    //}  
+//}
+
 @mixin crew-mobile-cifmc-shifter() { //mixins uses the context of the invocation, so & refers to ".crew-interact-fb-middle-container"
     @for $i from 1 through 3 {  //"through" takes into account the 2nd boundary, while "to" does not
         &>:nth-child(#{$i}) { 

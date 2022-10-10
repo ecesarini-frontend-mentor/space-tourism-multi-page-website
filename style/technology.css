@@ -133,6 +133,17 @@ p {
   text-transform: unset;
 }
 
+@keyframes mnt {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
   width: 100%;
@@ -333,6 +344,14 @@ main .content .fb-cell-02 .subnavbar {
   z-index: 1;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(40.7742px);
+}
+
+.mobile-navbar-transition-in {
+  animation: mnt 0.5s linear;
+}
+
+.mobile-navbar-transition-out {
+  animation: mnt 0.5s linear reverse;
 }
 
 @media screen and (max-width: 375px) {
@@ -589,13 +608,24 @@ html .content-tech .tech-show img {
   html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .tech-interact.fb-cell-01 {
     height: 320px;
     padding: 0 24px;
+    margin-bottom: 50px;
   }
   html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .tech-interact.fb-cell-01 .tech-content-subgrid nav {
-    height: 40px;
+    height: 100%;
+    width: 40.53vw;
     padding: 34px 0 26px 0;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .tech-interact.fb-cell-01 .tech-content-subgrid nav ul > li {
+    height: 40px;
+    width: 40px;
   }
   html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .tech-interact.fb-cell-01 .tech-content-sg-descr {
     height: 220px;
+    width: 100%;
+  }
+  html body main.main-mobile.mq-mobile .content.content-to-fb.content-tech .tech-interact.fb-cell-01 .tech-content-sg-descr .tech-term {
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 
