@@ -1,0 +1,112 @@
+@use 'tools';
+@use 'common';
+
+$content-w: 31.3vw;
+$content-padding-bottom: 14.56vh;
+$c02-margin: 0 11.5vw 0 auto;
+
+html {
+    @include tools.background;
+}
+
+.content.content-home {
+    height: 100%;
+    padding-bottom: $content-padding-bottom;
+    &>section {
+        justify-content: flex-end;
+    }
+    .ch-01.fb-cell-01 {
+        width: calc(tools.$main-c01-padding-left + $content-w);
+        h1 {
+            padding: 24px 0;
+        }
+    }
+    .ch-02.fb-cell-02 {
+        margin: $c02-margin;
+        button {
+            font-family: inherit;
+            text-transform: uppercase;
+            width: 274px;
+            height: 274px;
+            background-color: tools.$color-content;
+            border-radius: 50%;
+            cursor: pointer;
+            outline: 0px solid;
+            transition: 0.3s ease-out;
+            &:hover {
+                outline: 88px solid rgba(255, 255, 255, 0.1036);
+            }
+            span {
+                font-size: 32px;
+                line-height: 37px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}
+
+// Media Query
+//Tab
+@media screen and (max-width: tools.$tablet-w) {
+    $main-padding: 10.4vh 0 8.8vh 0;
+    $tab-content-gch01-h: 37.11vh;
+    $tab-content-gch01-w: 58.6vw;
+    html {
+        @include tools.background(url("../assets/home/background-home-tablet.jpg"));
+        body {
+            main.mq-tab.main-home {
+                padding: $main-padding;
+                .content-to-fb.content-home {
+                    height: 100%;
+                    padding: unset;
+                    .ch-01 {
+                        padding-top: initial;
+                        height: $tab-content-gch01-h;
+                        width: $tab-content-gch01-w;
+                    }
+                    .ch-02 {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: tools.$mobile-w) {
+    $mobile-main-h: calc(276px + 81px + 150px);
+    $mobile-main-position-top: 112px;
+    $mobile-content-h: 276px;
+    $mobile-content-w: 87.2vw;
+    $mobile-content-home-padding-top: 48px;
+    $mobile-content-padding-top: 48px;
+    $mobile-content-button-dim: 40vw;
+    $mobile-fb-cell-02-margin-top: 81px;
+    $mobile-fb-cell-02-padding-bottom: 48px;
+    html {
+        @include tools.background(url("../assets/home/background-home-mobile.jpg"));
+        body {
+            main.main-mobile.mq-mobile.main-home {
+                top: $mobile-main-position-top;
+                height: calc(100vh - $mobile-main-position-top);
+                padding: 0;
+                .content.content-to-fb.content-home {
+                    height: $mobile-main-h;
+                    .ch-02.fb-cell-02 {
+                        margin-top: $mobile-fb-cell-02-margin-top;
+                        padding-bottom: $mobile-fb-cell-02-padding-bottom;
+                        .btn-explore {
+                            height: $mobile-content-button-dim;                        
+                            width: $mobile-content-button-dim;
+                            span {
+                                font-size: 20px;
+                                line-height: 23px;
+                                letter-spacing: 1.25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

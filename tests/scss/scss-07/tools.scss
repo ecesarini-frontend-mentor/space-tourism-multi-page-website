@@ -1,0 +1,147 @@
+//Global var
+$color-back: hsl(230, 35%, 7%);
+$color-head: hsl(231, 77%, 90%);
+$color-content: hsl(0, 0%, 100%);
+$color-body-text: hsl(231, 79%, 90%);
+$color-navbar-hover: rgba(255, 255, 255, 0.50);
+
+// Viewports
+$desktop-w: 1440px;
+$desktop-h: 900px;
+$tablet-w: 768px;
+$tablet-h: 1024px;
+$mobile-w: 375px;
+//$mobile-h: 667px;
+
+$nav-padding-top: 4.44vh;
+$nav-w: 57.64vw;
+$nav-h: calc($nav-padding-top + 10.6vh);
+
+//$body-from-top-to-h5: calc(212px * 100 / $desktop-h);
+$body-from-top-to-h5: 23.55vh;
+$content-h5-h: 3.78vh;
+$content-h5-padding-left: 11.56vw;
+$content-from-top-h: calc(100vh - ($body-from-top-to-h5 + $content-h5-h));
+
+$content-padding-top: 8.44vh;
+
+$main-h: calc(100vh - $nav-h);
+$main-c01-padding-left: 11.46vw;
+
+$font-bellefair: "Bellefair", sans-serif;
+$font-barlow: "Barlow", sans-serif;
+$font-barlowCondensed: 'Barlow Condensed', sans-serif; 
+
+/* Mq variables */
+// Tablet
+$tab-fbc-01-w: 58.6vw;
+$tab-fbc-01-h: 32.6vh;
+$tab-main-h5-padding-left: 5vw;
+$tab-main-h5-padding-bottom: 5.86vh;
+$tab-navbar-h: 9.4vh;
+$tab-h5-padding-top: 3.9vh;
+
+// Mobile
+$mobile-body-min-h: 667px;
+$mobile-body-padding-lr: 24px;
+$mobile-header-h: calc(40px + 24px);
+$mobile-navbar-w: 67.73vw;
+$mobile-navbar-padding: 33.95px; 
+$mobile-close-btn-dim: 19.09px 26.95px 0 32px;
+$mobile-navindex-height: calc(19px * 4 + 32px * 3);
+//$mobile-main-top-gap-from-header: calc($mobile-header-h + 24px);
+$mobile-main-position-top: 88px;
+$mobile-main-h: calc(100vh - $mobile-main-position-top);
+$mobile-main-padding-lr: 6.4vw;
+$mobile-main-h5-total-h: 55px;
+$mobile-main-h5-margin-bottom: 32px;
+$mobile-content-padding-top: 24px;
+
+// Mixin
+
+@mixin background($img: url("../assets/home/background-home-desktop.jpg")) {
+    background: $img no-repeat center center / cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+
+@mixin font-styler($max-vw: $desktop-w) {
+    @if $max-vw >= $desktop-w {
+        body {font-size: 18px;}
+        h1 {font-size: 150px;}
+        h2 {font-size: 100px;}
+        h3 {font-size: 56px;}
+        h4 {font-size: 32px;}
+        h5 {font-size: 28px;}
+        ul span {font-size: 16px;}
+        .body-text {font-size: 18px;}
+        .subhead1 {font-size: 28px;}
+        .subhead2 {font-size: 14px;}
+    } @else if $max-vw < $desktop-w and $max-vw > $mobile-w {
+        h3 {font-size: 40px;}
+        h4 {font-size: 24px;}
+        h5, .h5-span-number {font-size: 20px;}
+        span {font-size: 14px;}
+        .body-text {
+            font-size: 16px;
+            line-height: 28px;
+            letter-spacing: 0.3px;
+        }        
+    } @else if $max-vw <= $mobile-w {
+        h1 {
+            font-size: 80px;
+            line-height: 100px;
+        }
+        h2 {
+            font-size: 56px;
+            line-height: 64px;
+        }
+        h3 {
+            font-size: 24px;
+            line-height: 28px;
+        }
+        h4 {
+            font-size: 16px;
+            line-height: 18px;
+        }
+        h5, .h5-span-number {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        .body-text {
+            font-size: 15px;
+            line-height: 25px;
+        }
+        .mobile-navbar {
+            line-height: 19px;
+            letter-spacing: 2.7px;
+            font-size: 16px;
+            font-weight: 400;
+            ul>li span:first-child {
+                font-weight: 700;
+            }
+        }
+    }
+} 
+
+//@mixin navbar-anim($dir: 'normal', $prop) {
+//    $k-tag: 0% 50% 100%;
+//    $kf: 0;
+//    @if($dir: 'reverse') {
+//        $k-tag: reverse(#{$k-tag});
+//    }
+//    @debug #{$dir} #{$k-tag};
+//    //@each $i in $k-tag {
+//    //    #{$prop}: $k-tag;
+//    //}  
+//}
+
+@mixin crew-mobile-cifmc-shifter() { //mixins uses the context of the invocation, so & refers to ".crew-interact-fb-middle-container"
+    @for $i from 1 through 3 {  //"through" takes into account the 2nd boundary, while "to" does not
+        &>:nth-child(#{$i}) { 
+            order: calc(#{$i} + 1);
+        }
+    } 
+}

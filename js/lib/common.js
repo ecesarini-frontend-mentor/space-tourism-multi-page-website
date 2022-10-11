@@ -91,7 +91,7 @@ export function createMobileNavbar() {
         navHamburgerBtn = document.createElement('button'),
         navHamburgerImg = document.createElement('img');
     
-    mobileNavbar.classList.add('mobile-navbar');
+    mobileNavbar.classList.add('mobile-navbar');//, 'mobile-navbar-transition-in');
     mobileNavCloseBtn.classList.add('mobile-navbar-close-btn');
     mobileNavCloseImg.src = '../../assets/shared/icon-close.svg';
     navHamburgerBtn.classList.add('mobile-navbar-hamburger');
@@ -111,8 +111,8 @@ export function swapMobileVp(maxVw) {
         mobileNavbar = document.querySelector('.mobile-navbar'),
         mobileNavbarClose = document.querySelector('.mobile-navbar-close-btn'),
         header = document.querySelector('header'),
-        navbarHamburger = document.querySelector('.mobile-navbar-hamburger'),
-        navbarHr = document.querySelector('header>hr');
+        navbarHamburger = document.querySelector('.mobile-navbar-hamburger');
+
     
     const mwChanged = () => {
         if(matchMqW.matches) {
@@ -128,14 +128,14 @@ export function swapMobileVp(maxVw) {
     }
     const navOpen = () => {
         mobileNavbar.style.display = 'block'; 
-        mobileNavbar.classList.toggle('mobile-navbar-transition-in');
+        mobileNavbar.classList.add('mobile-navbar-transition-in');
         mobileNavbar.classList.remove('mobile-navbar-transition-out');
         navbarHamburger.style.display = 'none';
     }
     const navClose = () => { 
         mobileNavbar.style = '';
         mobileNavbar.classList.remove('mobile-navbar-transition-in');
-        mobileNavbar.classList.toggle('mobile-navbar-transition-out');
+        mobileNavbar.classList.add('mobile-navbar-transition-out');
         navbarHamburger.style = '';       
     }
 

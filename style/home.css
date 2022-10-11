@@ -133,17 +133,6 @@ p {
   text-transform: unset;
 }
 
-@keyframes mnt {
-  0% {
-    width: 0%;
-  }
-  50% {
-    width: 50%;
-  }
-  100% {
-    width: 100%;
-  }
-}
 /* Design Home Page FIGMA DIRECTIVES and responsive*/
 header {
   width: 100%;
@@ -333,6 +322,14 @@ main .content .fb-cell-02 .subnavbar {
     width: 100%;
   }
 }
+@keyframes mnt {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 100%;
+  }
+}
 .mobile-navbar {
   display: none;
   position: fixed;
@@ -347,11 +344,13 @@ main .content .fb-cell-02 .subnavbar {
 }
 
 .mobile-navbar-transition-in {
-  animation: mnt 0.5s linear;
+  max-width: 67.73vw;
+  animation: mnt 0.3s linear;
 }
 
 .mobile-navbar-transition-out {
-  animation: mnt 0.5s linear reverse;
+  max-width: 0;
+  animation: mnt 0.3s linear reverse;
 }
 
 @media screen and (max-width: 375px) {

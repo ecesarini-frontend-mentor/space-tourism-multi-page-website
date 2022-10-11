@@ -1,0 +1,214 @@
+@use 'tools';
+@use 'common';
+
+$subgrid-h: 58.5vh;
+$subgrid-padding-top: 15.22vh;
+$subgrid-nav-w: 5.56vw;
+$subgrid-nav-li: 80px;
+$subgrid-descr-w: 32.64vw;
+$subgrid-descr-h: 33.67vh;
+
+$h5-h: 3.8vh;
+$h5-to-tech-img-gap: 2.9vh;
+$tech-img-w: 35.8vw;
+$tech-img-h: 58.6vh;
+$grid-content-h: calc($h5-h + $h5-to-tech-img-gap + $tech-img-h);
+
+
+$color-subnavbar-current: hsla(230, 35%, 7%);
+
+html {
+    @include tools.background(url("../assets/technology/background-technology-desktop.jpg"));
+    .content-tech {
+        height: $grid-content-h;
+        .fb-cell-01 {
+            width: unset;
+            .tech-content-subgrid {
+                $color-head: $subgrid-h;
+                padding-top: $subgrid-padding-top;
+                display: grid;
+                grid-template-columns: $subgrid-nav-w $subgrid-descr-w;
+                column-gap: $subgrid-nav-w;
+                &>* {
+                    height: $subgrid-descr-h;
+                }
+                nav {
+                    width: 100%;
+                    ul {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        li {
+                            width: $subgrid-nav-li;
+                            max-width: $subgrid-nav-li;
+                            height: $subgrid-nav-li;
+                            max-height: $subgrid-nav-li;
+                            line-height: $subgrid-nav-li;
+                            font-size: 32px;
+                            text-align: center;
+                            color: tools.$color-content;
+                            border-radius: 50%;
+                            outline: 1px solid tools.$color-navbar-hover;
+                            &:hover {
+                                cursor: pointer;
+                                outline-color: rgba(255, 255, 255 , 1) ;
+                            }
+                        }
+                        .snte-current {
+                            color: $color-subnavbar-current;
+                            background-color: tools.$color-content;
+                        }
+                    }
+                }
+                .tech-content-sg-descr {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .tech-term { 
+                        text-transform: uppercase;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        .tech-show {
+            margin-left: auto;
+            justify-content: flex-end;
+            justify-self: flex-end;
+            img {
+                max-width: $tech-img-w;
+                max-height: $tech-img-h;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+
+// Media Query
+//Tab
+@media screen and (max-width: tools.$tablet-w) {
+    $tab-fbc-01-subnav-margin-top: 5.47vh;
+    $tab-fbc-01-subnav-padding-bottom: 4.30vh;
+    $tab-fbc-01-ul-h: 5.86vh;
+    $tab-fbc-01-ul-w: 27.34vw;
+    $tab-fbc-01-li-font-size: 24px;
+    $tab-fbc-01-content-h: 23.14vh;
+    $tab-fbc-01-content-w: 59.64vw;
+    $tab-fbc-02-img-h: 30.27vh;
+    $tab-fbc-01-padding-top: 5.47vh;
+    $tab-fbc-02-navbar-padding-bottom: 4.30vh;
+    html {
+        @include tools.background(url("../assets/technology/background-technology-tablet.jpg"));
+        body {
+            main.mq-tab {
+                .content.content-to-fb.content-tech {
+                    //height: 100%;
+                    flex-direction: column-reverse;
+                    .tech-show.fb-cell-02 {
+                        .tech-img{
+                            max-height: initial;
+                            height: $tab-fbc-02-img-h;
+                            max-width: 100%;
+                            width: 100%;
+                        }
+                    }
+                    .tech-interact.fb-cell-01 {
+                        height: calc($tab-fbc-01-subnav-margin-top + $tab-fbc-01-subnav-padding-bottom + $tab-fbc-01-ul-h + $tab-fbc-01-content-h);
+                        .tech-content-subgrid {
+                            height: 100%;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            .tech-navbar {
+                                height: initial;
+                                width: $tab-fbc-01-ul-w;
+                                padding: $tab-fbc-01-padding-top 0 $tab-fbc-01-subnav-padding-bottom;
+                                ul {
+                                    height: 100%;
+                                    width: 100%;                                    
+                                    flex-direction: row;
+                                    li {
+                                        height: $tab-fbc-01-ul-h;
+                                        width: $tab-fbc-01-ul-h;
+                                        font-size: $tab-fbc-01-li-font-size;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-around;                                        
+                                    }                                    
+                                }
+                            }
+                            .tech-content-sg-descr {
+                                height: $tab-fbc-01-content-h;
+                                width: $tab-fbc-01-content-w;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Mobile
+@media screen and (max-width: tools.$mobile-w) {
+    $tech-show-h: 170px;
+    $tech-show-w: 375px;
+    $tech-main-padding: tools.$mobile-body-padding-lr;
+    $tech-navbar-li-dim: 40px;
+    $tech-navbar-padding-top: 34px; 
+    $tech-navbar-padding-bottom: 26px;
+    $tech-navbar-h: calc($tech-navbar-padding-top + $tech-navbar-padding-bottom + $tech-navbar-li-dim);
+    $tech-navbar-w: 40.53vw;
+    $tech-content-sg-descr-h: 220px;
+    $fb-cell-01-h: calc($tech-navbar-h + $tech-content-sg-descr-h);
+    $fb-cell-01-margin-bottom: 50px;
+    html {
+        @include tools.background(url('../assets/technology/background-technology-mobile.jpg'));
+        body {
+            main.main-mobile.mq-mobile {
+                margin: 0 (-$tech-main-padding);
+                width: auto;
+                .content.content-to-fb.content-tech {
+                    .fb-cell { max-width: unset; }
+                    .tech-show.fb-cell-02 {
+                        height: $tech-show-h;
+                        width: 100vw;
+                        .tech-img {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }                
+                    .tech-interact.fb-cell-01 {
+                        height: $fb-cell-01-h;
+                        padding: 0 $tech-main-padding;
+                        margin-bottom: $fb-cell-01-margin-bottom;
+                        .tech-content-subgrid {
+                            nav {
+                                height: 100%;
+                                width: $tech-navbar-w;
+                                padding: $tech-navbar-padding-top 0 $tech-navbar-padding-bottom 0;
+                                ul>li {
+                                    height: $tech-navbar-li-dim;
+                                    width: $tech-navbar-li-dim;
+                                }
+                            }
+                        }
+                        .tech-content-sg-descr {
+                            height: $tech-content-sg-descr-h;
+                            width: 100%;
+                            .tech-term {
+                                font-size: 14px;
+                                line-height: 17px;
+                            }
+                        }
+                    }
+                }   
+            }
+        }
+    }
+}

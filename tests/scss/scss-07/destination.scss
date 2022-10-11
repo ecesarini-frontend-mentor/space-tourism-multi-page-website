@@ -1,0 +1,227 @@
+@use 'tools';
+@use 'common';
+
+
+$fb-cell-02-h: 52.4vh;
+$fb-cell-02-subgrid-h: 9.9vh;
+
+
+$fb-cell-01-padding-left: 16vw;
+$dest-image-dim: 30.9vw; 
+$fb-cell-02-h: 52.4vh;
+$fb-cell-02-w: 30.9vw;
+$fb-cell-02-margin-right: 11.3vw;
+$fb-cell-02-padding-top: 7.1vh;
+$fb-cell-02-child-01-margin-bottom: 6vh;
+
+@keyframes destination-img-animation {
+    0%   {width: 0%;}
+    25%  {width: 25%;}
+    50%  {width: 50%;}
+    75%  {width: 75%;}
+    100% {width: 100%;}    
+}
+
+html {
+    @include tools.background(url("../assets/destination/background-destination-desktop.jpg"));
+    main {
+        .content.content-to-fb {
+            height: calc($fb-cell-02-h + $fb-cell-02-padding-top);
+            .fb-cell-01.destination-show {
+                height: 100%;
+                max-width: calc($fb-cell-01-padding-left + $dest-image-dim);
+                align-self: center;
+                .destination-img {
+                    max-width: 30.9vw;
+                    width: 100%;
+                    margin: auto 0 0 auto;
+                }
+                .destination-img-animation {
+                    animation-name: destination-img-animation;
+                    animation-duration: 0.5s;
+                }
+            }
+            .fb-cell-02.destination-interact {
+                height: 100%;
+                width: 30.9vw;
+                margin: 0 $fb-cell-02-margin-right 0 auto;
+                padding-top: $fb-cell-02-padding-top;
+                .destination-interact-child-01 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    flex: 2;
+                    .destination-navbar {
+                        justify-content: flex-start;
+                        ul {
+                            width: 64%;
+                            height: 100%;
+                            min-height: 31px;
+                            display: flex;
+                            justify-content: space-between;
+                            color: tools.$color-body-text;
+                            .subnavbar-destination-element {
+                                cursor: pointer;
+                                &.snde-current {
+                                    color: tools.$color-content;
+                                    border-bottom: 3px solid tools.$color-content;
+                                }
+                                &:hover {
+                                    color: tools.$color-navbar-hover;
+                                    border-bottom: 2px solid tools.$color-navbar-hover;
+                                }
+                            }
+                        }
+                    }
+                    .destination-description {
+                        line-height: 32px;
+                        letter-spacing: 0.1px;
+                    }
+                }
+                .destination-interact-child-02 {
+                    .destination-interact-subgrid {
+                        width: 100%;
+                        height: $fb-cell-02-subgrid-h;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        border-top: 1px solid tools.$color-navbar-hover;
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            padding: 5.93% 0 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Media Query
+//Tab
+@media screen and (max-width: tools.$tablet-w) {
+    $tab-fbc-01-img-dim: 29.3vmax; 
+    $tab-fbc-02-w: 74.6vw;
+    $tab-fbc-02-child-01-padding: 5.17vh 0 4.79vh 0;
+    //$tab-fbc-02-padding-top: 5.2vh;
+    //$tab-fbc-02-padding-top: 5.17vh;
+    //$tab-fbc-02-padding-bottom: 6.1vh; 
+    $tab-subnav-w: 37.2vw;
+    $tab-subgrid-h: 8.8vh;
+    $tab-subgrid-span-margin-bottom: 1.2vh;
+    
+    html {
+        @include tools.background(url("../assets/destination/background-destination-tablet.jpg"));
+    }
+    main.mq-tab {
+        .content.content-to-fb.content-destination { 
+            &>section { 
+                padding: 0;
+            }
+            .destination-show.fb-cell-01 {
+                .destination-img {
+                    margin: 0;
+                    height: $tab-fbc-01-img-dim;
+                    max-width: $tab-fbc-01-img-dim;
+                    width: $tab-fbc-01-img-dim;
+                }
+            }
+            .destination-interact.fb-cell-02 {
+                height: 100%;
+                width: $tab-fbc-02-w;
+                .destination-interact-child {
+                    width: 100%;
+                    align-items: center;
+                }
+                .destination-interact-child-01 {
+                    padding: $tab-fbc-02-child-01-padding;
+                    height: 100%;
+                    .destination-navbar {
+                        width: initial;
+                        ul {
+                            width: $tab-subnav-w;                            
+                        }
+                    }
+                }
+                .destination-interact-child-02 {
+
+                    height: $tab-subgrid-h;
+                    .destination-interact-subgrid {
+                        .dis-subgrid-fb {
+                            padding: 0;
+                            justify-content: flex-end;
+                            align-items: center;
+                            span:nth-child(1) {
+                                margin-bottom: $tab-subgrid-span-margin-bottom;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: tools.$mobile-w) {
+    //$body-min-h: 850px;
+    $fb-cell-01-img-dim: 170px;
+    $fb-cell-02-h: 296px;
+    //$fb-cell-02-child-02-h: 296px;
+    $fb-cell-02-child-01-subnavbar-w: 63.33vw;
+    $fb-cell-02-child-01-subnavbar-padding: 26px 0 20px 0;
+    $destination-interact-subgrid-vertical-gap: 32px;
+    $destination-interact-subgrid-padding-bottom: 58px;
+    $dis-subgrid-h: 61px;
+    $destination-interact-subgrid-h: calc(2 * ($destination-interact-subgrid-vertical-gap + $dis-subgrid-h) + $destination-interact-subgrid-padding-bottom);
+    html {
+        @include tools.background(url('../assets/destination/background-destination-mobile.jpg'));
+        body {            
+            main.main-mobile.mq-mobile {
+                .content.content-to-fb.content-destination {
+                    .fb-cell-01.destination-show {
+                        height: initial;
+                        .destination-img {
+                            height: $fb-cell-01-img-dim;
+                            max-width: unset;                            
+                            width: $fb-cell-01-img-dim;
+                        }
+                    }
+                    .fb-cell-02.destination-interact {
+                        height: $fb-cell-02-h;
+                        .destination-interact-child-01 {
+                            padding: 0;
+                            .subnavbar.destination-navbar {
+                                width: 100%;
+                                padding: $fb-cell-02-child-01-subnavbar-padding;
+                                ul {
+                                    margin: 0 auto;
+                                    width: $fb-cell-02-child-01-subnavbar-w;
+                                }
+                            }
+                            .destination-description {
+                                line-height: 25px;
+                                letter-spacing: unset;
+                            }
+                        }
+                        .destination-interact-child-02 {
+                            //height: $fb-cell-02-child-02-h;
+                            height: 100%;
+                            .destination-interact-subgrid {
+                                height: $destination-interact-subgrid-h;
+                                margin-top: $destination-interact-subgrid-vertical-gap;
+                                padding: $destination-interact-subgrid-vertical-gap 0 $destination-interact-subgrid-padding-bottom 0;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                .dis-subgrid-fb {
+                                    height: $dis-subgrid-h;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
