@@ -113,6 +113,10 @@ export function swapMobileVp(maxVw) {
         header = document.querySelector('header'),
         navbarHamburger = document.querySelector('.mobile-navbar-hamburger');
 
+        //let clk = false;
+
+    //mobileNavbar.classList.add('mobile-navbar-transition-in');
+
     
     const mwChanged = () => {
         if(matchMqW.matches) {
@@ -127,16 +131,31 @@ export function swapMobileVp(maxVw) {
         }
     }
     const navOpen = () => {
-        mobileNavbar.style.display = 'block'; 
-        mobileNavbar.classList.add('mobile-navbar-transition-in');
-        mobileNavbar.classList.remove('mobile-navbar-transition-out');
+        //clk = !clk;
+
         navbarHamburger.style.display = 'none';
+        
+        mobileNavbar.style.visibility = 'visible';
+        mobileNavbar.style.width = '100%';
+        
+        //mobileNavbar.style.display = 'block'; 
+        //mobileNavbar.classList.add('mobile-navbar-transition-in');
+        //mobileNavbar.classList.remove('mobile-navbar-transition-out');
+        //mobileNavbar.classList.add('mobile-navbar-transition-in');
+        //mobileNavbar.classList.remove('mobile-navbar-transition-out');
     }
     const navClose = () => { 
-        mobileNavbar.style = '';
-        mobileNavbar.classList.remove('mobile-navbar-transition-in');
-        mobileNavbar.classList.add('mobile-navbar-transition-out');
+        //clk = !clk;
+
         navbarHamburger.style = '';       
+        
+        mobileNavbar.style.width = '0';
+        mobileNavbar.style.visibility = '';
+        
+        //mobileNavbar.classList.remove('mobile-navbar-transition-in');
+        //mobileNavbar.classList.add('mobile-navbar-transition-out');
+        //mobileNavbar.classList.add('mobile-navbar-transition-out');
+        //mobileNavbar.classList.remove('mobile-navbar-transition-in');
     }
 
     window.addEventListener('load', mwChanged);

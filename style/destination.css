@@ -324,33 +324,43 @@ main .content .fb-cell-02 .subnavbar {
 }
 @keyframes mnt {
   from {
-    max-width: 0;
+    width: 0;
   }
   to {
-    max-width: 100%;
+    width: 100%;
+  }
+}
+@keyframes mnt-out {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
   }
 }
 .mobile-navbar {
-  display: none;
+  display: block;
+  visibility: hidden;
   position: fixed;
   right: 0;
   height: 100vh;
   max-width: 67.73vw;
-  width: 100%;
+  width: 0;
   padding: 33.95px;
   z-index: 1;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(40.7742px);
+  transition: visibility 0.1s linear, width 0.5s linear;
 }
 
 .mobile-navbar-transition-in {
-  max-width: 67.73vw;
-  animation: mnt 0.3s linear;
+  visibility: visible;
+  width: 100%;
 }
 
 .mobile-navbar-transition-out {
-  max-width: 0;
-  animation: mnt 0.3s linear reverse;
+  visibility: hidden;
+  width: 0;
 }
 
 @media screen and (max-width: 375px) {
@@ -393,9 +403,6 @@ main .content .fb-cell-02 .subnavbar {
   }
   body .mobile-navbar ul > li span:first-child {
     font-weight: 700;
-  }
-  body .mobile-navbar {
-    display: none;
   }
   body header {
     width: calc(100vw - 48px);
