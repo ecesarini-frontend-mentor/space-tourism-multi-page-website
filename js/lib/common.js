@@ -98,7 +98,7 @@ export function createMobileNavbar() {
     navHamburgerImg.src = '../../assets/shared/icon-hamburger.svg';
     
     mobileNavCloseBtn.append(mobileNavCloseImg);
-    mobileNavbar.append(mobileNavCloseBtn)
+    mobileNavbar.append(mobileNavCloseBtn);
     navHamburgerBtn.append(navHamburgerImg);
     docHeader.append(navHamburgerBtn);
     docHeader.after(mobileNavbar);
@@ -113,34 +113,24 @@ export function swapMobileVp(maxVw) {
         header = document.querySelector('header'),
         navbarHamburger = document.querySelector('.mobile-navbar-hamburger');
 
-        //let clk = false;
-
-    //mobileNavbar.classList.add('mobile-navbar-transition-in');
-
     
     const mwChanged = () => {
         if(matchMqW.matches) {
             mobileNavbar.append(mainNavbar);
-            //navbarHamburger.style.display = 'block';
-            //navbarHr.style.display = 'none';
         } else {
             header.append(mainNavbar);
             mobileNavbar.style = '';
-            //navbarHamburger.style = '';
-            //navbarHr.style = '';
         }
     }
     const navOpen = () => {
-        //clk = !clk;
 
-        navbarHamburger.style.display = 'none';
-        
+        navbarHamburger.style.display = 'none';        
         mobileNavbar.style.visibility = 'visible';
-        mobileNavbar.style.width = '100%';
+        //mobileNavbar.style.width = '100%';
         
         //mobileNavbar.style.display = 'block'; 
-        //mobileNavbar.classList.add('mobile-navbar-transition-in');
-        //mobileNavbar.classList.remove('mobile-navbar-transition-out');
+        mobileNavbar.classList.add('mobile-navbar-content-transition-in');
+        mobileNavbar.classList.remove('mobile-navbar-content-transition-out');
         //mobileNavbar.classList.add('mobile-navbar-transition-in');
         //mobileNavbar.classList.remove('mobile-navbar-transition-out');
     }
@@ -149,11 +139,11 @@ export function swapMobileVp(maxVw) {
 
         navbarHamburger.style = '';       
         
-        mobileNavbar.style.width = '0';
-        mobileNavbar.style.visibility = '';
+        mobileNavbar.style.visibility = 'hidden';
+        //mobileNavbar.style.width = '100%';
         
-        //mobileNavbar.classList.remove('mobile-navbar-transition-in');
-        //mobileNavbar.classList.add('mobile-navbar-transition-out');
+        mobileNavbar.classList.remove('mobile-navbar-content-transition-in');
+        mobileNavbar.classList.add('mobile-navbar-content-transition-out');
         //mobileNavbar.classList.add('mobile-navbar-transition-out');
         //mobileNavbar.classList.remove('mobile-navbar-transition-in');
     }

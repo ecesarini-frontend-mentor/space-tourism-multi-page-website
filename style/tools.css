@@ -1,3 +1,17 @@
-/* Mq variables */
+/* Error: Expected digit.
+ *    ,
+ * 62 | @mixin header-padding($max-w: $tools.) {
+ *    |                                      ^
+ *    '
+ *   scss\tools.scss 62:38  root stylesheet */
 
-/*# sourceMappingURL=tools.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Expected digit.\a    \2577 \a 62 \2502  @mixin header-padding($max-w: $tools.) {\d\a    \2502                                       ^\a    \2575 \a   scss\\tools.scss 62:38  root stylesheet";
+}

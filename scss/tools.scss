@@ -59,13 +59,16 @@ $mobile-content-padding-top: 24px;
 
 // Mixin
 
+@mixin header-padding($max-w: $tools.) {
+    
+}
+
 @mixin background($img: url("../assets/home/background-home-desktop.jpg")) {
     background: $img no-repeat center center / cover fixed; /* CSS-TRICKS: https://css-tricks.com/perfect-full-page-background-image/ .It needs on ./style.css path; https://stackoverflow.com/questions/25875713/can-you-declare-the-background-size-in-shorthand-for-the-background */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
 }
-
 
 @mixin font-styler($max-vw: $desktop-w) {
     @if $max-vw >= $desktop-w {
